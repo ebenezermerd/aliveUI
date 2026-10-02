@@ -10,7 +10,7 @@ import {
   Form,
   Input,
   Spinner,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import type { Session } from "../types.js";
 import { useSignIn } from "../react/hooks.js";
 import { defaultRenderLink, inlineLink, type RenderLink } from "./link.js";
@@ -65,7 +65,7 @@ export function SignInForm({
       <label className="flex items-center gap-2.5 text-sm">
         <Checkbox name="remember" defaultChecked /> Keep me signed in
       </label>
-      <Button type="submit" variant="tinted" size="lg" disabled={pending} className="w-full">
+      <Button type="submit" variant="primary" size="lg" disabled={pending} className="w-full">
         {pending ? <Spinner size="sm" label="Signing in" /> : null}
         {pending ? "Signing in" : "Sign in"}
       </Button>

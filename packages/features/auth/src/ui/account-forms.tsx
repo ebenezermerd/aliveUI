@@ -10,7 +10,7 @@ import {
   Input,
   Spinner,
   toast,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useChangePassword, useUpdateProfile } from "../react/hooks.js";
 import { useUser } from "../react/provider.js";
 import { PasswordInput } from "./password-input.js";
@@ -43,7 +43,7 @@ export function ProfileForm() {
         <FieldLabel>Email</FieldLabel>
         <Input defaultValue={user.email} readOnly />
       </Field>
-      <Button type="submit" variant="tinted" disabled={pending} className="self-start">
+      <Button type="submit" variant="primary" disabled={pending} className="self-start">
         {pending ? <Spinner size="sm" label="Saving" /> : null}
         Save profile
       </Button>

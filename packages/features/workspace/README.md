@@ -8,7 +8,7 @@ task board, team management, notifications, search and an app shell.
 | `@aliveui/workspace`       | Types, Zod schemas, labels, date helpers, pure selectors, seed data          |
 | `@aliveui/workspace/local` | `createLocalWorkspaceAdapter`, one document per owner in the browser         |
 | `@aliveui/workspace/react` | `WorkspaceProvider` with optimistic actions, selector hooks                  |
-| `@aliveui/workspace/glass` | `AppShell`, `OverviewView`, `ProjectsView`, `TasksView`, `TeamView` and more |
+| `@aliveui/workspace/ui`    | `AppShell`, `OverviewView`, `ProjectsView`, `TasksView`, `TeamView` and more |
 
 The views take callbacks for navigation, so they work with any router. Every edit applies to the
 screen straight away, rolls back if the adapter rejects it, and then syncs with the adapter so the

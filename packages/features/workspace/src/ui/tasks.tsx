@@ -12,7 +12,7 @@ import {
   Button,
   Checkbox,
   EmptyState,
-  GlassSurface,
+  Surface,
   IconButton,
   Input,
   Menu,
@@ -33,7 +33,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useMemo, useState, type DragEvent } from "react";
 import { taskPriorities, taskStatuses } from "../constants.js";
@@ -170,7 +170,7 @@ function TaskCard({
   const project = lookups.project.get(task.projectId);
   const [dragging, setDragging] = useState(false);
   return (
-    <GlassSurface
+    <Surface
       elevation="raised"
       padding="none"
       draggable
@@ -208,7 +208,7 @@ function TaskCard({
         </div>
         <MemberAvatar member={task.assigneeId ? lookups.member.get(task.assigneeId) : undefined} />
       </div>
-    </GlassSurface>
+    </Surface>
   );
 }
 
@@ -253,7 +253,7 @@ function Board({
               }
             }}
             className={cn(
-              "glass-well flex min-h-64 flex-col gap-3 rounded-surface p-3 transition-[background-color,box-shadow]",
+              "surface-well flex min-h-64 flex-col gap-3 rounded-surface p-3 transition-[background-color,box-shadow]",
               over === status.value && "bg-accent/10 ring-2 ring-accent/40",
             )}
           >
@@ -513,7 +513,7 @@ export function TasksView({ projectId, embedded = false }: TasksViewProps) {
           description={`${tasks.length} of ${scopeCount} tasks shown.`}
           actions={
             <Button
-              variant="tinted"
+              variant="primary"
               onClick={() => setCreating("todo")}
               disabled={projects.length === 0}
             >
@@ -525,25 +525,25 @@ export function TasksView({ projectId, embedded = false }: TasksViewProps) {
       {embedded ? (
         <div className="mb-4 flex items-center justify-between gap-3">
           <h2 className="text-xl font-semibold tracking-tight">Tasks</h2>
-          <Button variant="tinted" size="sm" onClick={() => setCreating("todo")}>
+          <Button variant="primary" size="sm" onClick={() => setCreating("todo")}>
             Add task
           </Button>
         </div>
       ) : null}
       {toolbar}
       {projects.length === 0 ? (
-        <GlassSurface>
+        <Surface>
           <EmptyState
             title="Create a project first"
             description="Tasks belong to projects, so start with one."
           />
-        </GlassSurface>
+        </Surface>
       ) : layout === "board" ? (
         <Board tasks={tasks} showProject={!projectId} onEdit={setEditing} onCreate={setCreating} />
       ) : tasks.length === 0 ? (
-        <GlassSurface>
+        <Surface>
           <EmptyState title="No tasks match" description="Try clearing the filters." />
-        </GlassSurface>
+        </Surface>
       ) : (
         <List tasks={tasks} showProject={!projectId} onEdit={setEditing} />
       )}

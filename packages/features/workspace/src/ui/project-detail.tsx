@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, EmptyState, GlassSurface, Meter } from "@aliveui/glass";
+import { Button, EmptyState, Surface, Meter } from "@aliveui/ui";
 import { useState } from "react";
 import { useWorkspace } from "../react/provider.js";
 import { countByStatus, projectProgress } from "../selectors.js";
@@ -23,13 +23,13 @@ export function ProjectDetailView({ projectId, onBack }: ProjectDetailViewProps)
 
   if (!project) {
     return (
-      <GlassSurface>
+      <Surface>
         <EmptyState
           title="Project not found"
           description="It may have been deleted."
           action={<Button onClick={onBack}>Back to projects</Button>}
         />
-      </GlassSurface>
+      </Surface>
     );
   }
 
@@ -57,15 +57,15 @@ export function ProjectDetailView({ projectId, onBack }: ProjectDetailViewProps)
         }
       />
       <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <GlassSurface elevation="raised" padding="none" className="space-y-2 p-5">
+        <Surface elevation="raised" padding="none" className="space-y-2 p-5">
           <p className="text-sm text-muted-foreground">Status</p>
           <ProjectStatusBadge status={project.status} />
-        </GlassSurface>
-        <GlassSurface elevation="raised" padding="none" className="space-y-2 p-5">
+        </Surface>
+        <Surface elevation="raised" padding="none" className="space-y-2 p-5">
           <p className="text-sm text-muted-foreground">Due</p>
           <DueDate date={project.dueDate} done={project.status === "completed"} />
-        </GlassSurface>
-        <GlassSurface elevation="raised" padding="none" className="space-y-2 p-5">
+        </Surface>
+        <Surface elevation="raised" padding="none" className="space-y-2 p-5">
           <p className="text-sm text-muted-foreground">Open work</p>
           <p className="text-sm">
             <span className="text-2xl font-semibold tabular-nums">
@@ -73,10 +73,10 @@ export function ProjectDetailView({ projectId, onBack }: ProjectDetailViewProps)
             </span>{" "}
             <span className="text-muted-foreground">open, {counts.review} in review</span>
           </p>
-        </GlassSurface>
-        <GlassSurface elevation="raised" padding="none" className="p-5">
+        </Surface>
+        <Surface elevation="raised" padding="none" className="p-5">
           <Meter value={progress.percent} label="Completion" />
-        </GlassSurface>
+        </Surface>
       </div>
       <TasksView projectId={project.id} embedded />
       <ProjectDialog open={editing} onOpenChange={setEditing} project={project} />

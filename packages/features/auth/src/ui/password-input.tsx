@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, Input, type InputProps } from "@aliveui/glass";
+import { IconButton, Input, type InputProps } from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useState } from "react";
 

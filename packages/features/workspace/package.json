@@ -21,9 +21,9 @@
       "types": "./dist/react/index.d.ts",
       "default": "./dist/react/index.js"
     },
-    "./glass": {
-      "types": "./dist/glass/index.d.ts",
-      "default": "./dist/glass/index.js"
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "default": "./dist/ui/index.js"
     }
   },
   "scripts": {
@@ -34,8 +34,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aliveui/glass": "workspace:*",
     "@aliveui/primitives": "workspace:*",
+    "@aliveui/ui": "workspace:*",
     "recharts": "^3.10.1",
     "zod": "catalog:"
   },

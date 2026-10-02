@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, Button, Field, FieldError, FieldLabel, Form, Input, Spinner } from "@aliveui/glass";
+import { Alert, Button, Field, FieldError, FieldLabel, Form, Input, Spinner } from "@aliveui/ui";
 import { useState } from "react";
 import { useSignUp } from "../react/hooks.js";
 import type { Session } from "../types.js";
@@ -59,7 +59,7 @@ export function SignUpForm({
         <PasswordInput autoComplete="new-password" placeholder="Type it again" />
         <FieldError />
       </Field>
-      <Button type="submit" variant="tinted" size="lg" disabled={pending} className="w-full">
+      <Button type="submit" variant="primary" size="lg" disabled={pending} className="w-full">
         {pending ? <Spinner size="sm" label="Creating account" /> : null}
         {pending ? "Creating account" : "Create account"}
       </Button>

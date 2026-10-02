@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardTitle,
   EmptyState,
-  GlassSurface,
+  Surface,
   Progress,
   ScrollArea,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useState, type ReactNode } from "react";
 import {
@@ -41,7 +41,7 @@ import { trend } from "../selectors.js";
 import { TaskDialog } from "./dialogs.js";
 import { DueDate, MemberAvatar, PageHeader, PriorityBadge, ProjectDot } from "./shared.js";
 
-/** Chart colours chosen to read well on both light and dark glass. */
+/** Chart colours chosen to read well in light and dark mode on every system. */
 const chartColors = {
   completed: "#22c55e",
   created: "#3b82f6",
@@ -58,7 +58,7 @@ interface StatProps {
 
 function Stat({ label, value, hint, icon, tone = "accent" }: StatProps) {
   return (
-    <GlassSurface elevation="raised" padding="none" className="flex flex-col gap-4 p-5">
+    <Surface elevation="raised" padding="none" className="flex flex-col gap-4 p-5">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{label}</p>
         <span
@@ -75,7 +75,7 @@ function Stat({ label, value, hint, icon, tone = "accent" }: StatProps) {
       </div>
       <p className="text-3xl font-semibold tracking-tight tabular-nums">{value}</p>
       <div className="text-xs text-muted-foreground">{hint}</div>
-    </GlassSurface>
+    </Surface>
   );
 }
 
@@ -166,7 +166,7 @@ function ChartTooltip({
 }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="glass-overlay rounded-xl px-3 py-2 text-xs text-foreground shadow-floating">
+    <div className="surface-overlay rounded-xl px-3 py-2 text-xs text-foreground shadow-floating">
       <p className="mb-1 font-semibold">{label}</p>
       {payload.map((item) => (
         <p key={item.name} className="flex items-center gap-2">
@@ -448,7 +448,7 @@ export function OverviewView({ greetingName, onOpenProject }: OverviewViewProps)
         title={greetingName ? `${greeting()}, ${greetingName}` : "Overview"}
         description={`Here is what is happening in ${workspace.name}.`}
         actions={
-          <Button variant="tinted" onClick={() => setCreating(true)}>
+          <Button variant="primary" onClick={() => setCreating(true)}>
             New task
           </Button>
         }

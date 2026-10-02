@@ -7,7 +7,7 @@ import {
   Drawer,
   DrawerContent,
   DrawerTitle,
-  GlassProvider,
+  SystemProvider,
   IconButton,
   Sidebar,
   SidebarFooter,
@@ -17,9 +17,9 @@ import {
   Toaster,
   Tooltip,
   TooltipProvider,
-  Wallpaper,
-  type GlassMode,
-} from "@aliveui/glass";
+  Backdrop,
+  type Mode,
+} from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useState, type ReactElement, type ReactNode } from "react";
 
@@ -55,7 +55,9 @@ export interface AppShellProps {
   renderLink: RenderNavLink;
   /** Controls on the right of the header, such as search, notifications and the user menu. */
   actions?: ReactNode;
-  mode?: GlassMode;
+  /** Design system to render in, such as `glass` or `neumorphism`. */
+  system: string;
+  mode?: Mode;
   children: ReactNode;
 }
 
@@ -142,7 +144,7 @@ function NavList({
 }
 
 /**
- * The frame of an authenticated app: a collapsible glass sidebar, a sticky
+ * The frame of an authenticated app: a collapsible sidebar, a sticky
  * header with breadcrumb and actions, and a mobile drawer for small screens.
  */
 export function AppShell({
@@ -153,6 +155,7 @@ export function AppShell({
   pathname,
   renderLink,
   actions,
+  system,
   mode,
   children,
 }: AppShellProps) {
@@ -180,13 +183,13 @@ export function AppShell({
   const current = allItems.find((entry) => isActive(entry, pathname));
 
   return (
-    <GlassProvider mode={mode} className="relative isolate min-h-dvh">
+    <SystemProvider system={system} mode={mode} className="relative isolate min-h-dvh">
       <Toaster>
         <TooltipProvider>
-          <Wallpaper />
+          <Backdrop />
           <a
             href="#main"
-            className="glass-overlay fixed top-3 left-3 z-50 -translate-y-20 rounded-full px-4 py-2 text-sm font-medium focus:translate-y-0"
+            className="surface-overlay fixed top-3 left-3 z-50 -translate-y-20 rounded-full px-4 py-2 text-sm font-medium focus:translate-y-0"
           >
             Skip to content
           </a>
@@ -217,7 +220,7 @@ export function AppShell({
             </div>
 
             <div className="flex min-w-0 flex-1 flex-col gap-4">
-              <header className="glass sticky top-3 z-30 flex h-16 items-center gap-3 rounded-surface px-3 shadow-raised lg:top-4 lg:px-5">
+              <header className="surface sticky top-3 z-30 flex h-16 items-center gap-3 rounded-surface px-3 shadow-raised lg:top-4 lg:px-5">
                 <IconButton
                   variant="ghost"
                   aria-label="Open navigation"
@@ -257,6 +260,6 @@ export function AppShell({
           </Drawer>
         </TooltipProvider>
       </Toaster>
-    </GlassProvider>
+    </SystemProvider>
   );
 }

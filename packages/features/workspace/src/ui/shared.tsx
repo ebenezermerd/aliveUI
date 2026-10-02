@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Avatar,
-  Badge,
-  Button,
-  EmptyState,
-  Skeleton,
-  toast,
-  type BadgeProps,
-} from "@aliveui/glass";
+import { Avatar, Badge, Button, EmptyState, Skeleton, toast, type BadgeProps } from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useCallback, type ReactNode } from "react";
 import { labelOf, projectStatuses, taskPriorities, taskStatuses } from "../constants.js";

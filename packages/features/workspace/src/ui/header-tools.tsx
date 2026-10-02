@@ -16,7 +16,7 @@ import {
   ScrollArea,
   type Command,
   type CommandGroup,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import { useMemo, useState } from "react";
 import { timeAgo } from "../dates.js";
@@ -147,7 +147,7 @@ export function QuickCreateMenu() {
   return (
     <>
       <Menu>
-        <MenuTrigger render={<IconButton variant="tinted" size="sm" aria-label="Create" />}>
+        <MenuTrigger render={<IconButton variant="primary" size="sm" aria-label="Create" />}>
           <PlusIcon />
         </MenuTrigger>
         <MenuContent align="end">
@@ -239,7 +239,7 @@ export function WorkspaceSearch({
       <Button
         variant="ghost"
         onClick={() => setOpen(true)}
-        className="glass-well h-9 gap-3 px-3 text-muted-foreground max-sm:w-9 max-sm:px-0 sm:w-56 sm:justify-start"
+        className="surface-well h-9 gap-3 px-3 text-muted-foreground max-sm:w-9 max-sm:px-0 sm:w-56 sm:justify-start"
         aria-label="Search"
       >
         <SearchIcon />

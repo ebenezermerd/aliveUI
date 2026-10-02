@@ -11,7 +11,7 @@ import {
   AvatarGroup,
   Button,
   EmptyState,
-  GlassSurface,
+  Surface,
   IconButton,
   Input,
   Menu,
@@ -31,7 +31,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useMemo, useState } from "react";
 import { projectStatuses } from "../constants.js";
 import { useLookups, useProjectsWithProgress } from "../react/hooks.js";
@@ -200,7 +200,7 @@ export function ProjectsView({ onOpenProject }: ProjectsViewProps) {
         title="Projects"
         description={`${rows.length} projects in this workspace.`}
         actions={
-          <Button variant="tinted" onClick={() => setCreating(true)}>
+          <Button variant="primary" onClick={() => setCreating(true)}>
             New project
           </Button>
         }
@@ -232,7 +232,7 @@ export function ProjectsView({ onOpenProject }: ProjectsViewProps) {
       </div>
 
       {visible.length === 0 ? (
-        <GlassSurface>
+        <Surface>
           <EmptyState
             title={rows.length === 0 ? "No projects yet" : "No projects match"}
             description={
@@ -242,18 +242,18 @@ export function ProjectsView({ onOpenProject }: ProjectsViewProps) {
             }
             action={
               rows.length === 0 ? (
-                <Button variant="tinted" onClick={() => setCreating(true)}>
+                <Button variant="primary" onClick={() => setCreating(true)}>
                   New project
                 </Button>
               ) : undefined
             }
           />
-        </GlassSurface>
+        </Surface>
       ) : layout === "grid" ? (
         <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {visible.map(({ project, progress }) => (
             <li key={project.id}>
-              <GlassSurface
+              <Surface
                 padding="none"
                 className="group flex h-full flex-col gap-4 p-5 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5"
               >
@@ -298,7 +298,7 @@ export function ProjectsView({ onOpenProject }: ProjectsViewProps) {
                     </AvatarGroup>
                   </div>
                 </div>
-              </GlassSurface>
+              </Surface>
             </li>
           ))}
         </ul>

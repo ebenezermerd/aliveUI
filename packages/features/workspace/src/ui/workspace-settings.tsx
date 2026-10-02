@@ -16,7 +16,7 @@ import {
   Form,
   Input,
   Spinner,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useState } from "react";
 import { useWorkspace, useWorkspaceActions } from "../react/provider.js";
 import { toFieldErrors, workspaceSchema, type FieldErrors } from "../schemas.js";
@@ -51,7 +51,7 @@ export function WorkspaceNameForm() {
         <Input defaultValue={workspace.name} key={workspace.name} />
         <FieldError />
       </Field>
-      <Button type="submit" variant="tinted" disabled={pending} className="self-start">
+      <Button type="submit" variant="primary" disabled={pending} className="self-start">
         {pending ? <Spinner size="sm" label="Saving" /> : null}
         Save
       </Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@aliveui/glass";
+import { Avatar, Menu, MenuContent, MenuItem, MenuSeparator, MenuTrigger } from "@aliveui/ui";
 import type { ReactNode } from "react";
 import { useSession } from "../react/provider.js";
 import { useSignOut } from "../react/hooks.js";

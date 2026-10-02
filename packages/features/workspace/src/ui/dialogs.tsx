@@ -19,7 +19,7 @@ import {
   Select,
   Spinner,
   Textarea,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useState, type FormEvent, type ReactNode } from "react";
 import {
   memberRoles,
@@ -83,7 +83,7 @@ function FormBody({
           <Button variant="ghost" onClick={onCancel}>
             Cancel
           </Button>
-          <Button type="submit" variant="tinted" disabled={pending}>
+          <Button type="submit" variant="primary" disabled={pending}>
             {pending ? <Spinner size="sm" label="Saving" /> : null}
             {submitLabel}
           </Button>
@@ -517,7 +517,7 @@ function InviteForm({ onDone }: { onDone: () => void }) {
           {invitableRoles.map((role) => (
             <label
               key={role.value}
-              className="glass-well flex cursor-pointer items-start gap-3 rounded-xl p-3 has-[[data-checked]]:border-accent/50"
+              className="surface-well flex cursor-pointer items-start gap-3 rounded-xl p-3 has-[[data-checked]]:border-accent/50"
             >
               <Radio value={role.value} className="mt-0.5" />
               <span>

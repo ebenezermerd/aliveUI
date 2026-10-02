@@ -8,12 +8,12 @@ render it and any backend can power it.
 | `@aliveui/auth`       | Zod schemas, error messages, password strength and the `AuthAdapter` contract   |
 | `@aliveui/auth/local` | `createLocalAuthAdapter`, accounts in the browser with PBKDF2 hashed passwords  |
 | `@aliveui/auth/react` | `AuthProvider`, `useSession`, `useSignIn`, `useSignUp`, `AuthGuard` and friends |
-| `@aliveui/auth/glass` | `AuthLayout`, `SignInForm`, `SignUpForm`, `UserMenu`, `ProfileForm` and more    |
+| `@aliveui/auth/ui`    | `AuthLayout`, `SignInForm`, `SignUpForm`, `UserMenu`, `ProfileForm` and more    |
 
 ```tsx
 import { createLocalAuthAdapter } from "@aliveui/auth/local";
 import { AuthProvider } from "@aliveui/auth/react";
-import { AuthLayout, SignInForm } from "@aliveui/auth/glass";
+import { AuthLayout, SignInForm } from "@aliveui/auth/ui";
 
 const adapter = createLocalAuthAdapter();
 

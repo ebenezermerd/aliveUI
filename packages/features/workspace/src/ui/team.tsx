@@ -25,7 +25,7 @@ import {
   TableHeader,
   TableRow,
   toast,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useMemo, useState } from "react";
 import { memberRoles } from "../constants.js";
 import { timeAgo } from "../dates.js";
@@ -146,7 +146,7 @@ export function TeamView({ currentMemberId }: TeamViewProps) {
         title="Team"
         description={`${members.length - invited} members${invited ? `, ${invited} invited` : ""}.`}
         actions={
-          <Button variant="tinted" onClick={() => setInviting(true)}>
+          <Button variant="primary" onClick={() => setInviting(true)}>
             Invite people
           </Button>
         }
