@@ -22,3 +22,4 @@ export * from "./components/menu/index.js";
 export * from "./components/tooltip/index.js";
 export * from "./components/popover/index.js";
 export * from "./components/dialog/index.js";
+export * from "./components/toast/index.js";
