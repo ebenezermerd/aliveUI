@@ -25,3 +25,5 @@ export * from "./components/dialog/index.js";
 export * from "./components/toast/index.js";
 export * from "./components/accordion/index.js";
 export * from "./components/collapsible/index.js";
+export * from "./components/alert-dialog/index.js";
+export * from "./components/drawer/index.js";
