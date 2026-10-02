@@ -10,7 +10,7 @@ export function ButtonsSection() {
     <ShowcaseSection
       id="buttons"
       title="Buttons"
-      description="Pill shaped, springy on press, with tinted and destructive variants."
+      description="Default, primary, ghost and destructive variants, with feedback while pressed."
     >
       <Panel className="grid gap-8 md:grid-cols-2">
         <Demo label="Variants">

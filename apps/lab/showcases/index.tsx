@@ -19,4 +19,5 @@ function kitShowcase(slug: SystemSlug): SystemShowcase {
 export const showcases: Record<SystemSlug, SystemShowcase> = {
   minimal: kitShowcase("minimal"),
   glass: kitShowcase("glass"),
+  neumorphism: kitShowcase("neumorphism"),
 };
