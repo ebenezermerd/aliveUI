@@ -8,7 +8,7 @@ const sans = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
   title: { default: "AliveUI Console", template: "%s · AliveUI Console" },
-  description: "A team workspace built from AliveUI features and the glass design system.",
+  description: "A team workspace built from AliveUI features and the surface design system.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

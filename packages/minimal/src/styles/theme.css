@@ -1,9 +1,9 @@
 /*
- * Minimal design system theme. Import after `tailwindcss`, then put
- * `data-system="minimal"` on any element to theme everything inside it.
- * Add `data-mode="dark"` on the same element or an ancestor for dark mode.
+ * Minimal design system theme. Import after `tailwindcss`, then render inside
+ * `<SystemProvider system="minimal">`, or put `data-system="minimal"` on any
+ * element. Add `data-mode="dark"` there or on an ancestor for dark mode.
  */
-@import "@aliveui/tokens/theme.css";
+@import "@aliveui/ui/styles.css";
 
 [data-system="minimal"] {
   --alive-background: oklch(1 0 0);
@@ -25,7 +25,23 @@
 
   --alive-shadow-raised: 0 1px 2px oklch(0 0 0 / 0.06);
   --alive-shadow-floating: 0 8px 24px oklch(0 0 0 / 0.08);
+  --alive-shadow-pressed: none;
   --alive-blur-surface: 0px;
+
+  /* Flat, bordered surfaces with no filters or decoration. */
+  --alive-surface-border: 1px solid var(--alive-border);
+  --alive-surface-image: none;
+  --alive-surface-filter: none;
+  --alive-overlay: var(--alive-surface-raised);
+  --alive-overlay-filter: none;
+  --alive-well: var(--alive-background);
+  --alive-well-border: 1px solid var(--alive-border);
+  --alive-well-shadow: none;
+  --alive-well-filter: none;
+  --alive-knob: oklch(1 0 0);
+  --alive-knob-shadow: 0 1px 2px oklch(0 0 0 / 0.2);
+  --alive-scrim: oklch(0 0 0 / 0.3);
+  --alive-backdrop-art: 0;
 
   --alive-duration-fast: 120ms;
   --alive-duration-base: 200ms;
@@ -36,7 +52,7 @@
 }
 
 [data-system="minimal"][data-mode="dark"],
-[data-mode="dark"] [data-system="minimal"] {
+[data-mode="dark"] [data-system="minimal"]:not([data-mode="light"]) {
   --alive-background: oklch(0.15 0 0);
   --alive-surface: oklch(0.19 0 0);
   --alive-surface-raised: oklch(0.23 0 0);
@@ -51,4 +67,6 @@
 
   --alive-shadow-raised: 0 1px 2px oklch(0 0 0 / 0.4);
   --alive-shadow-floating: 0 8px 24px oklch(0 0 0 / 0.5);
+  --alive-knob: oklch(0.96 0 0);
+  --alive-scrim: oklch(0 0 0 / 0.6);
 }

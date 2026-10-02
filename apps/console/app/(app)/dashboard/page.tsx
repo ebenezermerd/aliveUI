@@ -1,7 +1,7 @@
 "use client";
 
 import { useUser } from "@aliveui/auth/react";
-import { OverviewView } from "@aliveui/workspace/glass";
+import { OverviewView } from "@aliveui/workspace/ui";
 import { useRouter } from "next/navigation";
 import { projectHref } from "@/lib/navigation";
 

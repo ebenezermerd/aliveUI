@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectsView } from "@aliveui/workspace/glass";
+import { ProjectsView } from "@aliveui/workspace/ui";
 import { useRouter } from "next/navigation";
 import { projectHref } from "@/lib/navigation";
 

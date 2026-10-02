@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectDetailView } from "@aliveui/workspace/glass";
+import { ProjectDetailView } from "@aliveui/workspace/ui";
 import { useParams, useRouter } from "next/navigation";
 
 export default function ProjectPage() {

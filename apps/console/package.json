@@ -13,7 +13,9 @@
   "dependencies": {
     "@aliveui/auth": "workspace:*",
     "@aliveui/glass": "workspace:*",
+    "@aliveui/minimal": "workspace:*",
     "@aliveui/primitives": "workspace:*",
+    "@aliveui/ui": "workspace:*",
     "@aliveui/workspace": "workspace:*",
     "lucide-react": "^1.49.0",
     "next": "^16.3.8",

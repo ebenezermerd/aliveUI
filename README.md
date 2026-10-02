@@ -9,13 +9,14 @@ experiments.
 ```
 apps/
   lab/          Next.js app for full page showcases and experiments
-  console/      Team workspace app built only from features and the glass system
+  console/      Team workspace app built from features, switchable between design systems
   storybook/    Isolated component workbench, stories live next to components
 packages/
   tokens/       @aliveui/tokens      The semantic token contract every system fills in
   primitives/   @aliveui/primitives  Headless helpers shared by every system
-  minimal/      @aliveui/minimal     Minimal design system
-  glass/        @aliveui/glass       Glass design system
+  ui/           @aliveui/ui          The shared component kit, styled only through tokens
+  minimal/      @aliveui/minimal     Minimal design system, a theme over the kit
+  glass/        @aliveui/glass       Glass design system, a theme over the kit
   features/
     auth/       @aliveui/auth        Login and registration, headless plus design system blocks
     workspace/  @aliveui/workspace   Team workspace dashboard, headless plus design system blocks
@@ -24,14 +25,14 @@ tooling/
   eslint/       @aliveui/eslint-config   Shared ESLint presets
 ```
 
-Dependencies only flow one way: `tokens → primitives → systems → features → apps`. Design systems
+Dependencies only flow one way: `tokens → primitives → ui → systems → features → apps`. Design systems
 never import each other, and features never import each other.
 
 ## Features
 
 A feature packages a whole capability in layers: a core with schemas, types and an adapter
-contract, a React layer with hooks, and blocks per design system under a subpath such as
-`@aliveui/auth/glass`. Data goes through the adapter, so the same screens run on the bundled
+contract, a React layer with hooks, and system agnostic blocks under a subpath such as
+`@aliveui/auth/ui` that render in whichever design system is active. Data goes through the adapter, so the same screens run on the bundled
 local browser adapter today and on a real API later. Run the console with `pnpm --filter console
 dev` and open http://localhost:3001.
 
@@ -60,13 +61,15 @@ Each design system gives those names values as `--alive-*` CSS variables, scoped
 `data-system` attribute. That scoping lets several systems sit on the same page:
 
 ```tsx
-<div data-system="glass" data-mode="dark">
-  <Button variant="tinted">Continue</Button>
-</div>
+<SystemProvider system="glass" mode="dark">
+  <Button variant="primary">Continue</Button>
+</SystemProvider>
 ```
 
-A system may add its own extension variables (glass has `--alive-glass-sheen`), but shared
-components only rely on the contract.
+Beyond colours, the contract includes surface recipes: `surface-border`, `surface-image`,
+`surface-filter`, `overlay`, `well`, `knob`, `shadow-pressed` and more. The kit draws panels with the
+`surface`, `surface-overlay` and `surface-well` utilities that read them, so the same markup
+becomes frosted glass, soft extruded plastic or flat paper depending on the theme.
 
 ## Using a system in an app
 
@@ -79,19 +82,25 @@ components only rely on the contract.
 ```
 
 ```tsx
-import { Button, GlassSurface } from "@aliveui/glass";
+import { Button, Surface, SystemProvider } from "@aliveui/glass";
 ```
+
+Every system package re-exports the kit, so `@aliveui/ui` and `@aliveui/glass` give the same
+components.
 
 ## Adding a design system
 
 1. Copy `packages/minimal` to `packages/<name>` and rename the package to `@aliveui/<name>`.
-2. Fill in every token in `src/styles/theme.css` under `[data-system="<name>"]`.
-3. Build components in `src/components/<component>/` with a `.tsx`, a `.stories.tsx` and an
-   `index.ts`, and export them from `src/index.ts`.
-4. Import the new `styles.css` in `apps/lab/app/globals.css` and
-   `apps/storybook/.storybook/preview.css`.
-5. In `apps/lab/lib/registry.ts` set the system's status to `ready`, then give it a showcase in
-   `apps/lab/showcases`.
+2. Fill in every contract token in `src/styles/theme.css` under `[data-system="<name>"]`, plus the
+   dark mode block. The whole kit, the feature blocks and the console pick it up from there.
+3. Import the new `styles.css` in `apps/lab/app/globals.css`,
+   `apps/storybook/.storybook/preview.css` and `apps/console/app/globals.css`, and add the name to
+   the Storybook system toolbar and the console's `systems` list.
+4. In `apps/lab/lib/registry.ts` set the system's status to `ready` and register
+   `kitShowcase("<name>")` in `apps/lab/showcases`.
+
+A system that needs different structure, not just different tokens, can add its own components
+next to the theme and export them in place of the kit's.
 
 ## Roadmap
 

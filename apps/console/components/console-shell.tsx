@@ -1,8 +1,8 @@
 "use client";
 
-import { UserMenu } from "@aliveui/auth/glass";
+import { UserMenu } from "@aliveui/auth/ui";
 import { useSignOut, useUser } from "@aliveui/auth/react";
-import { IconButton, MenuItem } from "@aliveui/glass";
+import { IconButton, MenuItem } from "@aliveui/ui";
 import { useWorkspaceState, WorkspaceProvider } from "@aliveui/workspace/react";
 import {
   AppShell,
@@ -10,13 +10,13 @@ import {
   QuickCreateMenu,
   WorkspaceGate,
   WorkspaceSearch,
-} from "@aliveui/workspace/glass";
+} from "@aliveui/workspace/ui";
 import { Moon, Sun } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo, type ReactNode } from "react";
 import { createWorkspaceAdapter } from "@/lib/workspace";
 import { allPages, footerNav, mainNav, projectHref, renderNavLink } from "@/lib/navigation";
-import { useTheme } from "@/lib/theme";
+import { systems, useTheme } from "@/lib/theme";
 import { BrandMark } from "./brand";
 
 function ThemeToggle() {
@@ -37,7 +37,7 @@ function ThemeToggle() {
 function HeaderActions() {
   const router = useRouter();
   const state = useWorkspaceState();
-  const { mode, setMode } = useTheme();
+  const { mode, setMode, system, setSystem } = useTheme();
   const { signOut } = useSignOut(() => router.replace("/login"));
   const ready = state.status === "ready";
 
@@ -54,6 +54,13 @@ function HeaderActions() {
               label: mode === "dark" ? "Switch to light mode" : "Switch to dark mode",
               onSelect: () => setMode(mode === "dark" ? "light" : "dark"),
             },
+            ...systems
+              .filter((option) => option.value !== system)
+              .map((option) => ({
+                value: `command:system:${option.value}`,
+                label: `Use the ${option.label} design system`,
+                onSelect: () => setSystem(option.value),
+              })),
             { value: "command:sign-out", label: "Sign out", onSelect: () => void signOut() },
           ]}
         />
@@ -72,7 +79,7 @@ function HeaderActions() {
 export function ConsoleShell({ children }: { children: ReactNode }) {
   const user = useUser();
   const pathname = usePathname();
-  const { mode } = useTheme();
+  const { mode, system } = useTheme();
   // A new adapter when the person or their name changes keeps their member record in step.
   const adapter = useMemo(() => createWorkspaceAdapter(user), [user]);
 
@@ -90,6 +97,7 @@ export function ConsoleShell({ children }: { children: ReactNode }) {
         footerNav={footerNav}
         pathname={pathname}
         renderLink={renderNavLink}
+        system={system}
         mode={mode}
         actions={<HeaderActions />}
       >

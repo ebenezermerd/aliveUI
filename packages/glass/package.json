@@ -1,7 +1,7 @@
 {
   "name": "@aliveui/glass",
   "version": "0.0.0",
-  "description": "The glass AliveUI design system, translucent layered surfaces with depth and light.",
+  "description": "The glass AliveUI design system, translucent layered surfaces with depth and light. A theme over the shared kit.",
   "license": "MIT",
   "type": "module",
   "sideEffects": [
@@ -25,9 +25,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aliveui/primitives": "workspace:*",
-    "@aliveui/tokens": "workspace:*",
-    "@base-ui/react": "^1.8.0"
+    "@aliveui/ui": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -36,11 +34,9 @@
   "devDependencies": {
     "@aliveui/eslint-config": "workspace:*",
     "@aliveui/tsconfig": "workspace:*",
-    "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "eslint": "catalog:",
     "react": "catalog:",
-    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "publishConfig": {

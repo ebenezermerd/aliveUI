@@ -1,12 +1,12 @@
 /*
- * Glass design system theme. Import after `tailwindcss`, then put
- * `data-system="glass"` on any element to theme everything inside it.
- * Add `data-mode="dark"` on the same element or an ancestor for dark mode.
+ * Glass design system theme. Import after `tailwindcss`, then render inside
+ * `<SystemProvider system="glass">`, or put `data-system="glass"` on any
+ * element. Add `data-mode="dark"` there or on an ancestor for dark mode.
  *
  * Glass only reads as glass over a rich backdrop (imagery, gradients, colour),
- * so the surface tokens are translucent by design.
+ * so surfaces are translucent and `Backdrop` draws soft colour fields.
  */
-@import "@aliveui/tokens/theme.css";
+@import "@aliveui/ui/styles.css";
 
 [data-system="glass"] {
   --alive-background: oklch(0.95 0.02 255);
@@ -33,28 +33,34 @@
   --alive-shadow-floating:
     inset 0 1px 0 oklch(1 0 0 / 0.75), inset 0 -1px 0 oklch(1 0 0 / 0.14),
     0 2px 6px oklch(0.25 0.06 262 / 0.08), 0 28px 64px -16px oklch(0.25 0.06 262 / 0.32);
+  --alive-shadow-pressed: var(--alive-shadow-raised);
   --alive-blur-surface: 24px;
 
-  --alive-duration-fast: 160ms;
-  --alive-duration-base: 320ms;
-  --alive-ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  --alive-ease-spring: cubic-bezier(0.3, 1.4, 0.5, 1);
-
-  /* Extensions that only the glass system uses. */
-  --alive-glass-saturate: 1.8;
-  /* Popups float over arbitrary content, so they get a denser tint for legibility. */
-  --alive-glass-overlay: oklch(0.99 0.004 262 / 0.72);
-  --alive-glass-scrim: oklch(0.2 0.03 262 / 0.18);
-  /* Recessed wells such as inputs and tracks. */
-  --alive-glass-well: oklch(1 0 0 / 0.35);
-  --alive-glass-well-border: oklch(0.22 0.03 262 / 0.08);
-  --alive-glass-sheen: linear-gradient(
+  --alive-surface-border: 1px solid var(--alive-border);
+  --alive-surface-image: linear-gradient(
     135deg,
     oklch(1 0 0 / 0.42) 0%,
     oklch(1 0 0 / 0.08) 36%,
     oklch(1 0 0 / 0) 60%,
     oklch(1 0 0 / 0.12) 100%
   );
+  --alive-surface-filter: blur(var(--alive-blur-surface)) saturate(1.8);
+  /* Popups float over arbitrary content, so they get a denser tint for legibility. */
+  --alive-overlay: oklch(0.99 0.004 262 / 0.72);
+  --alive-overlay-filter: blur(calc(var(--alive-blur-surface) * 1.5)) saturate(1.8);
+  --alive-well: oklch(1 0 0 / 0.35);
+  --alive-well-border: 1px solid oklch(0.22 0.03 262 / 0.08);
+  --alive-well-shadow: inset 0 1px 2px oklch(0 0 0 / 0.08);
+  --alive-well-filter: blur(calc(var(--alive-blur-surface) / 2));
+  --alive-knob: oklch(1 0 0);
+  --alive-knob-shadow: 0 1px 2px oklch(0 0 0 / 0.2), 0 4px 12px oklch(0 0 0 / 0.16);
+  --alive-scrim: oklch(0.2 0.03 262 / 0.18);
+  --alive-backdrop-art: 0.8;
+
+  --alive-duration-fast: 160ms;
+  --alive-duration-base: 320ms;
+  --alive-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --alive-ease-spring: cubic-bezier(0.3, 1.4, 0.5, 1);
 
   color: var(--alive-foreground);
 }
@@ -79,85 +85,16 @@
     inset 0 1px 0 oklch(1 0 0 / 0.2), inset 0 -1px 0 oklch(1 0 0 / 0.05),
     0 2px 6px oklch(0 0 0 / 0.3), 0 28px 64px -16px oklch(0 0 0 / 0.6);
 
-  --alive-glass-overlay: oklch(0.26 0.03 262 / 0.7);
-  --alive-glass-scrim: oklch(0.05 0.02 262 / 0.45);
-  --alive-glass-well: oklch(0.1 0.02 262 / 0.28);
-  --alive-glass-well-border: oklch(1 0 0 / 0.08);
-
-  --alive-glass-sheen: linear-gradient(
+  --alive-surface-image: linear-gradient(
     135deg,
     oklch(1 0 0 / 0.16) 0%,
     oklch(1 0 0 / 0.03) 36%,
     oklch(1 0 0 / 0) 60%,
     oklch(1 0 0 / 0.05) 100%
   );
-}
-
-/*
- * Glass recipes. Each one stacks a sheen gradient over a translucent tint and
- * blurs and saturates whatever sits behind the element.
- */
-@utility glass {
-  background-color: var(--alive-surface);
-  background-image: var(--alive-glass-sheen);
-  border: 1px solid var(--alive-border);
-  -webkit-backdrop-filter: blur(var(--alive-blur-surface)) saturate(var(--alive-glass-saturate));
-  backdrop-filter: blur(var(--alive-blur-surface)) saturate(var(--alive-glass-saturate));
-}
-
-/* Denser glass for menus, popovers, dialogs and toasts. */
-@utility glass-overlay {
-  background-color: var(--alive-glass-overlay);
-  background-image: var(--alive-glass-sheen);
-  border: 1px solid var(--alive-border);
-  -webkit-backdrop-filter: blur(calc(var(--alive-blur-surface) * 1.5))
-    saturate(var(--alive-glass-saturate));
-  backdrop-filter: blur(calc(var(--alive-blur-surface) * 1.5)) saturate(var(--alive-glass-saturate));
-}
-
-/* A recessed well for text fields, tracks and grooves. */
-@utility glass-well {
-  background-color: var(--alive-glass-well);
-  border: 1px solid var(--alive-glass-well-border);
-  box-shadow: inset 0 1px 2px oklch(0 0 0 / 0.08);
-  -webkit-backdrop-filter: blur(calc(var(--alive-blur-surface) / 2));
-  backdrop-filter: blur(calc(var(--alive-blur-surface) / 2));
-}
-
-@keyframes glass-indeterminate {
-  from {
-    translate: -100% 0;
-  }
-  to {
-    translate: 300% 0;
-  }
-}
-
-@keyframes glass-spoke {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.15;
-  }
-}
-
-@keyframes glass-shimmer {
-  from {
-    background-position: 150% 0;
-  }
-  to {
-    background-position: -50% 0;
-  }
-}
-
-@keyframes glass-drift {
-  from {
-    translate: 0 0;
-    scale: 1;
-  }
-  to {
-    translate: 6rem 4rem;
-    scale: 1.15;
-  }
+  --alive-overlay: oklch(0.26 0.03 262 / 0.7);
+  --alive-well: oklch(0.1 0.02 262 / 0.28);
+  --alive-well-border: 1px solid oklch(1 0 0 / 0.08);
+  --alive-scrim: oklch(0.05 0.02 262 / 0.45);
+  --alive-backdrop-art: 0.6;
 }

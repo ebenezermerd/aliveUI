@@ -1,7 +1,7 @@
 "use client";
 
 import { AuthGuard } from "@aliveui/auth/react";
-import { Toaster } from "@aliveui/glass";
+import { Toaster } from "@aliveui/ui";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, type ReactNode } from "react";
 import { FullScreenLoader } from "@/components/full-screen-loader";

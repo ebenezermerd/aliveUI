@@ -1,4 +1,4 @@
-import type { RenderLink } from "@aliveui/auth/glass";
+import type { RenderLink } from "@aliveui/auth/ui";
 import Link from "next/link";
 
 /** Hands Next.js client side navigation to the feature blocks. */

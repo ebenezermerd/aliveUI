@@ -1,9 +1,17 @@
 "use client";
 
-import type { GlassMode } from "@aliveui/glass";
+import type { Mode } from "@aliveui/ui";
 import { useSyncExternalStore } from "react";
 
-const storageKey = "aliveui.console.mode";
+/** Design systems the console can render in. Their stylesheets are imported in `globals.css`. */
+export const systems = [
+  { value: "glass", label: "Glass", description: "Translucent layers over colour." },
+  { value: "minimal", label: "Minimal", description: "Quiet, flat and precise." },
+] as const;
+
+export type ConsoleSystem = (typeof systems)[number]["value"];
+
+const keys = { mode: "aliveui.console.mode", system: "aliveui.console.system" };
 const darkQuery = "(prefers-color-scheme: dark)";
 const listeners = new Set<() => void>();
 
@@ -19,20 +27,35 @@ function subscribe(listener: () => void) {
   };
 }
 
+function notify() {
+  for (const listener of listeners) listener();
+}
+
 /** The saved choice, or the system preference when nothing is saved yet. */
-function getMode(): GlassMode {
-  const saved = localStorage.getItem(storageKey);
+function getMode(): Mode {
+  const saved = localStorage.getItem(keys.mode);
   if (saved === "dark" || saved === "light") return saved;
   return window.matchMedia(darkQuery).matches ? "dark" : "light";
 }
 
-function setMode(mode: GlassMode) {
-  localStorage.setItem(storageKey, mode);
-  for (const listener of listeners) listener();
+function getSystem(): ConsoleSystem {
+  const saved = localStorage.getItem(keys.system);
+  return systems.some((system) => system.value === saved) ? (saved as ConsoleSystem) : "glass";
 }
 
-/** Light or dark glass, remembered across visits and shared between tabs. */
+function setMode(mode: Mode) {
+  localStorage.setItem(keys.mode, mode);
+  notify();
+}
+
+function setSystem(system: ConsoleSystem) {
+  localStorage.setItem(keys.system, system);
+  notify();
+}
+
+/** Design system and light or dark mode, remembered across visits and shared between tabs. */
 export function useTheme() {
   const mode = useSyncExternalStore(subscribe, getMode, () => "light" as const);
-  return { mode, setMode };
+  const system = useSyncExternalStore(subscribe, getSystem, () => "glass" as const);
+  return { mode, setMode, system, setSystem };
 }

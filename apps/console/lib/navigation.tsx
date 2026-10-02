@@ -1,4 +1,4 @@
-import type { NavItem, NavSection, RenderNavLink } from "@aliveui/workspace/glass";
+import type { NavItem, NavSection, RenderNavLink } from "@aliveui/workspace/ui";
 import { FolderKanban, LayoutDashboard, ListChecks, Settings, Users } from "lucide-react";
 import Link from "next/link";
 

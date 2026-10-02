@@ -1,3 +1,4 @@
+import { SystemProvider, type Mode } from "@aliveui/ui";
 import type { Preview } from "@storybook/react-vite";
 import "./preview.css";
 
@@ -6,6 +7,15 @@ const preview: Preview = {
     layout: "fullscreen",
   },
   globalTypes: {
+    system: {
+      description: "Design system",
+      toolbar: {
+        title: "System",
+        icon: "paintbrush",
+        items: ["glass", "minimal"],
+        dynamicTitle: true,
+      },
+    },
     mode: {
       description: "Colour mode",
       toolbar: {
@@ -17,18 +27,19 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
+    system: "glass",
     mode: "light",
   },
   decorators: [
-    // Each story file sets `parameters.system` so its tokens resolve.
-    (Story, { parameters, globals }) => (
-      <div
-        data-system={parameters.system as string | undefined}
-        data-mode={globals.mode as string}
+    // Every story renders in the system and mode picked in the toolbar.
+    (Story, { globals }) => (
+      <SystemProvider
+        system={globals.system as string}
+        mode={globals.mode as Mode}
         className="relative isolate min-h-dvh bg-background p-10"
       >
         <Story />
-      </div>
+      </SystemProvider>
     ),
   ],
 };
