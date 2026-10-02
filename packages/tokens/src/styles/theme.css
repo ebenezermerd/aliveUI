@@ -1,0 +1,27 @@
+/*
+ * Maps the AliveUI token contract into Tailwind v4 so components can use
+ * utilities such as `bg-surface`, `rounded-control` and `shadow-floating`.
+ * Values come from whichever design system is active on the nearest
+ * `[data-system]` ancestor. Import after `tailwindcss`.
+ */
+@theme inline {
+  --color-background: var(--alive-background);
+  --color-surface: var(--alive-surface);
+  --color-surface-raised: var(--alive-surface-raised);
+  --color-foreground: var(--alive-foreground);
+  --color-muted-foreground: var(--alive-muted-foreground);
+  --color-border: var(--alive-border);
+  --color-accent: var(--alive-accent);
+  --color-accent-foreground: var(--alive-accent-foreground);
+  --color-ring: var(--alive-ring);
+
+  --radius-control: var(--alive-radius-control);
+  --radius-surface: var(--alive-radius-surface);
+
+  --shadow-raised: var(--alive-shadow-raised);
+  --shadow-floating: var(--alive-shadow-floating);
+  --blur-surface: var(--alive-blur-surface);
+
+  --ease-standard: var(--alive-ease-standard);
+  --ease-spring: var(--alive-ease-spring);
+}

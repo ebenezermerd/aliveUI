@@ -1,0 +1,77 @@
+/*
+ * Glass design system theme. Import after `tailwindcss`, then put
+ * `data-system="glass"` on any element to theme everything inside it.
+ * Add `data-mode="dark"` on the same element or an ancestor for dark mode.
+ *
+ * Glass only reads as glass over a rich backdrop (imagery, gradients, colour),
+ * so the surface tokens are translucent by design.
+ */
+@import "@aliveui/tokens/theme.css";
+
+[data-system="glass"] {
+  --alive-background: oklch(0.95 0.02 255);
+  --alive-surface: oklch(1 0 0 / 0.5);
+  --alive-surface-raised: oklch(1 0 0 / 0.7);
+  --alive-foreground: oklch(0.22 0.03 262);
+  --alive-muted-foreground: oklch(0.22 0.03 262 / 0.64);
+  --alive-border: oklch(1 0 0 / 0.55);
+  --alive-accent: oklch(0.6 0.2 256);
+  --alive-accent-foreground: oklch(1 0 0);
+  --alive-ring: oklch(0.6 0.2 256 / 0.7);
+
+  --alive-radius-control: 9999px;
+  --alive-radius-surface: 1.75rem;
+
+  /* An inset top highlight plus soft, wide ambient shadows give the pane thickness. */
+  --alive-shadow-raised:
+    inset 0 1px 0 oklch(1 0 0 / 0.7), 0 1px 2px oklch(0.25 0.06 262 / 0.08),
+    0 6px 16px -4px oklch(0.25 0.06 262 / 0.12);
+  --alive-shadow-floating:
+    inset 0 1px 0 oklch(1 0 0 / 0.75), inset 0 -1px 0 oklch(1 0 0 / 0.14),
+    0 2px 6px oklch(0.25 0.06 262 / 0.08), 0 28px 64px -16px oklch(0.25 0.06 262 / 0.32);
+  --alive-blur-surface: 24px;
+
+  --alive-duration-fast: 160ms;
+  --alive-duration-base: 320ms;
+  --alive-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --alive-ease-spring: cubic-bezier(0.3, 1.4, 0.5, 1);
+
+  /* Extensions that only the glass system uses. */
+  --alive-glass-saturate: 1.8;
+  --alive-glass-sheen: linear-gradient(
+    135deg,
+    oklch(1 0 0 / 0.42) 0%,
+    oklch(1 0 0 / 0.08) 36%,
+    oklch(1 0 0 / 0) 60%,
+    oklch(1 0 0 / 0.12) 100%
+  );
+
+  color: var(--alive-foreground);
+}
+
+[data-system="glass"][data-mode="dark"],
+[data-mode="dark"] [data-system="glass"] {
+  --alive-background: oklch(0.18 0.03 262);
+  --alive-surface: oklch(0.32 0.03 262 / 0.42);
+  --alive-surface-raised: oklch(0.42 0.03 262 / 0.5);
+  --alive-foreground: oklch(0.97 0.005 262);
+  --alive-muted-foreground: oklch(0.97 0.005 262 / 0.66);
+  --alive-border: oklch(1 0 0 / 0.16);
+  --alive-accent: oklch(0.66 0.19 256);
+  --alive-ring: oklch(0.72 0.16 256 / 0.75);
+
+  --alive-shadow-raised:
+    inset 0 1px 0 oklch(1 0 0 / 0.18), 0 1px 2px oklch(0 0 0 / 0.3),
+    0 6px 16px -4px oklch(0 0 0 / 0.4);
+  --alive-shadow-floating:
+    inset 0 1px 0 oklch(1 0 0 / 0.2), inset 0 -1px 0 oklch(1 0 0 / 0.05),
+    0 2px 6px oklch(0 0 0 / 0.3), 0 28px 64px -16px oklch(0 0 0 / 0.6);
+
+  --alive-glass-sheen: linear-gradient(
+    135deg,
+    oklch(1 0 0 / 0.16) 0%,
+    oklch(1 0 0 / 0.03) 36%,
+    oklch(1 0 0 / 0) 60%,
+    oklch(1 0 0 / 0.05) 100%
+  );
+}
