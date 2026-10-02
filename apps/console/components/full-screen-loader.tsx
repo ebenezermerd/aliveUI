@@ -1,15 +1,19 @@
 "use client";
 
-import { GlassProvider, Spinner, Wallpaper } from "@aliveui/glass";
+import { SystemProvider, Spinner, Backdrop } from "@aliveui/ui";
 import { useTheme } from "@/lib/theme";
 
 /** Shown while the session is checked or a redirect is in flight. */
 export function FullScreenLoader() {
-  const { mode } = useTheme();
+  const { mode, system } = useTheme();
   return (
-    <GlassProvider mode={mode} className="relative isolate grid min-h-dvh place-items-center">
-      <Wallpaper />
+    <SystemProvider
+      system={system}
+      mode={mode}
+      className="relative isolate grid min-h-dvh place-items-center"
+    >
+      <Backdrop />
       <Spinner size="lg" label="Loading" />
-    </GlassProvider>
+    </SystemProvider>
   );
 }

@@ -1,21 +1,27 @@
 "use client";
 
-import { ChangePasswordForm, ProfileForm } from "@aliveui/auth/glass";
+import { ChangePasswordForm, ProfileForm } from "@aliveui/auth/ui";
 import {
+  Backdrop,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
+  Radio,
+  RadioGroup,
   SegmentedControl,
+  Surface,
+  SystemProvider,
   Tab,
   Tabs,
   TabsList,
   TabsPanel,
-} from "@aliveui/glass";
-import { PageHeader, ResetWorkspaceButton, WorkspaceNameForm } from "@aliveui/workspace/glass";
+} from "@aliveui/ui";
+import { PageHeader, ResetWorkspaceButton, WorkspaceNameForm } from "@aliveui/workspace/ui";
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "@/lib/theme";
+import { systems, useTheme, type ConsoleSystem } from "@/lib/theme";
 
 const modes = [
   { value: "light", label: <Sun />, "aria-label": "Light" },
@@ -23,7 +29,7 @@ const modes = [
 ] as const;
 
 export default function SettingsPage() {
-  const { mode, setMode } = useTheme();
+  const { mode, setMode, system, setSystem } = useTheme();
   return (
     <>
       <PageHeader title="Settings" description="Manage your account and this workspace." />
@@ -76,11 +82,59 @@ export default function SettingsPage() {
             </CardContent>
           </Card>
         </TabsPanel>
-        <TabsPanel value="appearance">
-          <Card className="max-w-xl">
+        <TabsPanel value="appearance" className="grid gap-6 lg:grid-cols-2">
+          <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle>Theme</CardTitle>
-              <CardDescription>Light or dark glass. Saved on this device.</CardDescription>
+              <CardTitle>Design system</CardTitle>
+              <CardDescription>
+                The whole console redraws in the system you pick. Saved on this device.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <RadioGroup
+                aria-label="Design system"
+                value={system}
+                onValueChange={(value) => setSystem(value as ConsoleSystem)}
+                className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+              >
+                {systems.map((option) => (
+                  <label
+                    key={option.value}
+                    className="surface-well flex cursor-pointer flex-col gap-3 rounded-2xl p-3 has-[[data-checked]]:ring-2 has-[[data-checked]]:ring-accent"
+                  >
+                    <SystemProvider
+                      system={option.value}
+                      mode={mode}
+                      className="relative isolate flex h-28 items-center justify-center gap-2 overflow-hidden rounded-xl bg-background"
+                    >
+                      <Backdrop fixed={false} animated={false} />
+                      <Surface padding="none" className="flex items-center gap-2 rounded-2xl p-3">
+                        <Button size="sm" variant="primary" tabIndex={-1}>
+                          Save
+                        </Button>
+                        <Button size="sm" tabIndex={-1}>
+                          Cancel
+                        </Button>
+                      </Surface>
+                    </SystemProvider>
+                    <span className="flex items-center gap-2.5 px-1">
+                      <Radio value={option.value} />
+                      <span>
+                        <span className="block text-sm font-medium">{option.label}</span>
+                        <span className="block text-xs text-muted-foreground">
+                          {option.description}
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                ))}
+              </RadioGroup>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Mode</CardTitle>
+              <CardDescription>Light or dark, in any system.</CardDescription>
             </CardHeader>
             <CardContent>
               <SegmentedControl

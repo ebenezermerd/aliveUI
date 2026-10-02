@@ -1,6 +1,6 @@
 "use client";
 
-import { AuthLayout, SignUpForm } from "@aliveui/auth/glass";
+import { AuthLayout, SignUpForm } from "@aliveui/auth/ui";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Brand } from "@/components/brand";
 import { renderLink } from "@/lib/link";
@@ -10,10 +10,11 @@ import { useTheme } from "@/lib/theme";
 export default function RegisterPage() {
   const router = useRouter();
   const next = useSearchParams().get("next");
-  const { mode } = useTheme();
+  const { mode, system } = useTheme();
 
   return (
     <AuthLayout
+      system={system}
       mode={mode}
       brand={<Brand />}
       title="Create your account"
