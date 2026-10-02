@@ -105,11 +105,17 @@ export function SidebarItem({
   };
 
   if (render) {
-    return cloneElement(render, { className: classes, children: content, ...shared });
+    // Forward handlers and refs too, so tooltips and click handlers reach the link.
+    return cloneElement(render, {
+      ...(props as Record<string, unknown>),
+      className: classes,
+      children: content,
+      ...shared,
+    });
   }
   if (href) {
     return (
-      <a href={href} className={classes} {...shared}>
+      <a href={href} className={classes} {...(props as Record<string, unknown>)} {...shared}>
         {content}
       </a>
     );
