@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Calendar } from "./calendar.js";
 
 const meta = {
-  title: "Glass/Calendar",
+  title: "Components/Calendar",
   component: Calendar,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Calendar>;
 

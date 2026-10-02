@@ -3,7 +3,7 @@
 import { cn } from "@aliveui/primitives";
 import { PreviewCard as BasePreviewCard } from "@base-ui/react/preview-card";
 import { popupMotion, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type PreviewCardProps = BasePreviewCard.Root.Props;
 
@@ -37,7 +37,7 @@ export function PreviewCardContent({
   sideOffset = 10,
   ...props
 }: PreviewCardContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BasePreviewCard.Portal>
       <BasePreviewCard.Positioner

@@ -25,7 +25,7 @@ export function EmptyState({
       {...props}
     >
       {icon ? (
-        <div className="glass mb-1 flex size-14 items-center justify-center rounded-2xl text-muted-foreground shadow-raised [&_svg]:size-6">
+        <div className="surface mb-1 flex size-14 items-center justify-center rounded-2xl text-muted-foreground shadow-raised [&_svg]:size-6">
           {icon}
         </div>
       ) : null}

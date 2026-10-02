@@ -13,8 +13,8 @@ const buttonVariants = variants(
   {
     variants: {
       variant: {
-        glass: "glass text-foreground shadow-raised hover:bg-surface-raised",
-        tinted:
+        default: "surface text-foreground shadow-raised hover:bg-surface-raised",
+        primary:
           "border border-white/30 bg-accent/85 text-accent-foreground shadow-raised backdrop-blur-surface hover:bg-accent",
         ghost: "text-foreground hover:bg-foreground/8 active:bg-foreground/12",
         danger:
@@ -27,7 +27,7 @@ const buttonVariants = variants(
       },
     },
     defaultVariants: {
-      variant: "glass",
+      variant: "default",
       size: "md",
     },
   },

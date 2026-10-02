@@ -10,9 +10,8 @@ const items = [
 ];
 
 const meta = {
-  title: "Glass/Select",
+  title: "Components/Select",
   component: Select<string>,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { items, placeholder: "Appearance", "aria-label": "Appearance" },
 } satisfies Meta<typeof Select<string>>;

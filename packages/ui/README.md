@@ -1,42 +1,43 @@
-# @aliveui/glass
+# @aliveui/ui
 
-Apple style glassmorphism for React. Translucent surfaces blur and saturate whatever sits behind
-them, with an edge highlight, a soft sheen and wide layered shadows. Behaviour and accessibility
-come from [Base UI](https://base-ui.com), styling comes from AliveUI tokens and Tailwind v4.
+The AliveUI component kit. Every component gets its behaviour and accessibility from
+[Base UI](https://base-ui.com) and its entire look from AliveUI tokens, so the same markup renders
+in any design system theme, such as `@aliveui/glass` or `@aliveui/minimal`.
 
 ## Setup
 
 ```css
 @import "tailwindcss";
+/* Import one or more system themes. Each one brings the kit's base styles. */
 @import "@aliveui/glass/styles.css";
 
 /* Let Tailwind generate the classes the components use. */
-@source "../node_modules/@aliveui/glass";
+@source "../node_modules/@aliveui/ui";
 ```
 
 ```tsx
-import { Button, GlassProvider, Toaster } from "@aliveui/glass";
+import { Button, SystemProvider, Toaster } from "@aliveui/ui";
 
 export function App() {
   return (
-    <GlassProvider mode="dark">
+    <SystemProvider system="glass" mode="dark">
       <Toaster>
-        <Button variant="tinted">Continue</Button>
+        <Button variant="primary">Continue</Button>
       </Toaster>
-    </GlassProvider>
+    </SystemProvider>
   );
 }
 ```
 
-`GlassProvider` scopes the tokens and tells popups which mode to use, since popups render at the
-end of the document outside any themed element. Glass needs something colourful behind it to
-read as glass, so place it over imagery or gradients.
+`SystemProvider` scopes the tokens and tells popups which system and mode to use, since popups
+render at the end of the document outside any themed element. `Backdrop` draws the page
+background, including colour fields for systems such as glass that need something to refract.
 
 ## Components
 
 | Group      | Components                                                                               |
 | ---------- | ---------------------------------------------------------------------------------------- |
-| Surfaces   | `GlassSurface`, `Card`                                                                   |
+| Surfaces   | `Surface`, `Card`, `Backdrop`                                                            |
 | Actions    | `Button`, `IconButton`, `Toggle`, `ToggleGroup`                                          |
 | Forms      | `Field`, `Fieldset`, `Form`, `Input`, `Textarea`, `NumberField`, `OTPField`              |
 | Pickers    | `Select`, `Combobox`, `MultiCombobox`, `Autocomplete`, `Calendar`, `DatePicker`          |
@@ -52,5 +53,6 @@ read as glass, so place it over imagery or gradients.
 `Menu`, `ContextMenu` and `Menubar` share the same item parts: `MenuItem`, `MenuCheckboxItem`,
 `MenuRadioGroup` with `MenuRadioItem`, `MenuGroup`, `MenuSeparator` and `MenuSubmenu`.
 
-The CSS also provides three utilities you can use directly: `glass`, `glass-overlay` for denser
-floating surfaces, and `glass-well` for recessed fields and tracks.
+The tokens package provides the recipe utilities the kit is drawn with, which you can use directly:
+`surface`, `surface-overlay` for floating popups, `surface-well` for recessed fields and tracks,
+and `knob` for thumbs.

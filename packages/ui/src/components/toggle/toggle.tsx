@@ -39,7 +39,7 @@ export function ToggleGroup({ className, ...props }: ToggleGroupProps) {
   return (
     <BaseToggleGroup
       className={cn(
-        "glass inline-flex items-center gap-1 rounded-full p-1 shadow-raised",
+        "surface inline-flex items-center gap-1 rounded-full p-1 shadow-raised",
         className,
       )}
       {...props}

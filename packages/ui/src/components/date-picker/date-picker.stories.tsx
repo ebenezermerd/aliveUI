@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { DatePicker } from "./date-picker.js";
 
 const meta = {
-  title: "Glass/DatePicker",
+  title: "Components/DatePicker",
   component: DatePicker,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { "aria-label": "Departure date" },
 } satisfies Meta<typeof DatePicker>;

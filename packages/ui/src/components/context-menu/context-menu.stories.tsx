@@ -10,9 +10,8 @@ import {
 import { ContextMenu, ContextMenuContent, ContextMenuTrigger } from "./context-menu.js";
 
 const meta = {
-  title: "Glass/ContextMenu",
+  title: "Components/ContextMenu",
   component: ContextMenu,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof ContextMenu>;
 
@@ -22,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <ContextMenu>
-      <ContextMenuTrigger className="glass flex h-40 w-72 items-center justify-center rounded-surface text-sm opacity-90">
+      <ContextMenuTrigger className="surface flex h-40 w-72 items-center justify-center rounded-surface text-sm opacity-90">
         Right click here
       </ContextMenuTrigger>
       <ContextMenuContent>

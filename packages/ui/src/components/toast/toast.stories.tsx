@@ -4,9 +4,8 @@ import { Button } from "../button/button.js";
 import { toast, Toaster } from "./toast.js";
 
 const meta = {
-  title: "Glass/Toast",
+  title: "Components/Toast",
   component: Toaster,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Toaster>;
 

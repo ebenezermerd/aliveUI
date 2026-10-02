@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { NumberField } from "./number-field.js";
 
 const meta = {
-  title: "Glass/NumberField",
+  title: "Components/NumberField",
   component: NumberField,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { defaultValue: 2, min: 0, max: 10, "aria-label": "Guests" },
 } satisfies Meta<typeof NumberField>;

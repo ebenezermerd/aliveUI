@@ -74,9 +74,15 @@ importers:
       '@aliveui/glass':
         specifier: workspace:*
         version: link:../../packages/glass
+      '@aliveui/minimal':
+        specifier: workspace:*
+        version: link:../../packages/minimal
       '@aliveui/primitives':
         specifier: workspace:*
         version: link:../../packages/primitives
+      '@aliveui/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@aliveui/workspace':
         specifier: workspace:*
         version: link:../../packages/features/workspace
@@ -138,6 +144,9 @@ importers:
       '@aliveui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
+      '@aliveui/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       lucide-react:
         specifier: ^1.49.0
         version: 1.49.0(@types/react@19.3.0)(react@19.3.0)
@@ -190,6 +199,9 @@ importers:
       '@aliveui/minimal':
         specifier: workspace:*
         version: link:../../packages/minimal
+      '@aliveui/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -236,12 +248,12 @@ importers:
 
   packages/features/auth:
     dependencies:
-      '@aliveui/glass':
-        specifier: workspace:*
-        version: link:../../glass
       '@aliveui/primitives':
         specifier: workspace:*
         version: link:../../primitives
+      '@aliveui/ui':
+        specifier: workspace:*
+        version: link:../../ui
       zod:
         specifier: 'catalog:'
         version: 4.6.5
@@ -270,12 +282,12 @@ importers:
 
   packages/features/workspace:
     dependencies:
-      '@aliveui/glass':
-        specifier: workspace:*
-        version: link:../../glass
       '@aliveui/primitives':
         specifier: workspace:*
         version: link:../../primitives
+      '@aliveui/ui':
+        specifier: workspace:*
+        version: link:../../ui
       recharts:
         specifier: ^3.10.1
         version: 3.10.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react-is@17.0.2)(react@19.3.0)(redux@5.0.1)
@@ -313,15 +325,12 @@ importers:
 
   packages/glass:
     dependencies:
-      '@aliveui/primitives':
+      '@aliveui/ui':
         specifier: workspace:*
-        version: link:../primitives
-      '@aliveui/tokens':
-        specifier: workspace:*
-        version: link:../tokens
-      '@base-ui/react':
-        specifier: ^1.8.0
-        version: 1.8.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: link:../ui
+      tailwindcss:
+        specifier: ^4.0.0
+        version: 4.3.3
     devDependencies:
       '@aliveui/eslint-config':
         specifier: workspace:*
@@ -329,9 +338,6 @@ importers:
       '@aliveui/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
-      '@storybook/react-vite':
-        specifier: 'catalog:'
-        version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@types/react':
         specifier: 'catalog:'
         version: 19.3.0
@@ -341,21 +347,18 @@ importers:
       react:
         specifier: 'catalog:'
         version: 19.3.0
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 4.3.3
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
 
   packages/minimal:
     dependencies:
-      '@aliveui/primitives':
+      '@aliveui/ui':
         specifier: workspace:*
-        version: link:../primitives
-      '@aliveui/tokens':
-        specifier: workspace:*
-        version: link:../tokens
+        version: link:../ui
+      tailwindcss:
+        specifier: ^4.0.0
+        version: 4.3.3
     devDependencies:
       '@aliveui/eslint-config':
         specifier: workspace:*
@@ -363,9 +366,6 @@ importers:
       '@aliveui/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
-      '@storybook/react-vite':
-        specifier: 'catalog:'
-        version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@types/react':
         specifier: 'catalog:'
         version: 19.3.0
@@ -375,9 +375,6 @@ importers:
       react:
         specifier: 'catalog:'
         version: 19.3.0
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 4.3.3
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -424,6 +421,43 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 10.11.0(jiti@2.7.0)
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+
+  packages/ui:
+    dependencies:
+      '@aliveui/primitives':
+        specifier: workspace:*
+        version: link:../primitives
+      '@aliveui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@base-ui/react':
+        specifier: ^1.8.0
+        version: 1.8.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+    devDependencies:
+      '@aliveui/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@aliveui/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.1(@types/react@19.3.0)(prettier@3.9.9)(react@19.3.0))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      eslint:
+        specifier: 'catalog:'
+        version: 10.11.0(jiti@2.7.0)
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.3
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

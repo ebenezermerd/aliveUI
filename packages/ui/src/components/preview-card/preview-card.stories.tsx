@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { PreviewCard, PreviewCardContent, PreviewCardTrigger } from "./preview-card.js";
 
 const meta = {
-  title: "Glass/PreviewCard",
+  title: "Components/PreviewCard",
   component: PreviewCard,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof PreviewCard>;
 

@@ -7,7 +7,7 @@ import { useEffect, useEffectEvent, useState, type ReactNode } from "react";
 import { SearchIcon } from "../../lib/icons.js";
 import { listItem, popupSurface } from "../../lib/styles.js";
 import { Kbd } from "../kbd/kbd.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 import { ScrollArea } from "../scroll-area/scroll-area.js";
 
 export interface Command {
@@ -44,7 +44,7 @@ export function CommandPalette({
 }: CommandPaletteProps) {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
   const open = controlledOpen ?? uncontrolledOpen;
-  const scope = useGlassScope();
+  const scope = useSystemScope();
 
   function setOpen(next: boolean) {
     setUncontrolledOpen(next);
@@ -70,7 +70,7 @@ export function CommandPalette({
       <BaseDialog.Portal>
         <BaseDialog.Backdrop
           {...scope}
-          className="fixed inset-0 z-50 bg-(--alive-glass-scrim) backdrop-blur-sm transition-opacity duration-(--alive-duration-base) data-starting-style:opacity-0 data-ending-style:opacity-0"
+          className="fixed inset-0 z-50 bg-(--alive-scrim) backdrop-blur-sm transition-opacity duration-(--alive-duration-base) data-starting-style:opacity-0 data-ending-style:opacity-0"
         />
         <BaseDialog.Viewport
           {...scope}

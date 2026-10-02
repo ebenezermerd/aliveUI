@@ -7,9 +7,8 @@ import { Input } from "../input/input.js";
 import { Form } from "./form.js";
 
 const meta = {
-  title: "Glass/Form",
+  title: "Components/Form",
   component: Form,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Form>;
 
@@ -33,7 +32,7 @@ function ServerValidated() {
         <Input required placeholder="Try admin" />
         <FieldError />
       </Field>
-      <Button type="submit" variant="tinted" className="self-start">
+      <Button type="submit" variant="primary" className="self-start">
         Create account
       </Button>
     </Form>

@@ -19,7 +19,7 @@ export function Radio({ className, ...props }: RadioProps) {
   return (
     <BaseRadio.Root
       className={cn(
-        "glass-well inline-flex size-5 shrink-0 items-center justify-center rounded-full",
+        "surface-well inline-flex size-5 shrink-0 items-center justify-center rounded-full",
         "transition-[background-color,border-color,box-shadow,scale] duration-(--alive-duration-base) ease-spring active:scale-90",
         "data-checked:border-transparent data-checked:bg-accent data-checked:shadow-raised",
         "data-disabled:opacity-50 motion-reduce:transition-none",

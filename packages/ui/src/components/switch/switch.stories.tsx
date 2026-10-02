@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Switch } from "./switch.js";
 
 const meta = {
-  title: "Glass/Switch",
+  title: "Components/Switch",
   component: Switch,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   render: (args) => (
     <label className="flex items-center gap-3 text-sm">

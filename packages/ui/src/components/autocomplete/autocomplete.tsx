@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { fieldControl } from "../input/input.js";
 import { SearchIcon } from "../../lib/icons.js";
 import { listItem, popupMotion, popupSurface } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export interface AutocompleteProps {
   /** Suggestions to filter as the user types. */
@@ -16,7 +16,7 @@ export interface AutocompleteProps {
   onValueChange?: (value: string) => void;
   placeholder?: string;
   emptyMessage?: ReactNode;
-  /** Show a search glass inside the field. */
+  /** Show a magnifying glass icon inside the field. */
   search?: boolean;
   id?: string;
   className?: string;
@@ -37,7 +37,7 @@ export function Autocomplete({
   "aria-label": ariaLabel,
   ...props
 }: AutocompleteProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseAutocomplete.Root items={items as string[]} {...props}>
       <div className={cn("relative flex w-full items-center", className)}>

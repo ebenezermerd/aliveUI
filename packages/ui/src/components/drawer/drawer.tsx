@@ -5,7 +5,7 @@ import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
 import { createContext, useContext, type HTMLAttributes } from "react";
 import { CloseIcon } from "../../lib/icons.js";
 import { focusRing, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type DrawerSide = "right" | "left" | "bottom";
 
@@ -29,7 +29,7 @@ export function Drawer({ side = "right", ...props }: DrawerProps) {
 
 export type DrawerTriggerProps = WithClassName<BaseDrawer.Trigger.Props>;
 
-/** Pass `render={<Button />}` to use a glass button as the trigger. */
+/** Pass `render={<Button />}` to use a kit button as the trigger. */
 export function DrawerTrigger(props: DrawerTriggerProps) {
   return <BaseDrawer.Trigger {...props} />;
 }
@@ -73,13 +73,13 @@ export function DrawerContent({
   ...props
 }: DrawerContentProps) {
   const side = useContext(DrawerSideContext);
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseDrawer.Portal>
       <BaseDrawer.Backdrop
         {...scope}
         className={cn(
-          "fixed inset-0 z-50 bg-(--alive-glass-scrim) opacity-[calc(1-var(--drawer-swipe-progress))] backdrop-blur-sm",
+          "fixed inset-0 z-50 bg-(--alive-scrim) opacity-[calc(1-var(--drawer-swipe-progress))] backdrop-blur-sm",
           "transition-opacity duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-swiping:duration-0",
           "data-starting-style:opacity-0 data-ending-style:opacity-0",
         )}
@@ -90,7 +90,7 @@ export function DrawerContent({
       >
         <BaseDrawer.Popup
           className={cn(
-            "glass-overlay relative flex flex-col overflow-y-auto overscroll-contain p-6 text-foreground shadow-floating outline-none",
+            "surface-overlay relative flex flex-col overflow-y-auto overscroll-contain p-6 text-foreground shadow-floating outline-none",
             "transition-transform duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-swiping:select-none",
             "data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] motion-reduce:transition-none",
             sideClasses[side].popup,
@@ -151,7 +151,7 @@ export function DrawerFooter({ className, ...props }: HTMLAttributes<HTMLDivElem
 
 export type DrawerCloseProps = WithClassName<BaseDrawer.Close.Props>;
 
-/** Pass `render={<Button />}` to close the drawer from a glass button. */
+/** Pass `render={<Button />}` to close the drawer from a kit button. */
 export function DrawerClose(props: DrawerCloseProps) {
   return <BaseDrawer.Close {...props} />;
 }

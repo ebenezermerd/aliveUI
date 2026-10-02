@@ -6,7 +6,7 @@ const badgeVariants = variants(
   {
     variants: {
       tone: {
-        neutral: "glass text-foreground",
+        neutral: "surface text-foreground",
         accent: "bg-accent/15 text-accent ring-1 ring-accent/25 ring-inset backdrop-blur-surface",
         success:
           "bg-success/15 text-success ring-1 ring-success/25 ring-inset backdrop-blur-surface",

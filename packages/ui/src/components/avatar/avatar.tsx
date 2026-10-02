@@ -5,7 +5,7 @@ import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
 import type { HTMLAttributes, Ref } from "react";
 
 const avatarVariants = variants(
-  "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full glass font-medium text-foreground select-none shadow-raised",
+  "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full surface font-medium text-foreground select-none shadow-raised",
   {
     variants: {
       size: {

@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { OTPField } from "./otp-field.js";
 
 const meta = {
-  title: "Glass/OTPField",
+  title: "Components/OTPField",
   component: OTPField,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { length: 6, groupSize: 3, "aria-label": "Verification code" },
 } satisfies Meta<typeof OTPField>;

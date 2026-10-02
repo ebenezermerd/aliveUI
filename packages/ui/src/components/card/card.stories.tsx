@@ -4,9 +4,8 @@ import { Button } from "../button/button.js";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card.js";
 
 const meta = {
-  title: "Glass/Card",
+  title: "Components/Card",
   component: Card,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Card>;
 
@@ -22,7 +21,7 @@ export const Default: Story = {
       </CardHeader>
       <CardContent>Upgrade to keep your photos and files in sync on every device.</CardContent>
       <CardFooter>
-        <Button variant="tinted">Upgrade</Button>
+        <Button variant="primary">Upgrade</Button>
         <Button variant="ghost">Not now</Button>
       </CardFooter>
     </Card>

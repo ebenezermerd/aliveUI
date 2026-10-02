@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage } from "./breadcrumb.js";
 
 const meta = {
-  title: "Glass/Breadcrumb",
+  title: "Components/Breadcrumb",
   component: Breadcrumb,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Breadcrumb>;
 

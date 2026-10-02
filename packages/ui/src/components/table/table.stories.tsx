@@ -20,9 +20,8 @@ const invoices = [
 const tone = { Paid: "success", Pending: "warning", Failed: "danger" } as const;
 
 const meta = {
-  title: "Glass/Table",
+  title: "Components/Table",
   component: Table,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Table>;
 

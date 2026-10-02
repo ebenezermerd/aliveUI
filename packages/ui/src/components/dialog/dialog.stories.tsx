@@ -13,9 +13,8 @@ import {
 } from "./dialog.js";
 
 const meta = {
-  title: "Glass/Dialog",
+  title: "Components/Dialog",
   component: Dialog,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Dialog>;
 

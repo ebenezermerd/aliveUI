@@ -1,2 +1,2 @@
-export { GlassSurface, glassSurfaceVariants } from "./glass-surface.js";
-export type { GlassSurfaceProps } from "./glass-surface.js";
+export { Surface, surfaceVariants } from "./surface.js";
+export type { SurfaceProps } from "./surface.js";

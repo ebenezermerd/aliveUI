@@ -5,9 +5,8 @@ import { Input } from "../input/input.js";
 import { Fieldset, FieldsetLegend } from "./fieldset.js";
 
 const meta = {
-  title: "Glass/Fieldset",
+  title: "Components/Fieldset",
   component: Fieldset,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Fieldset>;
 

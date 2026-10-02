@@ -5,7 +5,7 @@ import { Toast as BaseToast } from "@base-ui/react/toast";
 import type { ReactNode } from "react";
 import { CloseIcon } from "../../lib/icons.js";
 import { focusRing } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type ToastTone = "neutral" | "success" | "warning" | "danger";
 
@@ -51,7 +51,7 @@ const toneDot: Record<ToastTone, string> = {
 
 /** Render once near the root of the app. Toasts stack in the bottom right corner. */
 export function Toaster({ children }: { children?: ReactNode }) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseToast.Provider toastManager={manager} limit={3}>
       {children}
@@ -89,7 +89,7 @@ function ToastList() {
           "data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
           "data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
           "[transition:transform_0.5s_cubic-bezier(0.22,1,0.36,1),opacity_0.5s,height_0.15s]",
-          "glass-overlay rounded-2xl text-foreground shadow-floating",
+          "surface-overlay rounded-2xl text-foreground shadow-floating",
         )}
       >
         <BaseToast.Content className="flex items-start gap-3 overflow-hidden p-4 transition-opacity duration-250 data-behind:opacity-0 data-expanded:opacity-100">

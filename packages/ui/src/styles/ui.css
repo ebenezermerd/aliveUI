@@ -1,0 +1,44 @@
+/*
+ * Everything the shared kit needs besides a system's tokens: the token to
+ * Tailwind mapping, the surface recipes and the animations. Each system's
+ * stylesheet imports this, so apps only import the systems they use.
+ */
+@import "@aliveui/tokens/theme.css";
+
+@keyframes alive-indeterminate {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 300% 0;
+  }
+}
+
+@keyframes alive-spoke {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+
+@keyframes alive-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@keyframes alive-drift {
+  from {
+    translate: 0 0;
+    scale: 1;
+  }
+  to {
+    translate: 6rem 4rem;
+    scale: 1.15;
+  }
+}

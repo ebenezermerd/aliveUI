@@ -10,7 +10,7 @@ export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
 export function Breadcrumb({ className, children, ...props }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className={className} {...props}>
-      <ol className="glass inline-flex flex-wrap items-center gap-1 rounded-full px-2 py-1 text-sm shadow-raised [&>li+li]:before:px-1 [&>li+li]:before:text-muted-foreground/60 [&>li+li]:before:content-['›']">
+      <ol className="surface inline-flex flex-wrap items-center gap-1 rounded-full px-2 py-1 text-sm shadow-raised [&>li+li]:before:px-1 [&>li+li]:before:text-muted-foreground/60 [&>li+li]:before:content-['›']">
         {children}
       </ol>
     </nav>

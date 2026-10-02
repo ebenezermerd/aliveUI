@@ -13,12 +13,12 @@ export function Tabs({ className, ...props }: TabsProps) {
 
 export type TabsListProps = WithClassName<BaseTabs.List.Props>;
 
-/** The row of tabs. A glass pill slides under the active one. */
+/** The row of tabs. A raised pill slides under the active one. */
 export function TabsList({ className, children, ...props }: TabsListProps) {
   return (
     <BaseTabs.List
       className={cn(
-        "glass-well relative z-0 inline-flex w-fit items-center gap-1 rounded-full p-1",
+        "surface-well relative z-0 inline-flex w-fit items-center gap-1 rounded-full p-1",
         className,
       )}
       {...props}
@@ -26,7 +26,7 @@ export function TabsList({ className, children, ...props }: TabsListProps) {
       {children}
       <BaseTabs.Indicator
         className={cn(
-          "glass absolute top-(--active-tab-top) left-0 -z-10 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) rounded-full shadow-raised",
+          "surface absolute top-(--active-tab-top) left-0 -z-10 h-(--active-tab-height) w-(--active-tab-width) translate-x-(--active-tab-left) rounded-full shadow-raised",
           "transition-[translate,width] duration-(--alive-duration-base) ease-spring motion-reduce:transition-none",
         )}
       />

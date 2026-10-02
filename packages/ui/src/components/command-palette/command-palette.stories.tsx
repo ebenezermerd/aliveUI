@@ -25,9 +25,8 @@ const groups: CommandGroup[] = [
 ];
 
 const meta = {
-  title: "Glass/CommandPalette",
+  title: "Components/CommandPalette",
   component: CommandPalette,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { groups },
 } satisfies Meta<typeof CommandPalette>;

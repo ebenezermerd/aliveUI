@@ -13,9 +13,8 @@ import {
 } from "./alert-dialog.js";
 
 const meta = {
-  title: "Glass/AlertDialog",
+  title: "Components/AlertDialog",
   component: AlertDialog,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof AlertDialog>;
 

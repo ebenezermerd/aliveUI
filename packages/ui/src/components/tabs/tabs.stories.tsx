@@ -4,9 +4,8 @@ import { Card } from "../card/card.js";
 import { Tab, Tabs, TabsList, TabsPanel } from "./tabs.js";
 
 const meta = {
-  title: "Glass/Tabs",
+  title: "Components/Tabs",
   component: Tabs,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Tabs>;
 

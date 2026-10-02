@@ -21,7 +21,7 @@ export function Slider({ className, thumbLabels, ...props }: SliderProps) {
   return (
     <BaseSlider.Root className={cn("w-full", className)} {...props}>
       <BaseSlider.Control className="flex w-full touch-none items-center py-3 select-none data-disabled:opacity-50">
-        <BaseSlider.Track className="glass-well relative h-1.5 w-full rounded-full">
+        <BaseSlider.Track className="surface-well relative h-1.5 w-full rounded-full">
           <BaseSlider.Indicator className="rounded-full bg-accent" />
           {Array.from({ length: count }, (_, index) => (
             <BaseSlider.Thumb
@@ -29,7 +29,7 @@ export function Slider({ className, thumbLabels, ...props }: SliderProps) {
               index={index}
               aria-label={thumbLabels?.[index] ?? label}
               className={cn(
-                "size-5 rounded-full bg-white shadow-[0_1px_2px_oklch(0_0_0/0.2),0_4px_12px_oklch(0_0_0/0.16)] outline-none",
+                "size-5 knob rounded-full outline-none",
                 "transition-[scale,box-shadow] duration-(--alive-duration-base) ease-spring",
                 "has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-ring/40 data-dragging:scale-110",
               )}

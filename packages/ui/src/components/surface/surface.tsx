@@ -1,7 +1,7 @@
 import { cn, variants, type VariantProps } from "@aliveui/primitives";
 import type { HTMLAttributes, Ref } from "react";
 
-const glassSurfaceVariants = variants("glass relative rounded-surface text-foreground", {
+const surfaceVariants = variants("surface relative rounded-surface text-foreground", {
   variants: {
     elevation: {
       raised: "shadow-raised",
@@ -19,14 +19,14 @@ const glassSurfaceVariants = variants("glass relative rounded-surface text-foreg
   },
 });
 
-export interface GlassSurfaceProps
-  extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof glassSurfaceVariants> {
+export interface SurfaceProps
+  extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof surfaceVariants> {
   ref?: Ref<HTMLDivElement>;
 }
 
-/** A translucent pane that blurs and saturates whatever sits behind it. */
-export function GlassSurface({ className, elevation, padding, ...props }: GlassSurfaceProps) {
-  return <div className={cn(glassSurfaceVariants({ elevation, padding }), className)} {...props} />;
+/** A panel drawn with the active system's surface recipe. */
+export function Surface({ className, elevation, padding, ...props }: SurfaceProps) {
+  return <div className={cn(surfaceVariants({ elevation, padding }), className)} {...props} />;
 }
 
-export { glassSurfaceVariants };
+export { surfaceVariants };

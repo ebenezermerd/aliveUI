@@ -3,7 +3,7 @@
 import { cn } from "@aliveui/primitives";
 import { Popover as BasePopover } from "@base-ui/react/popover";
 import { popupMotion, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type PopoverProps = BasePopover.Root.Props;
 
@@ -14,7 +14,7 @@ export function Popover(props: PopoverProps) {
 
 export type PopoverTriggerProps = WithClassName<BasePopover.Trigger.Props>;
 
-/** Pass `render={<Button />}` to use a glass button as the trigger. */
+/** Pass `render={<Button />}` to use a kit button as the trigger. */
 export function PopoverTrigger(props: PopoverTriggerProps) {
   return <BasePopover.Trigger {...props} />;
 }
@@ -29,7 +29,7 @@ export function PopoverContent({
   sideOffset = 10,
   ...props
 }: PopoverContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BasePopover.Portal>
       <BasePopover.Positioner

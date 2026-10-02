@@ -10,9 +10,8 @@ const items = [
 ] as const;
 
 const meta = {
-  title: "Glass/SegmentedControl",
+  title: "Components/SegmentedControl",
   component: SegmentedControl<string>,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { items, defaultValue: "week", "aria-label": "Calendar range" },
 } satisfies Meta<typeof SegmentedControl<string>>;

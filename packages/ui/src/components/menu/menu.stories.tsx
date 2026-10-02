@@ -16,9 +16,8 @@ import {
 } from "./menu.js";
 
 const meta = {
-  title: "Glass/Menu",
+  title: "Components/Menu",
   component: Menu,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Menu>;
 

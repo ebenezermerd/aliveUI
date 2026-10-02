@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Badge } from "./badge.js";
 
 const meta = {
-  title: "Glass/Badge",
+  title: "Components/Badge",
   component: Badge,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { children: "Badge" },
   argTypes: {

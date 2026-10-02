@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Kbd } from "./kbd.js";
 
 const meta = {
-  title: "Glass/Kbd",
+  title: "Components/Kbd",
   component: Kbd,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Kbd>;
 

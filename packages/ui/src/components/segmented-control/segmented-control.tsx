@@ -50,7 +50,7 @@ export function SegmentedControl<Value extends string>({
         setUncontrolled(picked);
         onValueChange?.(picked);
       }}
-      className={cn("glass-well inline-flex items-center gap-1 rounded-full p-1", className)}
+      className={cn("surface-well inline-flex items-center gap-1 rounded-full p-1", className)}
     >
       {items.map((item) => (
         <Toggle
@@ -61,7 +61,7 @@ export function SegmentedControl<Value extends string>({
           className={cn(
             "flex h-8 min-w-8 items-center justify-center gap-1.5 rounded-full px-3.5 text-sm font-medium text-muted-foreground select-none [&_svg]:size-4",
             "transition-[background-color,color,box-shadow,scale] duration-(--alive-duration-base) ease-spring active:scale-[0.96]",
-            "hover:text-foreground data-pressed:glass data-pressed:text-foreground data-pressed:shadow-raised",
+            "hover:text-foreground data-pressed:surface data-pressed:text-foreground data-pressed:shadow-raised",
             "data-disabled:opacity-50",
             focusRing,
           )}

@@ -5,7 +5,7 @@ import { Popover as BasePopover } from "@base-ui/react/popover";
 import { useState } from "react";
 import { focusRing, popupMotion, popupSurface } from "../../lib/styles.js";
 import { Calendar, type SingleCalendarProps } from "../calendar/calendar.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export interface DatePickerProps extends Omit<
   SingleCalendarProps,
@@ -36,7 +36,7 @@ function CalendarIcon() {
   );
 }
 
-/** A field that opens a calendar in a glass popover and shows the chosen date. */
+/** A field that opens a calendar in a popover and shows the chosen date. */
 export function DatePicker({
   value,
   defaultValue = null,
@@ -52,7 +52,7 @@ export function DatePicker({
   const [open, setOpen] = useState(false);
   const [uncontrolled, setUncontrolled] = useState<Date | null>(defaultValue);
   const selected = value !== undefined ? value : uncontrolled;
-  const scope = useGlassScope();
+  const scope = useSystemScope();
 
   return (
     <BasePopover.Root open={open} onOpenChange={setOpen}>
@@ -60,7 +60,7 @@ export function DatePicker({
         disabled={disabled}
         aria-label={ariaLabel}
         className={cn(
-          "glass inline-flex h-10 min-w-48 items-center gap-2.5 rounded-xl px-3.5 text-sm shadow-raised",
+          "surface inline-flex h-10 min-w-48 items-center gap-2.5 rounded-xl px-3.5 text-sm shadow-raised",
           "transition-[background-color,scale] duration-(--alive-duration-base) ease-spring hover:bg-surface-raised active:scale-[0.98]",
           "data-popup-open:bg-surface-raised disabled:opacity-50",
           focusRing,

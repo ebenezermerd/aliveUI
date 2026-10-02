@@ -3,41 +3,56 @@
 import { cn } from "@aliveui/primitives";
 import { createContext, useContext, type HTMLAttributes, type Ref } from "react";
 
-export type GlassMode = "light" | "dark";
+export type Mode = "light" | "dark";
 
-const GlassModeContext = createContext<GlassMode | undefined>(undefined);
+interface SystemContextValue {
+  system: string | undefined;
+  mode: Mode | undefined;
+}
 
-/** The mode set by the nearest `GlassProvider`, if any. */
-export function useGlassMode(): GlassMode | undefined {
-  return useContext(GlassModeContext);
+const SystemContext = createContext<SystemContextValue>({ system: undefined, mode: undefined });
+
+/** The design system set by the nearest `SystemProvider`, if any. */
+export function useSystem(): string | undefined {
+  return useContext(SystemContext).system;
+}
+
+/** The colour mode set by the nearest `SystemProvider`, if any. */
+export function useMode(): Mode | undefined {
+  return useContext(SystemContext).mode;
 }
 
 /**
- * Attributes that scope an element to the glass system. Popups are portalled
- * to the end of the document, outside any themed ancestor, so they spread
- * these onto themselves to keep the right tokens.
+ * Attributes that scope an element to the active system and mode. Popups are
+ * portalled to the end of the document, outside any themed ancestor, so they
+ * spread these onto themselves to keep the right tokens.
  */
-export function useGlassScope() {
-  const mode = useGlassMode();
-  return { "data-system": "glass", "data-mode": mode } as const;
+export function useSystemScope() {
+  const { system, mode } = useContext(SystemContext);
+  return { "data-system": system, "data-mode": mode } as const;
 }
 
-export interface GlassProviderProps extends HTMLAttributes<HTMLDivElement> {
+export interface SystemProviderProps extends HTMLAttributes<HTMLDivElement> {
+  /** Which design system themes everything inside, such as `glass` or `neumorphism`. */
+  system: string;
   /** Colour mode for everything inside, including popups. Inherits from the page when omitted. */
-  mode?: GlassMode;
+  mode?: Mode;
   ref?: Ref<HTMLDivElement>;
 }
 
-/** Themes its children with the glass system and tells popups which mode to use. */
-export function GlassProvider({ mode, className, ...props }: GlassProviderProps) {
+/**
+ * Themes its children with a design system. Import that system's stylesheet
+ * once, then any component inside picks up its tokens.
+ */
+export function SystemProvider({ system, mode, className, ...props }: SystemProviderProps) {
   return (
-    <GlassModeContext.Provider value={mode}>
+    <SystemContext.Provider value={{ system, mode }}>
       <div
-        data-system="glass"
+        data-system={system}
         data-mode={mode}
         className={cn("text-foreground", className)}
         {...props}
       />
-    </GlassModeContext.Provider>
+    </SystemContext.Provider>
   );
 }

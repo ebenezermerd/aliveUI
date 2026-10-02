@@ -6,7 +6,7 @@ import type { WithClassName } from "../../lib/styles.js";
 
 /** Shared look for single and multi line text fields. */
 export const fieldControl = cn(
-  "glass-well w-full rounded-xl px-3.5 text-sm text-foreground placeholder:text-muted-foreground",
+  "surface-well w-full rounded-xl px-3.5 text-sm text-foreground placeholder:text-muted-foreground",
   "transition-[border-color,box-shadow,background-color] duration-(--alive-duration-base) ease-standard",
   "outline-none focus:border-accent/60 focus:ring-4 focus:ring-ring/25",
   "data-invalid:border-danger/70 data-invalid:focus:ring-danger/25",

@@ -11,8 +11,8 @@ export function Skeleton({ className, ...props }: SkeletonProps) {
     <div
       aria-hidden
       className={cn(
-        "glass-well rounded-xl bg-[linear-gradient(100deg,transparent_30%,oklch(1_0_0/0.35)_50%,transparent_70%)] bg-size-[200%_100%]",
-        "motion-safe:animate-[glass-shimmer_1.6s_ease-in-out_infinite]",
+        "surface-well rounded-xl bg-[linear-gradient(100deg,transparent_30%,oklch(1_0_0/0.35)_50%,transparent_70%)] bg-size-[200%_100%]",
+        "motion-safe:animate-[alive-shimmer_1.6s_ease-in-out_infinite]",
         className,
       )}
       {...props}

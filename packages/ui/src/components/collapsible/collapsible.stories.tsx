@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from "./collapsible.js";
 
 const meta = {
-  title: "Glass/Collapsible",
+  title: "Components/Collapsible",
   component: Collapsible,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Collapsible>;
 

@@ -5,7 +5,7 @@ import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 import type { HTMLAttributes } from "react";
 import { CloseIcon } from "../../lib/icons.js";
 import { focusRing, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type DialogProps = BaseDialog.Root.Props;
 
@@ -16,7 +16,7 @@ export function Dialog(props: DialogProps) {
 
 export type DialogTriggerProps = WithClassName<BaseDialog.Trigger.Props>;
 
-/** Pass `render={<Button />}` to use a glass button as the trigger. */
+/** Pass `render={<Button />}` to use a kit button as the trigger. */
 export function DialogTrigger(props: DialogTriggerProps) {
   return <BaseDialog.Trigger {...props} />;
 }
@@ -32,13 +32,13 @@ export function DialogContent({
   showClose = true,
   ...props
 }: DialogContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseDialog.Portal>
       <BaseDialog.Backdrop
         {...scope}
         className={cn(
-          "fixed inset-0 z-50 bg-(--alive-glass-scrim) backdrop-blur-sm",
+          "fixed inset-0 z-50 bg-(--alive-scrim) backdrop-blur-sm",
           "transition-opacity duration-(--alive-duration-base) ease-standard data-starting-style:opacity-0 data-ending-style:opacity-0",
         )}
       />
@@ -103,7 +103,7 @@ export function DialogFooter({ className, ...props }: HTMLAttributes<HTMLDivElem
 
 export type DialogCloseProps = WithClassName<BaseDialog.Close.Props>;
 
-/** Pass `render={<Button />}` to close the dialog from a glass button. */
+/** Pass `render={<Button />}` to close the dialog from a kit button. */
 export function DialogClose(props: DialogCloseProps) {
   return <BaseDialog.Close {...props} />;
 }

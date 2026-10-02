@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Spinner } from "./spinner.js";
 
 const meta = {
-  title: "Glass/Spinner",
+  title: "Components/Spinner",
   component: Spinner,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   argTypes: { size: { control: "inline-radio", options: ["sm", "md", "lg"] } },
 } satisfies Meta<typeof Spinner>;

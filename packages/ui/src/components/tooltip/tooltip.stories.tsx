@@ -4,9 +4,8 @@ import { Button } from "../button/button.js";
 import { Tooltip, TooltipProvider } from "./tooltip.js";
 
 const meta = {
-  title: "Glass/Tooltip",
+  title: "Components/Tooltip",
   component: Tooltip,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { content: "Add to library", children: <Button>Hover me</Button> },
   argTypes: { side: { control: "inline-radio", options: ["top", "right", "bottom", "left"] } },

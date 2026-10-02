@@ -32,7 +32,7 @@ export function Spinner({ className, size, label = "Loading", ...props }: Spinne
           style={{ rotate: `${index * 45}deg` }}
         >
           <span
-            className="h-[45%] w-full rounded-full bg-current motion-safe:animate-[glass-spoke_0.8s_linear_infinite]"
+            className="h-[45%] w-full rounded-full bg-current motion-safe:animate-[alive-spoke_0.8s_linear_infinite]"
             style={{ animationDelay: `${(index - 8) * 0.1}s` }}
           />
         </span>

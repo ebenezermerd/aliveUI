@@ -4,9 +4,8 @@ import { useState } from "react";
 import { Pagination } from "./pagination.js";
 
 const meta = {
-  title: "Glass/Pagination",
+  title: "Components/Pagination",
   component: Pagination,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { page: 1, pageCount: 20, onPageChange: () => {} },
 } satisfies Meta<typeof Pagination>;

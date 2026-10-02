@@ -1,4 +1,4 @@
-/** Shared class recipes so every glass component moves and focuses the same way. */
+/** Shared class recipes so every component moves and focuses the same way. */
 
 /** Focus ring for controls. */
 export const focusRing =
@@ -13,7 +13,7 @@ export const popupMotion =
   "origin-(--transform-origin) transition-[scale,opacity,translate] duration-(--alive-duration-base) ease-spring data-starting-style:scale-95 data-starting-style:opacity-0 data-ending-style:scale-95 data-ending-style:opacity-0 data-ending-style:duration-(--alive-duration-fast) data-ending-style:ease-standard motion-reduce:transition-none";
 
 /** Shared surface for every floating popup. */
-export const popupSurface = "glass-overlay rounded-2xl text-foreground shadow-floating";
+export const popupSurface = "surface-overlay rounded-2xl text-foreground shadow-floating";
 
 /** Disabled look for controls that expose Base UI's disabled attribute. */
 export const disabled = "data-disabled:pointer-events-none data-disabled:opacity-50";

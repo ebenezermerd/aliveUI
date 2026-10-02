@@ -4,9 +4,8 @@ import { Field, FieldDescription, FieldError, FieldLabel } from "../field/field.
 import { Input } from "./input.js";
 
 const meta = {
-  title: "Glass/Input",
+  title: "Components/Input",
   component: Input,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { placeholder: "Search", "aria-label": "Search", className: "max-w-xs" },
 } satisfies Meta<typeof Input>;

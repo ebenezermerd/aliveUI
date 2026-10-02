@@ -5,7 +5,7 @@ import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react/navigation-
 import type { CSSProperties, ReactNode } from "react";
 import { ChevronDownIcon } from "../../lib/icons.js";
 import { focusRing, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type NavigationMenuProps = WithClassName<BaseNavigationMenu.Root.Props>;
 
@@ -14,7 +14,7 @@ export type NavigationMenuProps = WithClassName<BaseNavigationMenu.Root.Props>;
  * move between triggers.
  */
 export function NavigationMenu({ className, children, ...props }: NavigationMenuProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseNavigationMenu.Root className={cn("relative", className)} {...props}>
       {children}
@@ -58,7 +58,7 @@ export type NavigationMenuListProps = WithClassName<BaseNavigationMenu.List.Prop
 export function NavigationMenuList({ className, ...props }: NavigationMenuListProps) {
   return (
     <BaseNavigationMenu.List
-      className={cn("glass flex items-center gap-0.5 rounded-full p-1 shadow-raised", className)}
+      className={cn("surface flex items-center gap-0.5 rounded-full p-1 shadow-raised", className)}
       {...props}
     />
   );

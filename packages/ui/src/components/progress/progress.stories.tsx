@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Progress } from "./progress.js";
 
 const meta = {
-  title: "Glass/Progress",
+  title: "Components/Progress",
   component: Progress,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { value: 64, label: "Uploading", showValue: true, className: "max-w-xs" },
 } satisfies Meta<typeof Progress>;

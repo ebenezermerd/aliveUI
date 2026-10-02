@@ -3,7 +3,7 @@
 import { cn } from "@aliveui/primitives";
 import { ContextMenu as BaseContextMenu } from "@base-ui/react/context-menu";
 import { popupMotion, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type ContextMenuProps = BaseContextMenu.Root.Props;
 
@@ -25,7 +25,7 @@ export function ContextMenuTrigger({ className, ...props }: ContextMenuTriggerPr
 export type ContextMenuContentProps = WithClassName<BaseContextMenu.Popup.Props>;
 
 export function ContextMenuContent({ className, ...props }: ContextMenuContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseContextMenu.Portal>
       <BaseContextMenu.Positioner {...scope} className="z-50 outline-none">

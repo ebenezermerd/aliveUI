@@ -5,7 +5,7 @@ import { Select as BaseSelect } from "@base-ui/react/select";
 import type { ReactNode } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "../../lib/icons.js";
 import { focusRing, popupMotion, popupSurface } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export interface SelectItem<Value> {
   value: Value;
@@ -25,7 +25,7 @@ export type SelectProps<Value> = Omit<
   "aria-labelledby"?: string;
 };
 
-/** Picks one value from a list, shown in a floating glass popup. */
+/** Picks one value from a list, shown in a floating popup. */
 export function Select<Value>({
   items,
   placeholder,
@@ -34,7 +34,7 @@ export function Select<Value>({
   "aria-labelledby": ariaLabelledBy,
   ...props
 }: SelectProps<Value>) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
 
   return (
     <BaseSelect.Root items={items as BaseSelect.Root.Props<Value, false>["items"]} {...props}>
@@ -42,7 +42,7 @@ export function Select<Value>({
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         className={cn(
-          "glass inline-flex h-10 min-w-44 items-center justify-between gap-3 rounded-xl pr-2.5 pl-3.5 text-sm text-foreground shadow-raised select-none",
+          "surface inline-flex h-10 min-w-44 items-center justify-between gap-3 rounded-xl pr-2.5 pl-3.5 text-sm text-foreground shadow-raised select-none",
           "transition-[background-color,scale] duration-(--alive-duration-base) ease-spring hover:bg-surface-raised active:scale-[0.98]",
           "data-popup-open:bg-surface-raised data-disabled:opacity-50",
           focusRing,

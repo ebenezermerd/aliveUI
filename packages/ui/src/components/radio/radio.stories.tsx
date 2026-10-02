@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Radio, RadioGroup } from "./radio.js";
 
 const meta = {
-  title: "Glass/Radio",
+  title: "Components/Radio",
   component: RadioGroup,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { defaultValue: "weekly", "aria-label": "Digest frequency" },
   render: (args) => (

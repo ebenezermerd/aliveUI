@@ -1,10 +1,10 @@
 import { cn } from "@aliveui/primitives";
 import type { HTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from "react";
 
-/** A data table in a glass pane. Scrolls sideways on narrow screens. */
+/** A data table on a surface. Scrolls sideways on narrow screens. */
 export function Table({ className, ...props }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="glass w-full overflow-x-auto rounded-surface shadow-raised">
+    <div className="surface w-full overflow-x-auto rounded-surface shadow-raised">
       <table className={cn("w-full border-collapse text-left text-sm", className)} {...props} />
     </div>
   );

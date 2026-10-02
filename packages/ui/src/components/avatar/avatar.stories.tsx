@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Avatar, AvatarGroup } from "./avatar.js";
 
 const meta = {
-  title: "Glass/Avatar",
+  title: "Components/Avatar",
   component: Avatar,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { alt: "Ada Lovelace" },
   argTypes: { size: { control: "inline-radio", options: ["sm", "md", "lg"] } },

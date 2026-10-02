@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Separator } from "./separator.js";
 
 const meta = {
-  title: "Glass/Separator",
+  title: "Components/Separator",
   component: Separator,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Separator>;
 

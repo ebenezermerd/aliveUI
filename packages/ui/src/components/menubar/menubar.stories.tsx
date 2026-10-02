@@ -4,9 +4,8 @@ import { Menu, MenuCheckboxItem, MenuContent, MenuItem, MenuSeparator } from "..
 import { Menubar, MenubarTrigger } from "./menubar.js";
 
 const meta = {
-  title: "Glass/Menubar",
+  title: "Components/Menubar",
   component: Menubar,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Menubar>;
 

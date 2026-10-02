@@ -38,7 +38,7 @@ export function Meter({
       {showValue ? (
         <BaseMeter.Value className="col-start-2 text-right text-sm text-muted-foreground tabular-nums" />
       ) : null}
-      <BaseMeter.Track className="glass-well col-span-2 h-2 overflow-hidden rounded-full">
+      <BaseMeter.Track className="surface-well col-span-2 h-2 overflow-hidden rounded-full">
         <BaseMeter.Indicator className={cn("rounded-full transition-[width] duration-500", tone)} />
       </BaseMeter.Track>
     </BaseMeter.Root>

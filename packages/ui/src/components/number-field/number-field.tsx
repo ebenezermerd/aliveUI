@@ -24,7 +24,7 @@ const stepper = cn(
 export function NumberField({ className, "aria-label": ariaLabel, ...props }: NumberFieldProps) {
   return (
     <BaseNumberField.Root className={cn("inline-flex", className)} {...props}>
-      <BaseNumberField.Group className="glass-well flex h-10 items-center gap-1 rounded-full px-1 focus-within:border-accent/60 focus-within:ring-4 focus-within:ring-ring/25">
+      <BaseNumberField.Group className="surface-well flex h-10 items-center gap-1 rounded-full px-1 focus-within:border-accent/60 focus-within:ring-4 focus-within:ring-ring/25">
         <BaseNumberField.Decrement aria-label="Decrease" className={stepper}>
           <MinusIcon />
         </BaseNumberField.Decrement>

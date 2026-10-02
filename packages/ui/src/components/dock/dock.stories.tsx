@@ -16,9 +16,8 @@ function AppIcon({ from, to }: { from: string; to: string }) {
 }
 
 const meta = {
-  title: "Glass/Dock",
+  title: "Components/Dock",
   component: Dock,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Dock>;
 

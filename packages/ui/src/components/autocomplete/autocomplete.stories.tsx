@@ -5,9 +5,8 @@ import { Autocomplete } from "./autocomplete.js";
 const tags = ["design", "development", "documentation", "glass", "motion", "tokens", "webgl"];
 
 const meta = {
-  title: "Glass/Autocomplete",
+  title: "Components/Autocomplete",
   component: Autocomplete,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { items: tags, placeholder: "Search tags", "aria-label": "Tag", className: "max-w-xs" },
 } satisfies Meta<typeof Autocomplete>;

@@ -3,7 +3,7 @@ import type { HTMLAttributes, ReactNode, Ref } from "react";
 import { AlertIcon, CheckCircleIcon, InfoIcon } from "../../lib/icons.js";
 
 const alertVariants = variants(
-  "glass relative flex gap-3 rounded-2xl p-4 text-sm shadow-raised [&>svg]:mt-0.5 [&>svg]:size-4 [&>svg]:shrink-0",
+  "surface relative flex gap-3 rounded-2xl p-4 text-sm shadow-raised [&>svg]:mt-0.5 [&>svg]:size-4 [&>svg]:shrink-0",
   {
     variants: {
       tone: {

@@ -7,11 +7,11 @@ import { focusRing, type WithClassName } from "../../lib/styles.js";
 
 export type AccordionProps = WithClassName<BaseAccordion.Root.Props>;
 
-/** Stacked sections that expand one or more at a time, inside one glass pane. */
+/** Stacked sections that expand one or more at a time, inside one surface. */
 export function Accordion({ className, ...props }: AccordionProps) {
   return (
     <BaseAccordion.Root
-      className={cn("glass flex w-full flex-col rounded-surface px-2 shadow-raised", className)}
+      className={cn("surface flex w-full flex-col rounded-surface px-2 shadow-raised", className)}
       {...props}
     />
   );

@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Meter } from "./meter.js";
 
 const meta = {
-  title: "Glass/Meter",
+  title: "Components/Meter",
   component: Meter,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { value: 42, label: "Storage", className: "max-w-xs" },
 } satisfies Meta<typeof Meter>;

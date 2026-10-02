@@ -4,9 +4,8 @@ import { Field, FieldLabel } from "../field/field.js";
 import { Textarea } from "./textarea.js";
 
 const meta = {
-  title: "Glass/Textarea",
+  title: "Components/Textarea",
   component: Textarea,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { placeholder: "Write a note", "aria-label": "Note", className: "max-w-sm" },
 } satisfies Meta<typeof Textarea>;

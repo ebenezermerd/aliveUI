@@ -4,9 +4,8 @@ import { Button } from "../button/button.js";
 import { Alert } from "./alert.js";
 
 const meta = {
-  title: "Glass/Alert",
+  title: "Components/Alert",
   component: Alert,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { title: "Update available", children: "macOS 27.1 is ready to install." },
   argTypes: {

@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Skeleton } from "./skeleton.js";
 
 const meta = {
-  title: "Glass/Skeleton",
+  title: "Components/Skeleton",
   component: Skeleton,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Skeleton>;
 

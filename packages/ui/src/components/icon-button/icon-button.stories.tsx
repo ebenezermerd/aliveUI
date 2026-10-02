@@ -4,13 +4,12 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { IconButton } from "./icon-button.js";
 
 const meta = {
-  title: "Glass/IconButton",
+  title: "Components/IconButton",
   component: IconButton,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { "aria-label": "Close", children: <CloseIcon /> },
   argTypes: {
-    variant: { control: "inline-radio", options: ["glass", "tinted", "ghost", "danger"] },
+    variant: { control: "inline-radio", options: ["default", "primary", "ghost", "danger"] },
     size: { control: "inline-radio", options: ["sm", "md", "lg"] },
   },
 } satisfies Meta<typeof IconButton>;
@@ -18,8 +17,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Glass: Story = {};
+export const Default: Story = {};
 
-export const Tinted: Story = { args: { variant: "tinted" } };
+export const Primary: Story = { args: { variant: "primary" } };
 
 export const Large: Story = { args: { size: "lg" } };

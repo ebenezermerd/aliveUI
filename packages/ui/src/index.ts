@@ -1,5 +1,5 @@
 export * from "./components/provider/index.js";
-export * from "./components/glass-surface/index.js";
+export * from "./components/surface/index.js";
 export * from "./components/button/index.js";
 export * from "./components/icon-button/index.js";
 export * from "./components/input/index.js";
@@ -54,4 +54,4 @@ export * from "./components/calendar/index.js";
 export * from "./components/date-picker/index.js";
 export * from "./components/sidebar/index.js";
 export * from "./components/dock/index.js";
-export * from "./components/wallpaper/index.js";
+export * from "./components/backdrop/index.js";

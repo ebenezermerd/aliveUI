@@ -7,9 +7,8 @@ const cities = ["Addis Ababa", "Berlin", "Cape Town", "Lisbon", "Nairobi", "Osak
 );
 
 const meta = {
-  title: "Glass/Combobox",
+  title: "Components/Combobox",
   component: Combobox,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: {
     items: cities,

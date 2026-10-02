@@ -14,9 +14,8 @@ import {
 } from "./drawer.js";
 
 const meta = {
-  title: "Glass/Drawer",
+  title: "Components/Drawer",
   component: Drawer,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   argTypes: { side: { control: "inline-radio", options: ["right", "left", "bottom"] } },
 } satisfies Meta<typeof Drawer>;
@@ -35,7 +34,7 @@ function Example({ side }: { side?: DrawerSide }) {
         </DrawerHeader>
         <p className="text-sm opacity-80">Details about the selected item appear here.</p>
         <DrawerFooter>
-          <DrawerClose render={<Button variant="tinted" />}>Done</DrawerClose>
+          <DrawerClose render={<Button variant="primary" />}>Done</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@aliveui/primitives";
-import { useGlassMode, type GlassMode } from "../provider/provider.js";
+import { useMode, type Mode } from "../provider/provider.js";
 
 const blobs = {
   light: [
@@ -20,9 +20,9 @@ const blobs = {
   ],
 } as const;
 
-export interface WallpaperProps {
-  /** Defaults to the nearest `GlassProvider` mode, then light. */
-  mode?: GlassMode;
+export interface BackdropProps {
+  /** Defaults to the nearest `SystemProvider` mode, then light. */
+  mode?: Mode;
   /** Pin to the viewport. Otherwise it fills the nearest positioned ancestor. */
   fixed?: boolean;
   /** Let the colour fields drift slowly. Always off for reduced motion. */
@@ -30,9 +30,9 @@ export interface WallpaperProps {
   className?: string;
 }
 
-/** A soft colour field to put behind glass, which needs something rich to refract. */
-export function Wallpaper({ mode, fixed = true, animated = true, className }: WallpaperProps) {
-  const inherited = useGlassMode();
+/** The page backdrop. Systems that use colour fields, such as glass, show them through the `backdrop-art` token. */
+export function Backdrop({ mode, fixed = true, animated = true, className }: BackdropProps) {
+  const inherited = useMode();
   const resolved = mode ?? inherited ?? "light";
 
   return (
@@ -41,7 +41,7 @@ export function Wallpaper({ mode, fixed = true, animated = true, className }: Wa
       className={cn(
         "pointer-events-none inset-0 -z-10 overflow-hidden transition-colors duration-700",
         fixed ? "fixed" : "absolute",
-        resolved === "dark" ? "bg-[#0b1020]" : "bg-[#e7ecff]",
+        "bg-background",
         className,
       )}
     >
@@ -49,15 +49,14 @@ export function Wallpaper({ mode, fixed = true, animated = true, className }: Wa
         <div
           key={blob}
           className={cn(
-            "absolute rounded-full blur-[90px]",
-            resolved === "dark" ? "opacity-60" : "opacity-80",
-            animated && "motion-safe:animate-[glass-drift_24s_ease-in-out_infinite_alternate]",
+            "absolute rounded-full opacity-(--alive-backdrop-art) blur-[90px]",
+            animated && "motion-safe:animate-[alive-drift_24s_ease-in-out_infinite_alternate]",
             blob,
           )}
           style={{ animationDelay: `${index * -5}s` }}
         />
       ))}
-      <div className="absolute inset-0 bg-[radial-gradient(oklch(1_0_0/0.06)_1px,transparent_1px)] bg-size-[22px_22px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(oklch(1_0_0/0.06)_1px,transparent_1px)] bg-size-[22px_22px] opacity-(--alive-backdrop-art)" />
     </div>
   );
 }

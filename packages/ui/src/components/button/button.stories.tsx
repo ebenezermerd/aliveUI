@@ -3,13 +3,12 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Button } from "./button.js";
 
 const meta = {
-  title: "Glass/Button",
+  title: "Components/Button",
   component: Button,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { children: "Button" },
   argTypes: {
-    variant: { control: "inline-radio", options: ["glass", "tinted", "ghost", "danger"] },
+    variant: { control: "inline-radio", options: ["default", "primary", "ghost", "danger"] },
     size: { control: "inline-radio", options: ["sm", "md", "lg"] },
   },
 } satisfies Meta<typeof Button>;
@@ -17,9 +16,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Glass: Story = {};
+export const Default: Story = {};
 
-export const Tinted: Story = { args: { variant: "tinted" } };
+export const Primary: Story = { args: { variant: "primary" } };
 
 export const Ghost: Story = { args: { variant: "ghost" } };
 

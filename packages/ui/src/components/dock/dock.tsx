@@ -16,7 +16,7 @@ export function Dock({ className, ...props }: DockProps) {
       role="toolbar"
       aria-orientation="horizontal"
       className={cn(
-        "glass inline-flex h-[4.5rem] items-end gap-2 rounded-[1.75rem] px-2.5 pb-2.5 shadow-floating",
+        "surface inline-flex h-[4.5rem] items-end gap-2 rounded-[1.75rem] px-2.5 pb-2.5 shadow-floating",
         className,
       )}
       {...props}
@@ -59,7 +59,7 @@ export function DockItem({ className, label, icon, active = false, ...props }: D
       </span>
       <span
         aria-hidden
-        className="glass-overlay pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 translate-y-1 rounded-lg px-2.5 py-1 text-xs font-medium whitespace-nowrap text-foreground opacity-0 shadow-raised transition-[opacity,translate] duration-150 group-hover/dock:translate-y-0 group-hover/dock:opacity-100 group-focus-visible/dock:opacity-100"
+        className="surface-overlay pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 translate-y-1 rounded-lg px-2.5 py-1 text-xs font-medium whitespace-nowrap text-foreground opacity-0 shadow-raised transition-[opacity,translate] duration-150 group-hover/dock:translate-y-0 group-hover/dock:opacity-100 group-focus-visible/dock:opacity-100"
       >
         {label}
       </span>

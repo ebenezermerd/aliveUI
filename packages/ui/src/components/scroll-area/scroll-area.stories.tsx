@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { ScrollArea } from "./scroll-area.js";
 
 const meta = {
-  title: "Glass/ScrollArea",
+  title: "Components/ScrollArea",
   component: ScrollArea,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof ScrollArea>;
 
@@ -14,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Vertical: Story = {
   render: () => (
-    <ScrollArea className="glass h-64 w-72 rounded-surface">
+    <ScrollArea className="surface h-64 w-72 rounded-surface">
       <ul className="space-y-1 p-3 text-sm">
         {Array.from({ length: 40 }, (_, index) => (
           <li key={index} className="rounded-lg px-3 py-2 hover:bg-foreground/6">

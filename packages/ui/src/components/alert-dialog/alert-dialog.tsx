@@ -4,7 +4,7 @@ import { cn } from "@aliveui/primitives";
 import { AlertDialog as BaseAlertDialog } from "@base-ui/react/alert-dialog";
 import type { HTMLAttributes } from "react";
 import { popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type AlertDialogProps = BaseAlertDialog.Root.Props;
 
@@ -18,7 +18,7 @@ export function AlertDialog(props: AlertDialogProps) {
 
 export type AlertDialogTriggerProps = WithClassName<BaseAlertDialog.Trigger.Props>;
 
-/** Pass `render={<Button />}` to use a glass button as the trigger. */
+/** Pass `render={<Button />}` to use a kit button as the trigger. */
 export function AlertDialogTrigger(props: AlertDialogTriggerProps) {
   return <BaseAlertDialog.Trigger {...props} />;
 }
@@ -26,12 +26,12 @@ export function AlertDialogTrigger(props: AlertDialogTriggerProps) {
 export type AlertDialogContentProps = WithClassName<BaseAlertDialog.Popup.Props>;
 
 export function AlertDialogContent({ className, ...props }: AlertDialogContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseAlertDialog.Portal>
       <BaseAlertDialog.Backdrop
         {...scope}
-        className="fixed inset-0 z-50 bg-(--alive-glass-scrim) backdrop-blur-sm transition-opacity duration-(--alive-duration-base) data-starting-style:opacity-0 data-ending-style:opacity-0"
+        className="fixed inset-0 z-50 bg-(--alive-scrim) backdrop-blur-sm transition-opacity duration-(--alive-duration-base) data-starting-style:opacity-0 data-ending-style:opacity-0"
       />
       <BaseAlertDialog.Viewport
         {...scope}
@@ -86,7 +86,7 @@ export function AlertDialogFooter({ className, ...props }: HTMLAttributes<HTMLDi
 
 export type AlertDialogCloseProps = WithClassName<BaseAlertDialog.Close.Props>;
 
-/** Pass `render={<Button />}` to close the alert from a glass button. */
+/** Pass `render={<Button />}` to close the alert from a kit button. */
 export function AlertDialogClose(props: AlertDialogCloseProps) {
   return <BaseAlertDialog.Close {...props} />;
 }

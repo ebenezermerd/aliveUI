@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { fieldControl } from "../input/input.js";
 import { CheckIcon, ChevronDownIcon, CloseIcon } from "../../lib/icons.js";
 import { focusRing, listItem, popupMotion, popupSurface } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export interface ComboboxOption {
   value: string;
@@ -31,7 +31,7 @@ const iconButton = cn(
 );
 
 function ComboboxPopup({ emptyMessage }: { emptyMessage: ReactNode }) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseCombobox.Portal>
       <BaseCombobox.Positioner {...scope} sideOffset={6} className="z-50 outline-none">
@@ -153,7 +153,7 @@ export function MultiCombobox({
                 <BaseCombobox.Chip
                   key={item.value}
                   aria-label={item.label}
-                  className="glass flex h-7 items-center gap-1 rounded-full pr-1 pl-2.5 text-xs font-medium shadow-raised outline-none data-highlighted:ring-2 data-highlighted:ring-ring"
+                  className="surface flex h-7 items-center gap-1 rounded-full pr-1 pl-2.5 text-xs font-medium shadow-raised outline-none data-highlighted:ring-2 data-highlighted:ring-ring"
                 >
                   {item.label}
                   <BaseCombobox.ChipRemove

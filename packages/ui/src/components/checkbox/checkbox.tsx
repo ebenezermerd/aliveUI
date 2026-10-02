@@ -12,7 +12,7 @@ export function Checkbox({ className, ...props }: CheckboxProps) {
   return (
     <BaseCheckbox.Root
       className={cn(
-        "glass-well group inline-flex size-5 shrink-0 items-center justify-center rounded-md text-accent-foreground",
+        "surface-well group inline-flex size-5 shrink-0 items-center justify-center rounded-md text-accent-foreground",
         "transition-[background-color,border-color,box-shadow,scale] duration-(--alive-duration-base) ease-spring active:scale-90",
         "data-checked:border-transparent data-checked:bg-accent data-checked:shadow-raised",
         "data-indeterminate:border-transparent data-indeterminate:bg-accent data-indeterminate:shadow-raised",

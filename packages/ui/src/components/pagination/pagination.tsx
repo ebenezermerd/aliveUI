@@ -51,7 +51,7 @@ export function Pagination({
 }: PaginationProps) {
   return (
     <nav aria-label="Pagination" className={className}>
-      <ul className="glass inline-flex items-center gap-1 rounded-full p-1 shadow-raised">
+      <ul className="surface inline-flex items-center gap-1 rounded-full p-1 shadow-raised">
         <li>
           <button
             type="button"

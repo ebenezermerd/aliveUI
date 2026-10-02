@@ -4,14 +4,13 @@ import { Button } from "../button/button.js";
 import { EmptyState } from "./empty-state.js";
 
 const meta = {
-  title: "Glass/EmptyState",
+  title: "Components/EmptyState",
   component: EmptyState,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: {
     title: "No photos yet",
     description: "Photos you import or take on your iPhone will appear here.",
-    action: <Button variant="tinted">Import photos</Button>,
+    action: <Button variant="primary">Import photos</Button>,
   },
 } satisfies Meta<typeof EmptyState>;
 

@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Slider } from "./slider.js";
 
 const meta = {
-  title: "Glass/Slider",
+  title: "Components/Slider",
   component: Slider,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { defaultValue: 40, "aria-label": "Volume", className: "max-w-xs" },
 } satisfies Meta<typeof Slider>;

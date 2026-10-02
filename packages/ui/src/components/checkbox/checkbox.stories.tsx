@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Checkbox } from "./checkbox.js";
 
 const meta = {
-  title: "Glass/Checkbox",
+  title: "Components/Checkbox",
   component: Checkbox,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   render: (args) => (
     <label className="flex items-center gap-2.5 text-sm">

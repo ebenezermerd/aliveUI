@@ -6,9 +6,8 @@ import { Button } from "../button/button.js";
 import { Sidebar, SidebarFooter, SidebarHeader, SidebarItem, SidebarSection } from "./sidebar.js";
 
 const meta = {
-  title: "Glass/Sidebar",
+  title: "Components/Sidebar",
   component: Sidebar,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Sidebar>;
 

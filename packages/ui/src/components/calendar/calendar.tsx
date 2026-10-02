@@ -33,7 +33,7 @@ interface CalendarBaseProps {
   locale?: string;
   /** Month shown first when nothing is selected. */
   defaultMonth?: Date;
-  /** `card` draws its own glass pane, `plain` leaves the surface to the parent. */
+  /** `card` draws its own surface, `plain` leaves the surface to the parent. */
   variant?: "card" | "plain";
   className?: string;
 }
@@ -165,7 +165,7 @@ export function Calendar(props: CalendarProps) {
     <div
       className={cn(
         "w-fit p-4 select-none",
-        variant === "card" && "glass rounded-surface shadow-floating",
+        variant === "card" && "surface rounded-surface shadow-floating",
         className,
       )}
     >

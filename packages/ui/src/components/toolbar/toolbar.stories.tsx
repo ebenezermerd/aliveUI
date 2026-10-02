@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Toolbar, ToolbarButton, ToolbarGroup, ToolbarSeparator } from "./toolbar.js";
 
 const meta = {
-  title: "Glass/Toolbar",
+  title: "Components/Toolbar",
   component: Toolbar,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Toolbar>;
 

@@ -10,9 +10,8 @@ import {
 } from "./navigation-menu.js";
 
 const meta = {
-  title: "Glass/NavigationMenu",
+  title: "Components/NavigationMenu",
   component: NavigationMenu,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof NavigationMenu>;
 

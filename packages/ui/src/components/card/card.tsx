@@ -1,17 +1,13 @@
 import { cn } from "@aliveui/primitives";
 import type { HTMLAttributes, Ref } from "react";
-import { GlassSurface, type GlassSurfaceProps } from "../glass-surface/glass-surface.js";
+import { Surface, type SurfaceProps } from "../surface/surface.js";
 
-export type CardProps = GlassSurfaceProps;
+export type CardProps = SurfaceProps;
 
-/** A glass surface laid out for content, with optional header, content and footer slots. */
+/** A surface laid out for content, with optional header, content and footer slots. */
 export function Card({ className, padding = "none", ...props }: CardProps) {
   return (
-    <GlassSurface
-      padding={padding}
-      className={cn("flex flex-col gap-5 p-6", className)}
-      {...props}
-    />
+    <Surface padding={padding} className={cn("flex flex-col gap-5 p-6", className)} {...props} />
   );
 }
 

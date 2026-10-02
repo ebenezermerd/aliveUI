@@ -36,7 +36,7 @@ export function OTPField({
           <BaseOTPField.Input
             aria-label={index === 0 ? ariaLabel : `Character ${index + 1} of ${length}`}
             className={cn(
-              "glass-well size-12 rounded-xl text-center text-lg font-semibold text-foreground caret-accent outline-none",
+              "surface-well size-12 rounded-xl text-center text-lg font-semibold text-foreground caret-accent outline-none",
               "transition-[border-color,box-shadow] duration-(--alive-duration-base) focus:border-accent/60 focus:ring-4 focus:ring-ring/25",
             )}
           />

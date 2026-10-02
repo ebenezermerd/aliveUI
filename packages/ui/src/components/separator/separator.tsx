@@ -6,7 +6,7 @@ import type { WithClassName } from "../../lib/styles.js";
 
 export type SeparatorProps = WithClassName<BaseSeparator.Props>;
 
-/** A hairline divider that reads on any glass tint. */
+/** A hairline divider that reads on any surface. */
 export function Separator({ className, orientation = "horizontal", ...props }: SeparatorProps) {
   return (
     <BaseSeparator

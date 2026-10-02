@@ -6,12 +6,12 @@ import { focusRing, pressable, type WithClassName } from "../../lib/styles.js";
 
 export type ToolbarProps = WithClassName<BaseToolbar.Root.Props>;
 
-/** A floating glass bar of actions with arrow key navigation between them. */
+/** A floating bar of actions with arrow key navigation between them. */
 export function Toolbar({ className, ...props }: ToolbarProps) {
   return (
     <BaseToolbar.Root
       className={cn(
-        "glass inline-flex items-center gap-1 rounded-full p-1.5 shadow-floating data-[orientation=vertical]:flex-col",
+        "surface inline-flex items-center gap-1 rounded-full p-1.5 shadow-floating data-[orientation=vertical]:flex-col",
         className,
       )}
       {...props}

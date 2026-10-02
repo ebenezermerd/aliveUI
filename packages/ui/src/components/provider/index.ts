@@ -1,2 +1,2 @@
-export { GlassProvider, useGlassMode, useGlassScope } from "./provider.js";
-export type { GlassMode, GlassProviderProps } from "./provider.js";
+export { SystemProvider, useMode, useSystem, useSystemScope } from "./provider.js";
+export type { Mode, SystemProviderProps } from "./provider.js";

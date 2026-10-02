@@ -5,7 +5,7 @@ import { Menu as BaseMenu } from "@base-ui/react/menu";
 import type { ReactNode } from "react";
 import { CheckIcon, ChevronRightIcon } from "../../lib/icons.js";
 import { popupMotion, popupSurface, type WithClassName } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type MenuProps = BaseMenu.Root.Props;
 
@@ -16,7 +16,7 @@ export function Menu(props: MenuProps) {
 
 export type MenuTriggerProps = WithClassName<BaseMenu.Trigger.Props>;
 
-/** Pass `render={<Button />}` to use a glass button as the trigger. */
+/** Pass `render={<Button />}` to use a kit button as the trigger. */
 export function MenuTrigger(props: MenuTriggerProps) {
   return <BaseMenu.Trigger {...props} />;
 }
@@ -32,7 +32,7 @@ export function MenuContent({
   sideOffset = 8,
   ...props
 }: MenuContentProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseMenu.Portal>
       <BaseMenu.Positioner

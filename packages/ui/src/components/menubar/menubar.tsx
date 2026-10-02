@@ -15,7 +15,7 @@ export function Menubar({ className, ...props }: MenubarProps) {
   return (
     <BaseMenubar
       className={cn(
-        "glass inline-flex items-center gap-0.5 rounded-full p-1 shadow-raised",
+        "surface inline-flex items-center gap-0.5 rounded-full p-1 shadow-raised",
         className,
       )}
       {...props}

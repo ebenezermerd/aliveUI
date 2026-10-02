@@ -1,2 +1,2 @@
-export { Wallpaper } from "./wallpaper.js";
-export type { WallpaperProps } from "./wallpaper.js";
+export { Backdrop } from "./backdrop.js";
+export type { BackdropProps } from "./backdrop.js";

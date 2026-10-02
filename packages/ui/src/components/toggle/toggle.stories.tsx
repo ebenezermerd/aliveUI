@@ -3,9 +3,8 @@ import { withBackdrop } from "../../storybook/with-backdrop.js";
 import { Toggle, ToggleGroup } from "./toggle.js";
 
 const meta = {
-  title: "Glass/Toggle",
+  title: "Components/Toggle",
   component: Toggle,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
   args: { children: "Favourite", "aria-label": "Favourite" },
 } satisfies Meta<typeof Toggle>;

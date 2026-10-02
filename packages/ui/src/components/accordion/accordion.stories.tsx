@@ -4,14 +4,13 @@ import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from "./ac
 
 const faqs = [
   ["What is AliveUI?", "A workspace of design systems shipped as React libraries."],
-  ["Is glass accessible?", "Yes. Behaviour comes from Base UI and contrast is tuned per mode."],
+  ["Is surface accessible?", "Yes. Behaviour comes from Base UI and contrast is tuned per mode."],
   ["Can I theme it?", "Override any --alive token on a data system element."],
 ];
 
 const meta = {
-  title: "Glass/Accordion",
+  title: "Components/Accordion",
   component: Accordion,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Accordion>;
 

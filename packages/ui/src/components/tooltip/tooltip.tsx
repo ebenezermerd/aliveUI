@@ -4,7 +4,7 @@ import { cn } from "@aliveui/primitives";
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
 import type { ReactElement, ReactNode } from "react";
 import { popupMotion } from "../../lib/styles.js";
-import { useGlassScope } from "../provider/provider.js";
+import { useSystemScope } from "../provider/provider.js";
 
 export type TooltipProviderProps = BaseTooltip.Provider.Props;
 
@@ -26,7 +26,7 @@ export interface TooltipProps {
 
 /** A short label that appears next to an element on hover and focus. */
 export function Tooltip({ content, children, side = "top", delay, className }: TooltipProps) {
-  const scope = useGlassScope();
+  const scope = useSystemScope();
   return (
     <BaseTooltip.Root>
       <BaseTooltip.Trigger delay={delay} render={children} />
@@ -34,7 +34,7 @@ export function Tooltip({ content, children, side = "top", delay, className }: T
         <BaseTooltip.Positioner {...scope} side={side} sideOffset={8} className="z-50">
           <BaseTooltip.Popup
             className={cn(
-              "glass-overlay rounded-full px-3 py-1.5 text-xs font-medium text-foreground shadow-raised",
+              "surface-overlay rounded-full px-3 py-1.5 text-xs font-medium text-foreground shadow-raised",
               popupMotion,
               "data-instant:transition-none",
               className,

@@ -15,13 +15,13 @@ export interface SidebarProps extends HTMLAttributes<HTMLElement> {
   ref?: Ref<HTMLElement>;
 }
 
-/** The app's main navigation column, a tall glass panel. */
+/** The app's main navigation column, a tall surface panel. */
 export function Sidebar({ className, collapsed = false, ...props }: SidebarProps) {
   return (
     <nav
       data-collapsed={collapsed || undefined}
       className={cn(
-        "group/sidebar glass flex h-full flex-col gap-4 rounded-surface p-3 shadow-floating",
+        "group/sidebar surface flex h-full flex-col gap-4 rounded-surface p-3 shadow-floating",
         "w-64 transition-[width] duration-(--alive-duration-base) ease-standard data-collapsed:w-[4.25rem]",
         className,
       )}

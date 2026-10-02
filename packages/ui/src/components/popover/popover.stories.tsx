@@ -11,9 +11,8 @@ import {
 } from "./popover.js";
 
 const meta = {
-  title: "Glass/Popover",
+  title: "Components/Popover",
   component: Popover,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof Popover>;
 

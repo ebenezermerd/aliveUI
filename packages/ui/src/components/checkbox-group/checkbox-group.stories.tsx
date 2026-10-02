@@ -7,9 +7,8 @@ import { CheckboxGroup } from "./checkbox-group.js";
 const apps = ["mail", "photos", "notes"];
 
 const meta = {
-  title: "Glass/CheckboxGroup",
+  title: "Components/CheckboxGroup",
   component: CheckboxGroup,
-  parameters: { system: "glass" },
   decorators: [withBackdrop],
 } satisfies Meta<typeof CheckboxGroup>;
 
