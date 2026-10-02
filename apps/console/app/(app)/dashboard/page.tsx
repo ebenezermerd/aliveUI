@@ -1,16 +1,17 @@
 "use client";
 
 import { useUser } from "@aliveui/auth/react";
-import { Card, CardDescription, CardHeader, CardTitle } from "@aliveui/glass";
+import { OverviewView } from "@aliveui/workspace/glass";
+import { useRouter } from "next/navigation";
+import { projectHref } from "@/lib/navigation";
 
 export default function DashboardPage() {
   const user = useUser();
+  const router = useRouter();
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Welcome, {user.name.split(" ")[0]}</CardTitle>
-        <CardDescription>Your workspace dashboard is on its way.</CardDescription>
-      </CardHeader>
-    </Card>
+    <OverviewView
+      greetingName={user.name.split(" ")[0]}
+      onOpenProject={(id) => router.push(projectHref(id))}
+    />
   );
 }

@@ -14,6 +14,7 @@
     "@aliveui/auth": "workspace:*",
     "@aliveui/glass": "workspace:*",
     "@aliveui/primitives": "workspace:*",
+    "@aliveui/workspace": "workspace:*",
     "lucide-react": "^1.49.0",
     "next": "^16.3.8",
     "react": "catalog:",

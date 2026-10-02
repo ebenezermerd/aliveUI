@@ -77,6 +77,9 @@ importers:
       '@aliveui/primitives':
         specifier: workspace:*
         version: link:../../packages/primitives
+      '@aliveui/workspace':
+        specifier: workspace:*
+        version: link:../../packages/features/workspace
       lucide-react:
         specifier: ^1.49.0
         version: 1.49.0(@types/react@19.3.0)(react@19.3.0)
