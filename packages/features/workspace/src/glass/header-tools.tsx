@@ -222,13 +222,11 @@ export function WorkspaceSearch({
       },
       {
         label: "Tasks",
-        items: tasks
-          .slice(0, 200)
-          .map((task) => ({
-            value: `task:${task.id}`,
-            label: task.title,
-            onSelect: () => setEditing(task),
-          })),
+        items: tasks.slice(0, 200).map((task) => ({
+          value: `task:${task.id}`,
+          label: task.title,
+          onSelect: () => setEditing(task),
+        })),
       },
     ],
     [pages, commands, projects, tasks, onNavigate, projectHref],
