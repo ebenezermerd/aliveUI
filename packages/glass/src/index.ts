@@ -52,3 +52,5 @@ export * from "./components/pagination/index.js";
 export * from "./components/table/index.js";
 export * from "./components/calendar/index.js";
 export * from "./components/date-picker/index.js";
+export * from "./components/sidebar/index.js";
+export * from "./components/dock/index.js";
