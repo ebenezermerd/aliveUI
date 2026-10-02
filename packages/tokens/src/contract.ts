@@ -25,7 +25,31 @@ export const tokenNames = [
   // elevation
   "shadow-raised",
   "shadow-floating",
+  /** Shadow while something is being pressed, such as a sunken button. */
+  "shadow-pressed",
   "blur-surface",
+  // surface recipes, read by the `surface`, `surface-overlay`, `surface-well` and `knob` utilities
+  /** Full border shorthand for surfaces, such as `1px solid ...` or `0 solid transparent`. */
+  "surface-border",
+  /** Layer painted over the surface colour, such as a glass sheen, or `none`. */
+  "surface-image",
+  /** Backdrop filter for surfaces, such as blur and saturate, or `none`. */
+  "surface-filter",
+  /** Background of floating popups, usually denser than `surface`. */
+  "overlay",
+  "overlay-filter",
+  /** Recessed wells for fields, tracks and grooves. */
+  "well",
+  "well-border",
+  "well-shadow",
+  "well-filter",
+  /** Thumbs of switches and sliders. */
+  "knob",
+  "knob-shadow",
+  /** Dimmed layer behind modal dialogs and drawers. */
+  "scrim",
+  /** Opacity, 0 to 1, of the decorative colour fields drawn by `Backdrop`. */
+  "backdrop-art",
   // motion
   "duration-fast",
   "duration-base",

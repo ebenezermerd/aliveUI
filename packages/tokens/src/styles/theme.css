@@ -24,8 +24,45 @@
 
   --shadow-raised: var(--alive-shadow-raised);
   --shadow-floating: var(--alive-shadow-floating);
+  --shadow-pressed: var(--alive-shadow-pressed);
   --blur-surface: var(--alive-blur-surface);
 
   --ease-standard: var(--alive-ease-standard);
   --ease-spring: var(--alive-ease-spring);
+}
+
+/*
+ * Surface recipes. Every system fills the tokens behind them, so the same
+ * component markup reads as glass, soft plastic or flat paper.
+ */
+@utility surface {
+  background-color: var(--alive-surface);
+  background-image: var(--alive-surface-image);
+  border: var(--alive-surface-border);
+  -webkit-backdrop-filter: var(--alive-surface-filter);
+  backdrop-filter: var(--alive-surface-filter);
+}
+
+/* Floating popups: menus, popovers, dialogs and toasts. */
+@utility surface-overlay {
+  background-color: var(--alive-overlay);
+  background-image: var(--alive-surface-image);
+  border: var(--alive-surface-border);
+  -webkit-backdrop-filter: var(--alive-overlay-filter);
+  backdrop-filter: var(--alive-overlay-filter);
+}
+
+/* Recessed wells for text fields, tracks and grooves. */
+@utility surface-well {
+  background-color: var(--alive-well);
+  border: var(--alive-well-border);
+  box-shadow: var(--alive-well-shadow);
+  -webkit-backdrop-filter: var(--alive-well-filter);
+  backdrop-filter: var(--alive-well-filter);
+}
+
+/* Thumbs of switches and sliders. */
+@utility knob {
+  background-color: var(--alive-knob);
+  box-shadow: var(--alive-knob-shadow);
 }
