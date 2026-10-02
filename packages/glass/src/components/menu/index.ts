@@ -1,9 +1,26 @@
-export { Menu, MenuContent, MenuGroup, MenuItem, MenuSeparator, MenuTrigger } from "./menu.js";
+export {
+  Menu,
+  MenuCheckboxItem,
+  MenuContent,
+  MenuGroup,
+  MenuItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSeparator,
+  MenuSubmenu,
+  MenuSubmenuTrigger,
+  MenuTrigger,
+} from "./menu.js";
 export type {
+  MenuCheckboxItemProps,
   MenuContentProps,
   MenuGroupProps,
   MenuItemProps,
   MenuProps,
+  MenuRadioGroupProps,
+  MenuRadioItemProps,
   MenuSeparatorProps,
+  MenuSubmenuProps,
+  MenuSubmenuTriggerProps,
   MenuTriggerProps,
 } from "./menu.js";

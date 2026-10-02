@@ -36,6 +36,16 @@ export const Tones: Story = {
         >
           Danger
         </Button>
+        <Button
+          onClick={() =>
+            toast({
+              title: "Message archived",
+              action: { label: "Undo", onClick: () => toast({ title: "Restored" }) },
+            })
+          }
+        >
+          With action
+        </Button>
       </div>
     </Toaster>
   ),
