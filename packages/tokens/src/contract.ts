@@ -15,6 +15,10 @@ export const tokenNames = [
   "accent",
   "accent-foreground",
   "ring",
+  "danger",
+  "danger-foreground",
+  "success",
+  "warning",
   // shape
   "radius-control",
   "radius-surface",

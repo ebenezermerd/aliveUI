@@ -9,7 +9,7 @@ const meta = {
   decorators: [withBackdrop],
   args: { children: "Button" },
   argTypes: {
-    variant: { control: "inline-radio", options: ["glass", "tinted"] },
+    variant: { control: "inline-radio", options: ["glass", "tinted", "ghost", "danger"] },
     size: { control: "inline-radio", options: ["sm", "md", "lg"] },
   },
 } satisfies Meta<typeof Button>;
@@ -20,5 +20,9 @@ type Story = StoryObj<typeof meta>;
 export const Glass: Story = {};
 
 export const Tinted: Story = { args: { variant: "tinted" } };
+
+export const Ghost: Story = { args: { variant: "ghost" } };
+
+export const Danger: Story = { args: { variant: "danger", children: "Delete" } };
 
 export const Disabled: Story = { args: { disabled: true } };
