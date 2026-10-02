@@ -10,3 +10,8 @@ export * from "./components/radio/index.js";
 export * from "./components/switch/index.js";
 export * from "./components/slider/index.js";
 export * from "./components/select/index.js";
+export * from "./components/badge/index.js";
+export * from "./components/avatar/index.js";
+export * from "./components/card/index.js";
+export * from "./components/progress/index.js";
+export * from "./components/separator/index.js";

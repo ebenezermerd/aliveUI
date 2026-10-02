@@ -123,3 +123,12 @@
   -webkit-backdrop-filter: blur(calc(var(--alive-blur-surface) / 2));
   backdrop-filter: blur(calc(var(--alive-blur-surface) / 2));
 }
+
+@keyframes glass-indeterminate {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 300% 0;
+  }
+}
