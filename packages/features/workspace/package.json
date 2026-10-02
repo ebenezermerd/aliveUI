@@ -1,0 +1,60 @@
+{
+  "name": "@aliveui/workspace",
+  "version": "0.0.0",
+  "description": "A team workspace dashboard as a reusable AliveUI feature: projects, tasks, team and activity.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./local": {
+      "types": "./dist/adapters/local.d.ts",
+      "default": "./dist/adapters/local.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./glass": {
+      "types": "./dist/glass/index.d.ts",
+      "default": "./dist/glass/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aliveui/glass": "workspace:*",
+    "@aliveui/primitives": "workspace:*",
+    "recharts": "^3.10.1",
+    "zod": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@aliveui/eslint-config": "workspace:*",
+    "@aliveui/tsconfig": "workspace:*",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
