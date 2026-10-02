@@ -1,11 +1,11 @@
 import type { ComponentType } from "react";
-import type { SystemSlug } from "@/lib/registry";
+import type { DesignSystem, SystemSlug } from "@/lib/registry";
 import { GlassPreview, GlassShowcase } from "./glass";
 import { MinimalPreview, MinimalShowcase } from "./minimal";
 
 interface SystemShowcase {
-  /** Full page of components, rendered at `/systems/<slug>`. */
-  Showcase: ComponentType;
+  /** Full page of components, rendered at `/systems/<slug>`. It owns its own layout. */
+  Showcase: ComponentType<{ system: DesignSystem }>;
   /** Small live sample, rendered on the lab home page card. */
   Preview: ComponentType;
 }

@@ -25,13 +25,5 @@ export default async function SystemPage({ params }: SystemPageProps) {
 
   const { Showcase } = showcases[system.slug];
 
-  return (
-    <main className="mx-auto max-w-5xl space-y-8 px-6 py-12">
-      <header className="space-y-1">
-        <h1 className="text-2xl font-semibold tracking-tight">{system.name}</h1>
-        <p className="text-zinc-600">{system.description}</p>
-      </header>
-      <Showcase />
-    </main>
-  );
+  return <Showcase system={system} />;
 }
