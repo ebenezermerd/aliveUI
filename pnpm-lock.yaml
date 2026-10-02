@@ -42,6 +42,37 @@ importers:
         specifier: 'catalog:'
         version: 6.0.3
 
+  packages/glass:
+    dependencies:
+      '@aliveui/primitives':
+        specifier: workspace:*
+        version: link:../primitives
+      '@aliveui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+    devDependencies:
+      '@aliveui/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@aliveui/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      eslint:
+        specifier: 'catalog:'
+        version: 10.11.0
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.3
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+
   packages/minimal:
     dependencies:
       '@aliveui/primitives':
