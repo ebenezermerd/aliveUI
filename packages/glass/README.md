@@ -34,15 +34,23 @@ read as glass, so place it over imagery or gradients.
 
 ## Components
 
-| Group      | Components                                                            |
-| ---------- | --------------------------------------------------------------------- |
-| Surfaces   | `GlassSurface`, `Card`                                                |
-| Actions    | `Button`, `IconButton`                                                |
-| Inputs     | `Input`, `Textarea`, `Field`, `Select`                                |
-| Selection  | `Checkbox`, `RadioGroup` and `Radio`, `Switch`, `Slider`              |
-| Display    | `Badge`, `Avatar` and `AvatarGroup`, `Progress`, `Separator`          |
-| Navigation | `Tabs`, `SegmentedControl`, `Toolbar`, `Menu`                         |
-| Overlays   | `Tooltip`, `Popover`, `Dialog`, `Toaster` with the `toast()` function |
+| Group      | Components                                                                               |
+| ---------- | ---------------------------------------------------------------------------------------- |
+| Surfaces   | `GlassSurface`, `Card`                                                                   |
+| Actions    | `Button`, `IconButton`, `Toggle`, `ToggleGroup`                                          |
+| Forms      | `Field`, `Fieldset`, `Form`, `Input`, `Textarea`, `NumberField`, `OTPField`              |
+| Pickers    | `Select`, `Combobox`, `MultiCombobox`, `Autocomplete`, `Calendar`, `DatePicker`          |
+| Selection  | `Checkbox`, `CheckboxGroup`, `RadioGroup` and `Radio`, `Switch`, `Slider`                |
+| Display    | `Badge`, `Avatar`, `Progress`, `Meter`, `Separator`, `Kbd`, `Spinner`, `Skeleton`        |
+| Feedback   | `Alert`, `EmptyState`, `Toaster` with the `toast()` function                             |
+| Disclosure | `Accordion`, `Collapsible`                                                               |
+| Data       | `Table`, `Pagination`, `ScrollArea`                                                      |
+| Navigation | `Tabs`, `SegmentedControl`, `Toolbar`, `Menu`, `Menubar`, `NavigationMenu`, `Breadcrumb` |
+| App shell  | `Sidebar`, `Dock`, `CommandPalette`                                                      |
+| Overlays   | `Tooltip`, `Popover`, `PreviewCard`, `Dialog`, `AlertDialog`, `Drawer`, `ContextMenu`    |
+
+`Menu`, `ContextMenu` and `Menubar` share the same item parts: `MenuItem`, `MenuCheckboxItem`,
+`MenuRadioGroup` with `MenuRadioItem`, `MenuGroup`, `MenuSeparator` and `MenuSubmenu`.
 
 The CSS also provides three utilities you can use directly: `glass`, `glass-overlay` for denser
 floating surfaces, and `glass-well` for recessed fields and tracks.
