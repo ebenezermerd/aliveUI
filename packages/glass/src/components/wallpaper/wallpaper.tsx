@@ -1,5 +1,7 @@
-import type { GlassMode } from "@aliveui/glass";
+"use client";
+
 import { cn } from "@aliveui/primitives";
+import { useGlassMode, type GlassMode } from "../provider/provider.js";
 
 const blobs = {
   light: [
@@ -18,23 +20,38 @@ const blobs = {
   ],
 } as const;
 
-/** A soft, slowly drifting colour field. Glass needs something rich behind it to refract. */
-export function Wallpaper({ mode, fixed = true }: { mode: GlassMode; fixed?: boolean }) {
+export interface WallpaperProps {
+  /** Defaults to the nearest `GlassProvider` mode, then light. */
+  mode?: GlassMode;
+  /** Pin to the viewport. Otherwise it fills the nearest positioned ancestor. */
+  fixed?: boolean;
+  /** Let the colour fields drift slowly. Always off for reduced motion. */
+  animated?: boolean;
+  className?: string;
+}
+
+/** A soft colour field to put behind glass, which needs something rich to refract. */
+export function Wallpaper({ mode, fixed = true, animated = true, className }: WallpaperProps) {
+  const inherited = useGlassMode();
+  const resolved = mode ?? inherited ?? "light";
+
   return (
     <div
       aria-hidden
       className={cn(
         "pointer-events-none inset-0 -z-10 overflow-hidden transition-colors duration-700",
         fixed ? "fixed" : "absolute",
-        mode === "dark" ? "bg-[#0b1020]" : "bg-[#e7ecff]",
+        resolved === "dark" ? "bg-[#0b1020]" : "bg-[#e7ecff]",
+        className,
       )}
     >
-      {blobs[mode].map((blob, index) => (
+      {blobs[resolved].map((blob, index) => (
         <div
           key={blob}
           className={cn(
-            "absolute rounded-full opacity-80 blur-[90px] motion-safe:animate-[drift_24s_ease-in-out_infinite_alternate]",
-            mode === "dark" && "opacity-60",
+            "absolute rounded-full blur-[90px]",
+            resolved === "dark" ? "opacity-60" : "opacity-80",
+            animated && "motion-safe:animate-[glass-drift_24s_ease-in-out_infinite_alternate]",
             blob,
           )}
           style={{ animationDelay: `${index * -5}s` }}

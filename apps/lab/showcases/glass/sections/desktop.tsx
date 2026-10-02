@@ -8,10 +8,10 @@ import {
   GlassSurface,
   Input,
   Menu,
-  MenuContent,
-  MenuItem,
   Menubar,
   MenubarTrigger,
+  MenuContent,
+  MenuItem,
   ScrollArea,
   Sidebar,
   SidebarFooter,
@@ -20,6 +20,7 @@ import {
   SidebarSection,
   Toolbar,
   ToolbarButton,
+  Wallpaper,
 } from "@aliveui/glass";
 import {
   Archive,
@@ -34,7 +35,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { ShowcaseSection } from "@/components/showcase/showcase-section";
-import { Wallpaper } from "../wallpaper";
 
 const mailboxes = [
   { id: "inbox", label: "Inbox", icon: <Inbox />, badge: 12 },

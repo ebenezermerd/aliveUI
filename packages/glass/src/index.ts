@@ -54,3 +54,4 @@ export * from "./components/calendar/index.js";
 export * from "./components/date-picker/index.js";
 export * from "./components/sidebar/index.js";
 export * from "./components/dock/index.js";
+export * from "./components/wallpaper/index.js";

@@ -31,14 +31,3 @@
     animation-iteration-count: 1 !important;
   }
 }
-
-@keyframes drift {
-  from {
-    translate: 0 0;
-    scale: 1;
-  }
-  to {
-    translate: 6rem 4rem;
-    scale: 1.15;
-  }
-}

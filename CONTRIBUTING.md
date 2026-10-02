@@ -9,6 +9,7 @@ Run the checks from the repository root and make sure they pass:
 ```sh
 pnpm typecheck
 pnpm lint
+pnpm test
 pnpm format:check
 ```
 

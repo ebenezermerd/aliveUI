@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "@aliveui/glass/styles.css";
+
+/* Generate the classes used inside the workspace packages and features. */
+@source "../../../packages";
+
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}

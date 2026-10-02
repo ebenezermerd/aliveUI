@@ -1,0 +1,35 @@
+{
+  "name": "console",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --port 3001",
+    "start": "next start --port 3001",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@aliveui/auth": "workspace:*",
+    "@aliveui/glass": "workspace:*",
+    "@aliveui/primitives": "workspace:*",
+    "@aliveui/workspace": "workspace:*",
+    "lucide-react": "^1.49.0",
+    "next": "^16.3.8",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@aliveui/eslint-config": "workspace:*",
+    "@aliveui/tsconfig": "workspace:*",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "postcss": "^8.5.0",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  }
+}

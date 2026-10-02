@@ -150,3 +150,14 @@
     background-position: -50% 0;
   }
 }
+
+@keyframes glass-drift {
+  from {
+    translate: 0 0;
+    scale: 1;
+  }
+  to {
+    translate: 6rem 4rem;
+    scale: 1.15;
+  }
+}

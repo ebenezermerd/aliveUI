@@ -1,0 +1,56 @@
+{
+  "name": "@aliveui/auth",
+  "version": "0.0.0",
+  "description": "Login and registration as a reusable AliveUI feature: headless logic, swappable adapters and design system blocks.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./local": {
+      "types": "./dist/adapters/local.d.ts",
+      "default": "./dist/adapters/local.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./glass": {
+      "types": "./dist/glass/index.d.ts",
+      "default": "./dist/glass/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aliveui/glass": "workspace:*",
+    "@aliveui/primitives": "workspace:*",
+    "zod": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@aliveui/eslint-config": "workspace:*",
+    "@aliveui/tsconfig": "workspace:*",
+    "@types/react": "catalog:",
+    "eslint": "catalog:",
+    "react": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
