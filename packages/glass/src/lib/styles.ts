@@ -20,3 +20,7 @@ export const disabled = "data-disabled:pointer-events-none data-disabled:opacity
 
 /** Base UI accepts a class function, our components take a plain string so it can be merged. */
 export type WithClassName<Props> = Omit<Props, "className"> & { className?: string };
+
+/** Shared look for rows in listbox popups such as select, combobox and autocomplete. */
+export const listItem =
+  "flex cursor-default items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm outline-none select-none data-disabled:opacity-40 data-highlighted:bg-accent data-highlighted:text-accent-foreground [&_svg]:size-4";

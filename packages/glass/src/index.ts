@@ -43,3 +43,7 @@ export * from "./components/skeleton/index.js";
 export * from "./components/spinner/index.js";
 export * from "./components/kbd/index.js";
 export * from "./components/empty-state/index.js";
+export * from "./components/combobox/index.js";
+export * from "./components/autocomplete/index.js";
+export * from "./components/scroll-area/index.js";
+export * from "./components/command-palette/index.js";
