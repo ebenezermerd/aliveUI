@@ -19,18 +19,6 @@ function Clay() {
   );
 }
 
-function Neumorphism() {
-  return (
-    <div className="flex size-full items-center justify-center gap-6 bg-[#e4e8ee]">
-      <div className="size-20 rounded-full bg-[#e4e8ee] shadow-[10px_10px_20px_#c3c8d0,-10px_-10px_20px_#ffffff]" />
-      <div className="flex flex-col gap-4">
-        <div className="h-8 w-28 rounded-full bg-[#e4e8ee] shadow-[inset_5px_5px_10px_#c3c8d0,inset_-5px_-5px_10px_#ffffff]" />
-        <div className="h-8 w-16 rounded-full bg-[#e4e8ee] shadow-[5px_5px_10px_#c3c8d0,-5px_-5px_10px_#ffffff]" />
-      </div>
-    </div>
-  );
-}
-
 function NeoBrutalism() {
   return (
     <div className="flex size-full items-center justify-center bg-[#ffe14d]">
@@ -293,7 +281,6 @@ function WabiSabi() {
 
 export const swatches: Record<PlannedSlug, ComponentType> = {
   clay: Clay,
-  neumorphism: Neumorphism,
   neobrutalism: NeoBrutalism,
   swiss: Swiss,
   editorial: Editorial,

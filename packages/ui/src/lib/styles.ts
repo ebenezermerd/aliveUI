@@ -4,9 +4,12 @@
 export const focusRing =
   "outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0";
 
-/** Springy press and hover feedback for anything clickable. */
+/**
+ * Springy press and hover feedback for anything clickable. While pressed it
+ * takes the theme's `shadow-pressed`, so soft systems can sink the control in.
+ */
 export const pressable =
-  "transition-[background-color,box-shadow,scale,color,opacity] duration-(--alive-duration-base) ease-spring active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100";
+  "transition-[background-color,box-shadow,scale,color,opacity] duration-(--alive-duration-base) ease-spring active:scale-[0.97] active:shadow-pressed motion-reduce:transition-none motion-reduce:active:scale-100";
 
 /** Popup entrance and exit, driven by Base UI's starting and ending style attributes. */
 export const popupMotion =

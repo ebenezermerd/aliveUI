@@ -6,6 +6,7 @@ import { useSyncExternalStore } from "react";
 /** Design systems the console can render in. Their stylesheets are imported in `globals.css`. */
 export const systems = [
   { value: "glass", label: "Glass", description: "Translucent layers over colour." },
+  { value: "neumorphism", label: "Neumorphism", description: "Soft surfaces shaped by light." },
   { value: "minimal", label: "Minimal", description: "Quiet, flat and precise." },
 ] as const;
 

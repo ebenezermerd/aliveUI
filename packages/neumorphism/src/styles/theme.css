@@ -1,0 +1,80 @@
+/*
+ * Neumorphism design system theme. Import after `tailwindcss`, then render
+ * inside `<SystemProvider system="neumorphism">`, or put
+ * `data-system="neumorphism"` on any element. Add `data-mode="dark"` there or
+ * on an ancestor for dark mode.
+ *
+ * Every surface shares the background colour. Depth comes only from a pair of
+ * shadows, light from the top left and dark from the bottom right: raised for
+ * things you press, inset for things you fill in.
+ */
+@import "@aliveui/ui/styles.css";
+
+[data-system="neumorphism"] {
+  /* The two shadow tones every recipe below is built from. */
+  --neu-base: oklch(0.925 0.012 255);
+  --neu-light: oklch(1 0 0 / 0.9);
+  --neu-dark: oklch(0.72 0.03 258 / 0.75);
+
+  --alive-background: var(--neu-base);
+  --alive-surface: var(--neu-base);
+  --alive-surface-raised: oklch(0.945 0.01 255);
+  --alive-foreground: oklch(0.36 0.03 262);
+  --alive-muted-foreground: oklch(0.36 0.03 262 / 0.68);
+  --alive-border: oklch(0.86 0.014 258);
+  --alive-accent: oklch(0.6 0.15 268);
+  --alive-accent-foreground: oklch(0.99 0 0);
+  --alive-ring: oklch(0.6 0.15 268 / 0.55);
+  --alive-danger: oklch(0.62 0.19 22);
+  --alive-danger-foreground: oklch(0.99 0 0);
+  --alive-success: oklch(0.66 0.14 160);
+  --alive-warning: oklch(0.76 0.14 70);
+
+  --alive-radius-control: 1rem;
+  --alive-radius-surface: 1.75rem;
+
+  --alive-shadow-raised: 5px 5px 12px var(--neu-dark), -5px -5px 12px var(--neu-light);
+  --alive-shadow-floating: 12px 12px 28px var(--neu-dark), -12px -12px 28px var(--neu-light);
+  --alive-shadow-pressed: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+  --alive-blur-surface: 0px;
+
+  --alive-surface-border: 1px solid oklch(1 0 0 / 0.35);
+  --alive-surface-image: none;
+  --alive-surface-filter: none;
+  --alive-overlay: var(--neu-base);
+  --alive-overlay-filter: none;
+  --alive-well: var(--neu-base);
+  --alive-well-border: 1px solid transparent;
+  --alive-well-shadow: inset 3px 3px 7px var(--neu-dark), inset -3px -3px 7px var(--neu-light);
+  --alive-well-filter: none;
+  --alive-knob: var(--neu-base);
+  --alive-knob-shadow: 2px 2px 5px var(--neu-dark), -2px -2px 5px var(--neu-light);
+  --alive-scrim: oklch(0.55 0.02 258 / 0.3);
+  --alive-backdrop-art: 0;
+
+  --alive-duration-fast: 140ms;
+  --alive-duration-base: 260ms;
+  --alive-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --alive-ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+
+  color: var(--alive-foreground);
+}
+
+[data-system="neumorphism"][data-mode="dark"],
+[data-mode="dark"] [data-system="neumorphism"]:not([data-mode="light"]) {
+  --neu-base: oklch(0.29 0.012 262);
+  --neu-light: oklch(0.37 0.014 262 / 0.9);
+  --neu-dark: oklch(0.19 0.012 262 / 0.95);
+
+  --alive-surface-raised: oklch(0.31 0.012 262);
+  --alive-foreground: oklch(0.9 0.012 262);
+  --alive-muted-foreground: oklch(0.9 0.012 262 / 0.62);
+  --alive-border: oklch(0.36 0.014 262);
+  --alive-accent: oklch(0.68 0.14 268);
+  --alive-ring: oklch(0.68 0.14 268 / 0.6);
+  --alive-danger: oklch(0.68 0.17 22);
+  --alive-success: oklch(0.72 0.13 160);
+
+  --alive-surface-border: 1px solid oklch(1 0 0 / 0.04);
+  --alive-scrim: oklch(0.1 0.01 262 / 0.5);
+}

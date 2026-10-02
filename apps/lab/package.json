@@ -13,6 +13,7 @@
   "dependencies": {
     "@aliveui/glass": "workspace:*",
     "@aliveui/minimal": "workspace:*",
+    "@aliveui/neumorphism": "workspace:*",
     "@aliveui/primitives": "workspace:*",
     "@aliveui/tokens": "workspace:*",
     "@aliveui/ui": "workspace:*",

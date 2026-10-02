@@ -51,7 +51,7 @@ export const systems = [
     slug: "neumorphism",
     name: "Neumorphism",
     description: "Controls extruded from the background with paired light and dark shadows.",
-    status: "planned",
+    status: "ready",
     family: "tactile",
   },
   {

@@ -12,7 +12,7 @@ const preview: Preview = {
       toolbar: {
         title: "System",
         icon: "paintbrush",
-        items: ["glass", "minimal"],
+        items: ["glass", "neumorphism", "minimal"],
         dynamicTitle: true,
       },
     },

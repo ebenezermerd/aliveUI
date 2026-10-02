@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@aliveui/glass/styles.css";
 @import "@aliveui/minimal/styles.css";
+@import "@aliveui/neumorphism/styles.css";
 
 /* Generate the classes used inside the workspace packages and features. */
 @source "../../../packages";

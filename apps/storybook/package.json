@@ -12,6 +12,7 @@
   "dependencies": {
     "@aliveui/glass": "workspace:*",
     "@aliveui/minimal": "workspace:*",
+    "@aliveui/neumorphism": "workspace:*",
     "@aliveui/ui": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
