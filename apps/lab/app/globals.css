@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Every design system the lab can showcase. */
+@import "@aliveui/minimal/styles.css";
+@import "@aliveui/glass/styles.css";
+
+/* Let Tailwind see the utility classes used inside the workspace packages. */
+@source "../../../packages";
