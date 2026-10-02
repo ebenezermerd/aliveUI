@@ -1,18 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { CloseIcon } from "../../lib/icons.js";
 import { withBackdrop } from "../../storybook/with-backdrop.js";
-import { Button } from "./button.js";
+import { IconButton } from "./icon-button.js";
 
 const meta = {
-  title: "Glass/Button",
-  component: Button,
+  title: "Glass/IconButton",
+  component: IconButton,
   parameters: { system: "glass" },
   decorators: [withBackdrop],
-  args: { children: "Button" },
+  args: { "aria-label": "Close", children: <CloseIcon /> },
   argTypes: {
     variant: { control: "inline-radio", options: ["glass", "tinted", "ghost", "danger"] },
     size: { control: "inline-radio", options: ["sm", "md", "lg"] },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -21,8 +22,4 @@ export const Glass: Story = {};
 
 export const Tinted: Story = { args: { variant: "tinted" } };
 
-export const Ghost: Story = { args: { variant: "ghost" } };
-
-export const Danger: Story = { args: { variant: "danger", children: "Delete" } };
-
-export const Disabled: Story = { args: { disabled: true } };
+export const Large: Story = { args: { size: "lg" } };

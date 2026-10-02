@@ -1,25 +1,29 @@
 import { cn, Slot, variants, type VariantProps } from "@aliveui/primitives";
 import type { ButtonHTMLAttributes, Ref } from "react";
+import { focusRing, pressable } from "../../lib/styles.js";
 
 const buttonVariants = variants(
   [
-    "inline-flex shrink-0 items-center justify-center gap-2 rounded-control border font-medium whitespace-nowrap select-none",
-    "shadow-raised backdrop-blur-surface backdrop-saturate-(--alive-glass-saturate)",
-    "transition-[background-color,box-shadow,scale] duration-(--alive-duration-base) ease-spring active:scale-[0.97]",
-    "motion-reduce:transition-none motion-reduce:active:scale-100",
-    "outline-none focus-visible:ring-2 focus-visible:ring-ring",
+    "relative inline-flex shrink-0 items-center justify-center gap-2 rounded-control font-medium whitespace-nowrap select-none",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0",
+    pressable,
+    focusRing,
     "disabled:pointer-events-none disabled:opacity-50",
   ],
   {
     variants: {
       variant: {
-        glass: "border-border bg-surface text-foreground hover:bg-surface-raised",
-        tinted: "border-white/30 bg-accent/85 text-accent-foreground hover:bg-accent",
+        glass: "glass text-foreground shadow-raised hover:bg-surface-raised",
+        tinted:
+          "border border-white/30 bg-accent/85 text-accent-foreground shadow-raised backdrop-blur-surface hover:bg-accent",
+        ghost: "text-foreground hover:bg-foreground/8 active:bg-foreground/12",
+        danger:
+          "border border-white/25 bg-danger/85 text-danger-foreground shadow-raised backdrop-blur-surface hover:bg-danger",
       },
       size: {
-        sm: "h-8 px-3.5 text-sm",
-        md: "h-10 px-5 text-sm",
-        lg: "h-12 px-7 text-base",
+        sm: "h-8 px-3.5 text-sm [&_svg]:size-3.5",
+        md: "h-10 px-5 text-sm [&_svg]:size-4",
+        lg: "h-12 px-7 text-base [&_svg]:size-5",
       },
     },
     defaultVariants: {
