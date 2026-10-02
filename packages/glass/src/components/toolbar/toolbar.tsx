@@ -49,7 +49,8 @@ export function ToolbarSeparator({ className, ...props }: ToolbarSeparatorProps)
   return (
     <BaseToolbar.Separator
       className={cn(
-        "mx-1 h-5 w-px bg-foreground/12 data-[orientation=vertical]:my-1 data-[orientation=vertical]:h-px data-[orientation=vertical]:w-5",
+        // A separator runs across the toolbar, so a horizontal toolbar holds a vertical one.
+        "mx-1 h-5 w-px bg-foreground/12 data-[orientation=horizontal]:mx-0 data-[orientation=horizontal]:my-1 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-5",
         className,
       )}
       {...props}
