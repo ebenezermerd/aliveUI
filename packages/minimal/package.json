@@ -1,7 +1,7 @@
 {
   "name": "@aliveui/minimal",
   "version": "0.0.0",
-  "description": "The minimal AliveUI design system, quiet surfaces and crisp type.",
+  "description": "The minimal AliveUI design system, quiet surfaces and crisp type. A theme over the shared kit.",
   "license": "MIT",
   "type": "module",
   "sideEffects": [
@@ -25,8 +25,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aliveui/primitives": "workspace:*",
-    "@aliveui/tokens": "workspace:*"
+    "@aliveui/ui": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -35,11 +34,9 @@
   "devDependencies": {
     "@aliveui/eslint-config": "workspace:*",
     "@aliveui/tsconfig": "workspace:*",
-    "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "eslint": "catalog:",
     "react": "catalog:",
-    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "publishConfig": {
