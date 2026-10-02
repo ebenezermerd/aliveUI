@@ -23,3 +23,5 @@ export * from "./components/tooltip/index.js";
 export * from "./components/popover/index.js";
 export * from "./components/dialog/index.js";
 export * from "./components/toast/index.js";
+export * from "./components/accordion/index.js";
+export * from "./components/collapsible/index.js";
