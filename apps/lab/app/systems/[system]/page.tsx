@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { systems } from "@/lib/registry";
+import { readySystems } from "@/lib/registry";
 import { showcases } from "@/showcases";
 
 interface SystemPageProps {
@@ -10,17 +10,17 @@ interface SystemPageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return systems.map((system) => ({ system: system.slug }));
+  return readySystems.map((system) => ({ system: system.slug }));
 }
 
 export async function generateMetadata({ params }: SystemPageProps): Promise<Metadata> {
   const { system: slug } = await params;
-  return { title: systems.find((system) => system.slug === slug)?.name };
+  return { title: readySystems.find((system) => system.slug === slug)?.name };
 }
 
 export default async function SystemPage({ params }: SystemPageProps) {
   const { system: slug } = await params;
-  const system = systems.find((candidate) => candidate.slug === slug);
+  const system = readySystems.find((candidate) => candidate.slug === slug);
   if (!system) notFound();
 
   const Showcase = showcases[system.slug];
