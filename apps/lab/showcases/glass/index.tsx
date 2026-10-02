@@ -69,7 +69,7 @@ export function GlassShowcase({ system }: { system: DesignSystem }) {
             <ControlCenter />
           </section>
 
-          <GlassSections />
+          <GlassSections mode={mode} />
         </main>
       </Toaster>
     </GlassProvider>
