@@ -1,9 +1,12 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "packages/features/*"
   - "tooling/*"
 
 catalog:
+  vitest: ^5.0.3
+  zod: ^4.6.5
   "@types/node": ^24.0.0
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
