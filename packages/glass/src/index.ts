@@ -19,3 +19,6 @@ export * from "./components/tabs/index.js";
 export * from "./components/segmented-control/index.js";
 export * from "./components/toolbar/index.js";
 export * from "./components/menu/index.js";
+export * from "./components/tooltip/index.js";
+export * from "./components/popover/index.js";
+export * from "./components/dialog/index.js";
