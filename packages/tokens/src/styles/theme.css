@@ -14,6 +14,10 @@
   --color-accent: var(--alive-accent);
   --color-accent-foreground: var(--alive-accent-foreground);
   --color-ring: var(--alive-ring);
+  --color-danger: var(--alive-danger);
+  --color-danger-foreground: var(--alive-danger-foreground);
+  --color-success: var(--alive-success);
+  --color-warning: var(--alive-warning);
 
   --radius-control: var(--alive-radius-control);
   --radius-surface: var(--alive-radius-surface);
