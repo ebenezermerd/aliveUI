@@ -17,3 +17,6 @@ export const popupSurface = "glass-overlay rounded-2xl text-foreground shadow-fl
 
 /** Disabled look for controls that expose Base UI's disabled attribute. */
 export const disabled = "data-disabled:pointer-events-none data-disabled:opacity-50";
+
+/** Base UI accepts a class function, our components take a plain string so it can be merged. */
+export type WithClassName<Props> = Omit<Props, "className"> & { className?: string };
