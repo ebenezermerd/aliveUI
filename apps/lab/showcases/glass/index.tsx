@@ -3,11 +3,12 @@
 import {
   Badge,
   Button,
+  type GlassMode,
   GlassProvider,
   GlassSurface,
   SegmentedControl,
   Toaster,
-  type GlassMode,
+  Wallpaper,
 } from "@aliveui/glass";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
@@ -15,7 +16,6 @@ import { ShowcaseHeader } from "@/components/showcase/showcase-header";
 import type { DesignSystem } from "@/lib/registry";
 import { ControlCenter } from "./control-center";
 import { componentNames, GlassSections, sections } from "./sections";
-import { Wallpaper } from "./wallpaper";
 
 const modes = [
   { value: "light", label: <Sun />, "aria-label": "Light" },
