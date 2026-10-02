@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, Button, EmptyState } from "@aliveui/glass";
+import { Alert, Button, EmptyState } from "@aliveui/ui";
 import { ImagePlus } from "lucide-react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";
@@ -32,7 +32,7 @@ export function FeedbackSection() {
             icon={<ImagePlus />}
             title="No photos yet"
             description="Photos you import or take on your iPhone will appear here."
-            action={<Button variant="tinted">Import photos</Button>}
+            action={<Button variant="primary">Import photos</Button>}
           />
         </Demo>
       </Panel>

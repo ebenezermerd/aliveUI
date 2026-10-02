@@ -10,7 +10,7 @@ import {
   Separator,
   Skeleton,
   Spinner,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useEffect, useState } from "react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";

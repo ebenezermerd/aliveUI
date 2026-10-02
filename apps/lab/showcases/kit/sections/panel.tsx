@@ -1,11 +1,11 @@
-import { GlassSurface } from "@aliveui/glass";
+import { Surface } from "@aliveui/ui";
 import type { ReactNode } from "react";
 
-/** The glass pane each showcase section sits on. */
+/** The surface each showcase section sits on. */
 export function Panel({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <GlassSurface padding="lg" className={className}>
+    <Surface padding="lg" className={className}>
       {children}
-    </GlassSurface>
+    </Surface>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import type { GlassMode } from "@aliveui/glass";
+import type { Mode } from "@aliveui/ui";
 import { ButtonsSection } from "./buttons";
 import { CardsSection } from "./cards";
 import { DataSection } from "./data";
@@ -28,9 +28,9 @@ export const sections = [
   { id: "desktop", title: "Desktop" },
 ] as const;
 
-/** Every component the glass package exports, counted on the page header. */
+/** Every component the kit exports, counted on the page header. */
 export const componentNames = [
-  "GlassSurface",
+  "Surface",
   "Card",
   "Button",
   "IconButton",
@@ -89,7 +89,7 @@ export const componentNames = [
   "Toast",
 ] as const;
 
-export function GlassSections({ mode }: { mode: GlassMode }) {
+export function KitSections({ mode }: { mode: Mode }) {
   return (
     <div className="space-y-16">
       <ButtonsSection />

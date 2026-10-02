@@ -1,6 +1,6 @@
 "use client";
 
-import { Checkbox, CheckboxGroup, Radio, RadioGroup, Slider, Switch } from "@aliveui/glass";
+import { Checkbox, CheckboxGroup, Radio, RadioGroup, Slider, Switch } from "@aliveui/ui";
 import { useState } from "react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";

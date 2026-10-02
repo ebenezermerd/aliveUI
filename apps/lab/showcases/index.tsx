@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import type { DesignSystem, SystemSlug } from "@/lib/registry";
-import { GlassPreview, GlassShowcase } from "./glass";
-import { MinimalPreview, MinimalShowcase } from "./minimal";
+import { KitPreview, KitShowcase } from "./kit";
 
 interface SystemShowcase {
   /** Full page of components, rendered at `/systems/<slug>`. It owns its own layout. */
@@ -10,8 +9,14 @@ interface SystemShowcase {
   Preview: ComponentType;
 }
 
+/** Systems built on the shared kit all reuse the kit showcase in their own theme. */
+function kitShowcase(slug: SystemSlug): SystemShowcase {
+  const Preview = () => <KitPreview system={slug} />;
+  return { Showcase: KitShowcase, Preview };
+}
+
 /** One showcase per built design system. The type forces every system to have one. */
 export const showcases: Record<SystemSlug, SystemShowcase> = {
-  minimal: { Showcase: MinimalShowcase, Preview: MinimalPreview },
-  glass: { Showcase: GlassShowcase, Preview: GlassPreview },
+  minimal: kitShowcase("minimal"),
+  glass: kitShowcase("glass"),
 };

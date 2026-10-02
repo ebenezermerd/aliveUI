@@ -13,7 +13,7 @@ import {
   CardTitle,
   Progress,
   Switch,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { ShowcaseSection } from "@/components/showcase/showcase-section";
 
 export function CardsSection() {
@@ -36,7 +36,7 @@ export function CardsSection() {
             <Progress value={92} aria-label="Storage used" />
           </CardContent>
           <CardFooter>
-            <Button variant="tinted" size="sm">
+            <Button variant="primary" size="sm">
               Upgrade
             </Button>
             <Button variant="ghost" size="sm">

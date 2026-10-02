@@ -5,7 +5,7 @@ import {
   Dock,
   DockItem,
   DockSeparator,
-  GlassSurface,
+  Surface,
   Input,
   Menu,
   Menubar,
@@ -20,8 +20,8 @@ import {
   SidebarSection,
   Toolbar,
   ToolbarButton,
-  Wallpaper,
-} from "@aliveui/glass";
+  Backdrop,
+} from "@aliveui/ui";
 import {
   Archive,
   Inbox,
@@ -62,7 +62,7 @@ const apps = [
   { label: "Photos", from: "#fde68a", to: "#f97316" },
 ];
 
-/** A whole desktop composed only from glass components. */
+/** A whole desktop composed only from kit components. */
 export function DesktopSection({ mode }: { mode: "light" | "dark" }) {
   const [active, setActive] = useState("inbox");
   const [collapsed, setCollapsed] = useState(false);
@@ -75,7 +75,7 @@ export function DesktopSection({ mode }: { mode: "light" | "dark" }) {
       description="Menubar, sidebar, toolbar, scroll area and dock working together in one scene."
     >
       <div className="relative isolate h-[40rem] overflow-hidden rounded-[2rem] shadow-floating">
-        <Wallpaper mode={mode} fixed={false} />
+        <Backdrop mode={mode} fixed={false} />
 
         <div className="absolute inset-x-3 top-3 flex justify-center">
           <Menubar>
@@ -93,7 +93,7 @@ export function DesktopSection({ mode }: { mode: "light" | "dark" }) {
           </Menubar>
         </div>
 
-        <GlassSurface
+        <Surface
           padding="none"
           className="absolute inset-x-6 top-20 bottom-28 flex gap-3 overflow-hidden rounded-[1.75rem] p-3 md:inset-x-16"
         >
@@ -142,7 +142,7 @@ export function DesktopSection({ mode }: { mode: "light" | "dark" }) {
                 <Input aria-label="Search mail" placeholder="Search" className="pl-10" />
               </div>
             </div>
-            <ScrollArea className="glass-well min-h-0 flex-1 rounded-2xl">
+            <ScrollArea className="surface-well min-h-0 flex-1 rounded-2xl">
               <ul className="p-1.5">
                 {messages.map(([from, subject, preview], index) => (
                   <li key={subject}>
@@ -167,7 +167,7 @@ export function DesktopSection({ mode }: { mode: "light" | "dark" }) {
               </ul>
             </ScrollArea>
           </div>
-        </GlassSurface>
+        </Surface>
 
         <div className="absolute inset-x-0 bottom-4 flex justify-center">
           <Dock aria-label="Dock">

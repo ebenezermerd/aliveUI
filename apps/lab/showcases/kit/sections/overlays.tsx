@@ -48,7 +48,7 @@ import {
   Tooltip,
   TooltipProvider,
   type CommandGroup,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useState } from "react";
 import { Heart, Share } from "lucide-react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
@@ -95,7 +95,7 @@ export function OverlaysSection() {
     <ShowcaseSection
       id="overlays"
       title="Overlays"
-      description="Tooltips, popovers, dialogs and toasts float in denser glass."
+      description="Tooltips, popovers, dialogs and toasts float above everything else."
     >
       <Panel className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <Demo label="Tooltip">
@@ -216,7 +216,7 @@ export function OverlaysSection() {
                 </div>
               </div>
               <DrawerFooter>
-                <DrawerClose render={<Button variant="tinted" />}>Done</DrawerClose>
+                <DrawerClose render={<Button variant="primary" />}>Done</DrawerClose>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
@@ -250,7 +250,7 @@ export function OverlaysSection() {
         </Demo>
         <Demo label="Context menu" className="md:col-span-2">
           <ContextMenu>
-            <ContextMenuTrigger className="glass-well flex h-28 items-center justify-center rounded-2xl text-sm opacity-90">
+            <ContextMenuTrigger className="surface-well flex h-28 items-center justify-center rounded-2xl text-sm opacity-90">
               Right click or long press here
             </ContextMenuTrigger>
             <ContextMenuContent>

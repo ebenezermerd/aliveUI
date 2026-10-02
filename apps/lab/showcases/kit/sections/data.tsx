@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow,
   type DateRange,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { useState } from "react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";
@@ -128,7 +128,7 @@ export function DataSection() {
           <RangePicker />
         </Demo>
         <Demo label="Scroll area" className="lg:col-span-2">
-          <ScrollArea className="glass-well h-48 rounded-2xl">
+          <ScrollArea className="surface-well h-48 rounded-2xl">
             <ul className="divide-y divide-foreground/6 text-sm">
               {people.map((person) => (
                 <li key={person} className="flex items-center gap-3 px-4 py-2.5">

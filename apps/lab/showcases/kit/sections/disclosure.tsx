@@ -9,17 +9,17 @@ import {
   CollapsiblePanel,
   CollapsibleTrigger,
   Switch,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";
 
 const faqs = [
   ["What is AliveUI?", "A workspace of design systems, each shipped as its own React library."],
   [
-    "Is the glass system accessible?",
+    "Is the surface system accessible?",
     "Behaviour, focus management and keyboard support come from Base UI, and contrast is tuned per mode.",
   ],
-  ["Can I theme it?", "Override any --alive token on an element with data-system set to glass."],
+  ["Can I theme it?", "Override any --alive token on an element with a data system attribute."],
 ];
 
 export function DisclosureSection() {

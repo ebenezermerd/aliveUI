@@ -1,6 +1,6 @@
 "use client";
 
-import { GlassSurface, IconButton, Slider } from "@aliveui/glass";
+import { Surface, IconButton, Slider } from "@aliveui/ui";
 import { cn } from "@aliveui/primitives";
 import {
   Bluetooth,
@@ -31,7 +31,7 @@ function ToggleTile({
       <IconButton
         aria-label={label}
         aria-pressed={on}
-        variant={on ? "tinted" : "glass"}
+        variant={on ? "primary" : "default"}
         onClick={() => setOn((value) => !value)}
       >
         {icon}
@@ -43,28 +43,28 @@ function ToggleTile({
 
 function SliderTile({ label, icon, value }: { label: string; icon: ReactNode; value: number }) {
   return (
-    <GlassSurface
+    <Surface
       elevation="raised"
       padding="none"
       className="col-span-4 flex items-center gap-3 rounded-3xl px-4 py-2"
     >
       <span className="opacity-70 [&_svg]:size-4">{icon}</span>
       <Slider aria-label={label} defaultValue={value} />
-    </GlassSurface>
+    </Surface>
   );
 }
 
-/** An Apple style control centre, composed only from glass components. */
+/** An Apple style control centre, composed only from kit components. */
 export function ControlCenter({ className }: { className?: string }) {
   const [playing, setPlaying] = useState(true);
   const [focus, setFocus] = useState(false);
 
   return (
-    <GlassSurface
+    <Surface
       padding="none"
       className={cn("grid w-full max-w-sm grid-cols-4 gap-3 rounded-[2.25rem] p-3.5", className)}
     >
-      <GlassSurface
+      <Surface
         elevation="raised"
         padding="none"
         className="col-span-2 grid grid-cols-2 place-items-center gap-y-3 rounded-3xl p-3"
@@ -73,9 +73,9 @@ export function ControlCenter({ className }: { className?: string }) {
         <ToggleTile label="Wi Fi" icon={<Wifi />} defaultOn />
         <ToggleTile label="Bluetooth" icon={<Bluetooth />} defaultOn />
         <ToggleTile label="Night" icon={<Moon />} />
-      </GlassSurface>
+      </Surface>
 
-      <GlassSurface
+      <Surface
         elevation="raised"
         padding="none"
         className="col-span-2 flex flex-col justify-between rounded-3xl p-4"
@@ -102,14 +102,14 @@ export function ControlCenter({ className }: { className?: string }) {
             <SkipForward className="fill-current" />
           </IconButton>
         </div>
-      </GlassSurface>
+      </Surface>
 
       <button
         type="button"
         aria-pressed={focus}
         onClick={() => setFocus((value) => !value)}
         className={cn(
-          "glass col-span-4 flex items-center gap-3 rounded-3xl px-4 py-3 text-left shadow-raised transition-[background-color,scale] duration-300 ease-spring active:scale-[0.98]",
+          "surface col-span-4 flex items-center gap-3 rounded-3xl px-4 py-3 text-left shadow-raised transition-[background-color,scale] duration-300 ease-spring active:scale-[0.98]",
           "outline-none focus-visible:ring-2 focus-visible:ring-ring",
           focus && "bg-accent/85 text-accent-foreground",
         )}
@@ -128,6 +128,6 @@ export function ControlCenter({ className }: { className?: string }) {
 
       <SliderTile label="Brightness" icon={<Sun />} value={70} />
       <SliderTile label="Volume" icon={<Volume2 />} value={45} />
-    </GlassSurface>
+    </Surface>
   );
 }

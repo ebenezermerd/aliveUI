@@ -3,32 +3,33 @@
 import {
   Badge,
   Button,
-  type GlassMode,
-  GlassProvider,
-  GlassSurface,
+  type Mode,
+  SystemProvider,
+  Surface,
   SegmentedControl,
   Toaster,
-  Wallpaper,
-} from "@aliveui/glass";
+  Backdrop,
+} from "@aliveui/ui";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { ShowcaseHeader } from "@/components/showcase/showcase-header";
 import type { DesignSystem } from "@/lib/registry";
 import { ControlCenter } from "./control-center";
-import { componentNames, GlassSections, sections } from "./sections";
+import { componentNames, KitSections, sections } from "./sections";
 
 const modes = [
   { value: "light", label: <Sun />, "aria-label": "Light" },
   { value: "dark", label: <Moon />, "aria-label": "Dark" },
 ] as const;
 
-export function GlassShowcase({ system }: { system: DesignSystem }) {
-  const [mode, setMode] = useState<GlassMode>("light");
+/** The full kit, rendered in whichever design system the page is for. */
+export function KitShowcase({ system }: { system: DesignSystem }) {
+  const [mode, setMode] = useState<Mode>("light");
 
   return (
-    <GlassProvider mode={mode} className="relative isolate">
+    <SystemProvider system={system.slug} mode={mode} className="relative isolate">
       <Toaster>
-        <Wallpaper mode={mode} />
+        <Backdrop mode={mode} />
         <main className="mx-auto max-w-6xl space-y-16 px-6 py-16">
           <ShowcaseHeader
             system={system}
@@ -48,15 +49,15 @@ export function GlassShowcase({ system }: { system: DesignSystem }) {
           <section className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             <div className="max-w-xl space-y-5">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
-                Layered light, built from tokens.
+                One kit, themed by tokens.
               </h2>
               <p className="opacity-75">
-                Every surface blurs and saturates what sits behind it, adds an edge highlight and
-                casts a soft, wide shadow. The scene on the right uses nothing but components from{" "}
+                Every component on this page comes from{" "}
                 <code className="rounded-md bg-foreground/8 px-1.5 py-0.5 text-sm">
-                  @aliveui/glass
-                </code>
-                .
+                  @aliveui/ui
+                </code>{" "}
+                and takes its look from the {system.name} theme. The scene on the right is built
+                from nothing but kit components.
               </p>
               <nav aria-label="Sections" className="flex flex-wrap gap-2">
                 {sections.map((section) => (
@@ -69,19 +70,22 @@ export function GlassShowcase({ system }: { system: DesignSystem }) {
             <ControlCenter />
           </section>
 
-          <GlassSections mode={mode} />
+          <KitSections mode={mode} />
         </main>
       </Toaster>
-    </GlassProvider>
+    </SystemProvider>
   );
 }
 
-/** A small live sample of the system for the lab home page. */
-export function GlassPreview() {
+/** A small live sample of a system for the lab home page. */
+export function KitPreview({ system }: { system: string }) {
   return (
-    <GlassProvider className="relative isolate flex size-full items-center justify-center overflow-hidden">
-      <Wallpaper mode="light" fixed={false} />
-      <GlassSurface padding="none" className="w-60 space-y-3 p-4">
+    <SystemProvider
+      system={system}
+      className="relative isolate flex size-full items-center justify-center overflow-hidden bg-background"
+    >
+      <Backdrop mode="light" fixed={false} />
+      <Surface padding="none" className="w-60 space-y-3 p-4">
         <div className="flex items-center gap-3">
           <div className="size-10 rounded-xl bg-[conic-gradient(from_200deg,#f472b6,#60a5fa,#fbbf24,#f472b6)] shadow-raised" />
           <div>
@@ -90,12 +94,12 @@ export function GlassPreview() {
           </div>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" variant="tinted">
+          <Button size="sm" variant="primary">
             Play
           </Button>
           <Button size="sm">Queue</Button>
         </div>
-      </GlassSurface>
-    </GlassProvider>
+      </Surface>
+    </SystemProvider>
   );
 }

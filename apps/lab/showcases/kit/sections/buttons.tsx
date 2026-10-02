@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, IconButton, Toggle, ToggleGroup } from "@aliveui/glass";
+import { Button, IconButton, Toggle, ToggleGroup } from "@aliveui/ui";
 import { Bold, Heart, Italic, Plus, Search, Share, Star, Trash2 } from "lucide-react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";
@@ -15,8 +15,8 @@ export function ButtonsSection() {
       <Panel className="grid gap-8 md:grid-cols-2">
         <Demo label="Variants">
           <div className="flex flex-wrap items-center gap-3">
-            <Button>Glass</Button>
-            <Button variant="tinted">Tinted</Button>
+            <Button>Default</Button>
+            <Button variant="primary">Tinted</Button>
             <Button variant="ghost">Ghost</Button>
             <Button variant="danger">Danger</Button>
           </div>
@@ -30,7 +30,7 @@ export function ButtonsSection() {
         </Demo>
         <Demo label="With icons">
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="tinted">
+            <Button variant="primary">
               <Plus /> New note
             </Button>
             <Button>
@@ -47,7 +47,7 @@ export function ButtonsSection() {
             <IconButton aria-label="Favourite">
               <Heart />
             </IconButton>
-            <IconButton aria-label="Add" variant="tinted">
+            <IconButton aria-label="Add" variant="primary">
               <Plus />
             </IconButton>
             <IconButton aria-label="Delete" variant="danger" size="lg">

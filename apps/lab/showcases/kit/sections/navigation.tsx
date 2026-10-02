@@ -34,7 +34,7 @@ import {
   ToolbarButton,
   ToolbarGroup,
   ToolbarSeparator,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import {
   Bold,
   ChevronDown,
@@ -66,7 +66,7 @@ export function NavigationSection() {
     <ShowcaseSection
       id="navigation"
       title="Navigation"
-      description="Tabs with a sliding glass pill, segmented controls, toolbars and menus."
+      description="Tabs with a sliding surface pill, segmented controls, toolbars and menus."
     >
       <Panel className="grid gap-8 md:grid-cols-2">
         <Demo label="Tabs">

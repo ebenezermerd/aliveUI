@@ -18,7 +18,7 @@ import {
   OTPField,
   Select,
   Textarea,
-} from "@aliveui/glass";
+} from "@aliveui/ui";
 import { Search } from "lucide-react";
 import { Demo, ShowcaseSection } from "@/components/showcase/showcase-section";
 import { Panel } from "./panel";
@@ -111,7 +111,7 @@ export function InputsSection() {
                 <Input placeholder="Fiscal number" />
               </Field>
             </Fieldset>
-            <Button type="submit" variant="tinted">
+            <Button type="submit" variant="primary">
               Save
             </Button>
           </Form>
