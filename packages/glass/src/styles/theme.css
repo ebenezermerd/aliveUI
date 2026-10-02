@@ -132,3 +132,21 @@
     translate: 300% 0;
   }
 }
+
+@keyframes glass-spoke {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+
+@keyframes glass-shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
