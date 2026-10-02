@@ -15,3 +15,7 @@ export * from "./components/avatar/index.js";
 export * from "./components/card/index.js";
 export * from "./components/progress/index.js";
 export * from "./components/separator/index.js";
+export * from "./components/tabs/index.js";
+export * from "./components/segmented-control/index.js";
+export * from "./components/toolbar/index.js";
+export * from "./components/menu/index.js";
