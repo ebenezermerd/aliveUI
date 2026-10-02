@@ -47,3 +47,6 @@ export * from "./components/combobox/index.js";
 export * from "./components/autocomplete/index.js";
 export * from "./components/scroll-area/index.js";
 export * from "./components/command-palette/index.js";
+export * from "./components/breadcrumb/index.js";
+export * from "./components/pagination/index.js";
+export * from "./components/table/index.js";
