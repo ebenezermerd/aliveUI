@@ -17,6 +17,7 @@ packages/
   ui/           @aliveui/ui          The shared component kit, styled only through tokens
   minimal/      @aliveui/minimal     Minimal design system, a theme over the kit
   glass/        @aliveui/glass       Glass design system, a theme over the kit
+  neumorphism/  @aliveui/neumorphism Neumorphism design system, a theme over the kit
   features/
     auth/       @aliveui/auth        Login and registration, headless plus design system blocks
     workspace/  @aliveui/workspace   Team workspace dashboard, headless plus design system blocks
@@ -104,8 +105,8 @@ next to the theme and export them in place of the kit's.
 
 ## Roadmap
 
-AliveUI covers 22 design systems. Minimalism and Glassmorphism are built, and the rest are
-planned: Claymorphism, Neumorphism, Neo-Brutalism, Swiss Design, Editorial Design, Luxury
+AliveUI covers 22 design systems. Minimalism, Glassmorphism and Neumorphism are built, and the
+rest are planned: Claymorphism, Neo-Brutalism, Swiss Design, Editorial Design, Luxury
 Typography, Bento Grid, Maximalism, Cybercore, Cyberpunk, Synthwave, Y2K Aesthetic, Pixel Art,
 Scrapbook, Conceptual Sketch, Surrealism, Ethereal, Bohemian, Victorian and Wabi-Sabi.
 
