@@ -15,13 +15,28 @@ export interface ToastOptions {
   tone?: ToastTone;
   /** Milliseconds before the toast closes on its own. `0` keeps it open. */
   timeout?: number;
+  /** A single action, such as Undo. Clicking it also closes the toast. */
+  action?: { label: string; onClick: () => void };
 }
 
 const manager = BaseToast.createToastManager();
 
 /** Shows a toast from anywhere, including outside React. Returns its id. */
-export function toast({ tone = "neutral", ...options }: ToastOptions): string {
-  return manager.add({ ...options, type: tone });
+export function toast({ tone = "neutral", action, ...options }: ToastOptions): string {
+  const id: string = manager.add({
+    ...options,
+    type: tone,
+    actionProps: action
+      ? {
+          children: action.label,
+          onClick: () => {
+            action.onClick();
+            manager.close(id);
+          },
+        }
+      : undefined,
+  });
+  return id;
 }
 
 /** Closes one toast by id, or every toast when no id is given. */
@@ -82,6 +97,14 @@ function ToastList() {
           <div className="flex min-w-0 flex-1 flex-col gap-0.5">
             <BaseToast.Title className="text-sm font-semibold" />
             <BaseToast.Description className="text-sm text-muted-foreground" />
+            {item.actionProps ? (
+              <BaseToast.Action
+                className={cn(
+                  "mt-2 inline-flex h-7 w-fit items-center rounded-full bg-accent px-3 text-xs font-semibold text-accent-foreground transition-[scale] active:scale-95",
+                  focusRing,
+                )}
+              />
+            ) : null}
           </div>
           <BaseToast.Close
             aria-label="Dismiss"
