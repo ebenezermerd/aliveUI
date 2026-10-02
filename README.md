@@ -9,19 +9,31 @@ experiments.
 ```
 apps/
   lab/          Next.js app for full page showcases and experiments
+  console/      Team workspace app built only from features and the glass system
   storybook/    Isolated component workbench, stories live next to components
 packages/
   tokens/       @aliveui/tokens      The semantic token contract every system fills in
   primitives/   @aliveui/primitives  Headless helpers shared by every system
   minimal/      @aliveui/minimal     Minimal design system
   glass/        @aliveui/glass       Glass design system
+  features/
+    auth/       @aliveui/auth        Login and registration, headless plus design system blocks
+    workspace/  @aliveui/workspace   Team workspace dashboard, headless plus design system blocks
 tooling/
   typescript/   @aliveui/tsconfig        Shared tsconfig presets
   eslint/       @aliveui/eslint-config   Shared ESLint presets
 ```
 
-Dependencies only flow one way: `tokens → primitives → systems → apps`. Design systems never
-import each other.
+Dependencies only flow one way: `tokens → primitives → systems → features → apps`. Design systems
+never import each other, and features never import each other.
+
+## Features
+
+A feature packages a whole capability in layers: a core with schemas, types and an adapter
+contract, a React layer with hooks, and blocks per design system under a subpath such as
+`@aliveui/auth/glass`. Data goes through the adapter, so the same screens run on the bundled
+local browser adapter today and on a real API later. Run the console with `pnpm --filter console
+dev` and open http://localhost:3001.
 
 ## Getting started
 
