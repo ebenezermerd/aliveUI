@@ -78,7 +78,18 @@ import { Button, GlassSurface } from "@aliveui/glass";
    `index.ts`, and export them from `src/index.ts`.
 4. Import the new `styles.css` in `apps/lab/app/globals.css` and
    `apps/storybook/.storybook/preview.css`.
-5. Add the system to `apps/lab/lib/registry.ts` and give it a showcase in `apps/lab/showcases`.
+5. In `apps/lab/lib/registry.ts` set the system's status to `ready`, then give it a showcase in
+   `apps/lab/showcases`.
+
+## Roadmap
+
+AliveUI covers 22 design systems. Minimalism and Glassmorphism are built, and the rest are
+planned: Claymorphism, Neumorphism, Neo-Brutalism, Swiss Design, Editorial Design, Luxury
+Typography, Bento Grid, Maximalism, Cybercore, Cyberpunk, Synthwave, Y2K Aesthetic, Pixel Art,
+Scrapbook, Conceptual Sketch, Surrealism, Ethereal, Bohemian, Victorian and Wabi-Sabi.
+
+The source of truth is `apps/lab/lib/registry.ts`, and the lab home page shows what is built and
+what is planned.
 
 ## Adding an experiment
 
