@@ -35,6 +35,7 @@
   "devDependencies": {
     "@aliveui/eslint-config": "workspace:*",
     "@aliveui/tsconfig": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "@types/react": "catalog:",
     "eslint": "catalog:",
     "react": "catalog:",

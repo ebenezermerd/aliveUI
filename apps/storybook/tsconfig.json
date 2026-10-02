@@ -1,0 +1,7 @@
+{
+  "extends": "@aliveui/tsconfig/vite.json",
+  "compilerOptions": {
+    "types": ["node", "vite/client"]
+  },
+  "include": [".storybook/**/*"]
+}
