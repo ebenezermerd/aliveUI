@@ -35,3 +35,23 @@ export function MinimalShowcase() {
     </div>
   );
 }
+
+/** A small live sample of the system for the lab home page. */
+export function MinimalPreview() {
+  return (
+    <div data-system="minimal" className="flex size-full items-center justify-center bg-background">
+      <div className="w-56 space-y-3 rounded-surface border border-border bg-surface-raised p-4 shadow-floating">
+        <div className="space-y-1">
+          <p className="text-sm font-medium">Invite your team</p>
+          <p className="text-xs text-muted-foreground">Collaborate on every project.</p>
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm">Invite</Button>
+          <Button size="sm" variant="outline">
+            Later
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}

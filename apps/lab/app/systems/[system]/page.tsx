@@ -23,7 +23,7 @@ export default async function SystemPage({ params }: SystemPageProps) {
   const system = readySystems.find((candidate) => candidate.slug === slug);
   if (!system) notFound();
 
-  const Showcase = showcases[system.slug];
+  const { Showcase } = showcases[system.slug];
 
   return (
     <main className="mx-auto max-w-5xl space-y-8 px-6 py-12">

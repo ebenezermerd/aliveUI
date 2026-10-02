@@ -47,3 +47,27 @@ export function GlassShowcase() {
     </div>
   );
 }
+
+/** A small live sample of the system for the lab home page. */
+export function GlassPreview() {
+  return (
+    <div
+      data-system="glass"
+      className="relative isolate flex size-full items-center justify-center overflow-hidden bg-background"
+    >
+      <Backdrop />
+      <GlassSurface padding="none" className="w-56 space-y-3 p-4">
+        <div className="space-y-1">
+          <p className="text-sm font-semibold">Now playing</p>
+          <p className="text-xs text-muted-foreground">Glass, layered over colour.</p>
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" variant="tinted">
+            Play
+          </Button>
+          <Button size="sm">Queue</Button>
+        </div>
+      </GlassSurface>
+    </div>
+  );
+}
