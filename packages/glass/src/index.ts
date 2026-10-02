@@ -35,3 +35,6 @@ export * from "./components/toggle/index.js";
 export * from "./components/checkbox-group/index.js";
 export * from "./components/fieldset/index.js";
 export * from "./components/form/index.js";
+export * from "./components/number-field/index.js";
+export * from "./components/otp-field/index.js";
+export * from "./components/meter/index.js";
